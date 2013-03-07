@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/abis/bin/backup/config_backup'
+let g:netrw_dirhist_2='/home/abis_m/bin/root'
+let g:netrw_dirhist_3='/home/abis_m/template_praesentation_latex/ETH-master-sample-LaTeX/ETH_res'
+let g:netrw_dirhist_4='/home/abis_m/lab/readimages/test'
+let g:netrw_dirhist_5='/home/abis_m/.vim/bundle/vim-spec-macros'
+let g:netrw_dirhist_6='/home/abis_m/.vim/bundle/vim-spec-macros/syntax'
+let g:netrw_dirhist_7='/home/abis_m/.vim/bundle/vim-spec-macros'

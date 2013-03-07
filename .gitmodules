@@ -1,0 +1,33 @@
+[submodule "vim-spec-macros"]
+	path = vim-spec-macros
+	url = ./bundle/vim-spec-macros/
+[submodule "a.vim"]
+	path = a.vim
+	url = ./bundle/a.vim
+[submodule "gundo"]
+	path = gundo
+	url = ./bundle/gundo
+[submodule "nerdcommenter"]
+	path = nerdcommenter
+	url = ./bundle/nerdcommenter
+[submodule "snipmate-snippets"]
+	path = snipmate-snippets
+	url = ./bundle/snipmate-snippets
+[submodule "tlib_vim"]
+	path = tlib_vim
+	url = ./bundle/tlib_vim
+[submodule "vim-addon-mw-utils"]
+	path = vim-addon-mw-utils
+	url = ./bundle/vim-addon-mw-utils
+[submodule "vim-latex"]
+	path = vim-latex
+	url = ./bundle/vim-latex
+[submodule "vim-repeat"]
+	path = vim-repeat
+	url = ./bundle/vim-repeat
+[submodule "vim-snipmate"]
+	path = vim-snipmate
+	url = ./bundle/vim-snipmate
+[submodule "vim-surround"]
+	path = vim-surround
+	url = ./bundle/vim-surround
