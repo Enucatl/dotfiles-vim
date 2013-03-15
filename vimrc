@@ -60,3 +60,15 @@ let g:Tex_CompileRule_ps='dvips -o $*.ps $*.dvi'
 let g:Tex_CompileRule_pdf='ps2pdf $*.ps'
 let g:Tex_ViewRule_pdf='okular'
 
+" UltiSnips
+" declare global configuration dictionary so that config options can be added:
+let g:UltiSnips = {}
+
+" Use old snipmates default mappings (look them up in
+" plugin/UltiSnips.vim)
+" ExpandTrigger, ListSnippets, JumpForwardTrigger, JumpBackwardTrigger
+" yourself. Eg use <c-j> to jump to next placeholder, which is UltiSnips
+" default. It makes sense to use a different mapping so that you don't
+" expand var names. in for loops if they also represent a snippet.
+let g:UltiSnips.InterfaceFlavour = "SnipMate"
+let g:UltiSnips.JumpForwardTrigger = "<c-j>"
