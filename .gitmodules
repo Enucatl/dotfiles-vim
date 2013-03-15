@@ -28,6 +28,3 @@
 [submodule "bundle/vim-spec-macros"]
 	path = bundle/vim-spec-macros
 	url = git@bitbucket.org:Enucatl/vim-spec-macros.git
-[submodule "bundle/UltiSnips"]
-	path = bundle/UltiSnips
-	url = https://github.com/MarcWeber/ultisnips.git
