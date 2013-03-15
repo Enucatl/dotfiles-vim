@@ -4,9 +4,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/snipmate-snippets"]
-	path = bundle/snipmate-snippets
-	url = git@bitbucket.org:Enucatl/snipmate-snippets.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -28,3 +25,6 @@
 [submodule "bundle/vim-spec-macros"]
 	path = bundle/vim-spec-macros
 	url = git@bitbucket.org:Enucatl/vim-spec-macros.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:Enucatl/ultisnips.git
