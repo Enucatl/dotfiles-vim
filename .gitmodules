@@ -28,3 +28,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = git@github.com:Enucatl/ultisnips.git
+[submodule "bundle/vim-haskellmode"]
+	path = bundle/vim-haskellmode
+	url = https://github.com/lukerandall/haskellmode-vim.git

@@ -7,6 +7,8 @@ set foldenable
 set autoindent
 set smartindent
 set autowrite
+set nojoinspaces
+set shiftround
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -59,3 +61,8 @@ let g:Tex_CompileRule_dvi='latex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps='dvips -o $*.ps $*.dvi'
 let g:Tex_CompileRule_pdf='ps2pdf $*.ps'
 let g:Tex_ViewRule_pdf='okular'
+
+"Haskell
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+let g:haddock_browser = "firefox"
