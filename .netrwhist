@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/abis/lab/readimages/analysis/src'
+let g:netrw_dirhist_2='/home/abis_m/lab/readimages/python'
+let g:netrw_dirhist_3='/home/abis_m/lab/dpcsimulation'
+let g:netrw_dirhist_4='/home/abis_m/.vim/bundle/ultisnips'
+let g:netrw_dirhist_5='/home/abis_m/.vim/bundle/ultisnips/UltiSnips'
+let g:netrw_dirhist_6='/home/abis_m/.vim/bundle'
+let g:netrw_dirhist_7='/home/abis_m/.vim'
+let g:netrw_dirhist_8='/home/abis_m/lab/gridrec/.git'
+let g:netrw_dirhist_9='/home/abis_m/bin'

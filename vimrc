@@ -66,3 +66,7 @@ let g:Tex_ViewRule_pdf='okular'
 " use ghc functionality for haskell files
 au Bufenter *.hs compiler ghc
 let g:haddock_browser = "firefox"
+
+
+"python pylint
+autocmd FileType python compiler pylint

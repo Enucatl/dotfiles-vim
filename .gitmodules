@@ -31,3 +31,6 @@
 [submodule "bundle/vim-haskellmode"]
 	path = bundle/vim-haskellmode
 	url = https://github.com/lukerandall/haskellmode-vim.git
+[submodule "bundle/pylint"]
+	path = bundle/pylint
+	url = git://github.com/orenhe/pylint.vim.git
