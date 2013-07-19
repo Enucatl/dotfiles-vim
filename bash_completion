@@ -1,0 +1,6 @@
+#elimina estensioni indesiderate quando completi il nome di un file da
+#aprire con vim. Utilissimo per latex.
+complete -f -X '*.@(log|dvi|toc|pdf|ps|aux|idx|bbl|out|idx|blg)' gvim vim
+complete -f -X '!*.@(zip|bz2|tar|z|gz)' aunpack
+complete -o filenames -F _apt_get ag
+complete -o filenames -F _apt_cache ac
