@@ -70,3 +70,11 @@ let g:haddock_browser = "firefox"
 
 "python pylint
 autocmd FileType python compiler pylint
+
+
+"Delete in normal mode to switch off highlighting till next search and clear messages...
+nmap <silent> <BS> [Cancel highlighting] :nohlsearch <CR>
+
+" Forward/back one file...
+nmap <DOWN> :bn<CR>0
+nmap <UP> :bp<CR>0
