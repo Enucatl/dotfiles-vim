@@ -6,6 +6,8 @@ Installation:
 Create symlinks:
 
     :::bash
+    ln -s ~/.vim/gitconfig ~/.gitconfig
+    ln -s ~/.vim/gitignore ~/.gitignore
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
     ln -s ~/.vim/bashrc ~/.bashrc
