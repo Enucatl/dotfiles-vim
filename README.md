@@ -6,6 +6,9 @@ Installation:
 Create symlinks:
 
     :::bash
+    ln -s ~/.vim/Rprofile ~/.Rprofile
+    ln -s ~/.vim/xmobarrc ~/.xmobarrc
+    ln -s ~/.vim/xmonad.hs ~/.xmonad/xmonad.hs
     ln -s ~/.vim/gitconfig ~/.gitconfig
     ln -s ~/.vim/gitignore ~/.gitignore
     ln -s ~/.vim/vimrc ~/.vimrc
