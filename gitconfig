@@ -1,0 +1,24 @@
+[user]
+    name = Matteo Abis
+    email = gmatteo..abis@gmail.com
+
+[alias]
+    pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+    diffwords = diff --color-words
+    ours = "!f() { git co --ours $@ && git add $@; }; f"
+    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+[core]
+    excludesfile = ~/.gitignore
+[content]
+    editor = gvim -w
+[core]
+    editor = gvim -f
+    pager = less -r
+    whitespace = trailing-space,space-before-tab
+[push]
+    default = simple
+[color]
+    ui = auto
+    interactive = auto
+[branch]
+    autosetuprebase=always
