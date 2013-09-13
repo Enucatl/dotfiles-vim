@@ -49,7 +49,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-PS1='${debian_chroot:+($debian_chroot)}\A \u@\h:\w\$ '
+PS1='${debian_chroot:+($debian_chroot)}\A \u@\h:\w`__git_ps1`\$ '
 unset color_prompt force_color_prompt
 
 # Alias definitions.

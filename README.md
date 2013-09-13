@@ -6,6 +6,8 @@ Installation:
 Create symlinks:
 
     :::bash
+    ln -s ~/.vim/func_cd ~/bin/func_cd
+    ln -s ~/.vim/func_mcd ~/bin/func_mcd
     ln -s ~/.vim/Rprofile ~/.Rprofile
     ln -s ~/.vim/xmobarrc ~/.xmobarrc
     ln -s ~/.vim/xmonad.hs ~/.xmonad/xmonad.hs

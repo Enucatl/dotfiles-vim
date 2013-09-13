@@ -23,3 +23,7 @@
     interactive = auto
 [branch]
     autosetuprebase=always
+[advice]
+  pushNonFastForward = false
+  commitBeforeMerge = false
+  implicitIdentity = false
