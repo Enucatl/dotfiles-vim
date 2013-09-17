@@ -10,9 +10,6 @@
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = git+ssh://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
