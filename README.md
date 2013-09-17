@@ -27,6 +27,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule update
 
 How to remove submodules?
+Go to the ROOT of the project.
 Define a `submodulepath` shell variable (no trailing slash):
 
     :::bash
