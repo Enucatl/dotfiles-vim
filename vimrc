@@ -78,3 +78,6 @@ nmap <silent> <BS> [Cancel highlighting] :nohlsearch <CR>
 " Forward/back one file...
 nmap <DOWN> :bn<CR>0
 nmap <UP> :bp<CR>0
+
+" avoid C-j clash between ultisnips and vim-latex
+imap <C-j> <Plug>IMAP_JumpForward
