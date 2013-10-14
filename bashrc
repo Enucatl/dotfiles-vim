@@ -92,7 +92,7 @@ export CDPATH=:~:~/documenti/unipd
 export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root:~/lab:
 export ROOTLIB=/usr/lib/root
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/:/usr/local/lib:$ROOTLIB:/usr/lib/jni
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/:/usr/local/lib:$ROOTLIB
 export EDITOR=gvim
 
 #more functions:
