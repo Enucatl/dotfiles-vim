@@ -95,6 +95,11 @@ export ROOTLIB=/usr/lib/root
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/:/usr/local/lib:$ROOTLIB
 export EDITOR=gvim
 
+#use pyenv!
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 #more functions:
 source func_cd
 source func_mcd
