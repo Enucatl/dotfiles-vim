@@ -15,6 +15,7 @@ Create symlinks:
     ln -s ~/.vim/gitignore ~/.gitignore
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
+    ln -s ~/.vim/pentadactylrc ~/.pentadactylrc
     ln -s ~/.vim/bashrc ~/.bashrc
     ln -s ~/.vim/bash_aliases ~/.bash_aliases
     ln -s ~/.vim/bash_completion ~/.bash_completion
