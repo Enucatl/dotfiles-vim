@@ -8,6 +8,7 @@
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     s = status
+    export = "!f() { name=${PWD##*/}-$(git describe --always --abbrev=4 $1); git archive --prefix=$name -o $name.tar.gz $1; }; f"
 [core]
     excludesfile = ~/.gitignore
 [content]
@@ -24,6 +25,6 @@
 [branch]
     autosetuprebase=always
 [advice]
-  pushNonFastForward = false
-  commitBeforeMerge = false
-  implicitIdentity = false
+    pushNonFastForward = false
+    commitBeforeMerge = false
+    implicitIdentity = false
