@@ -28,3 +28,5 @@
     pushNonFastForward = false
     commitBeforeMerge = false
     implicitIdentity = false
+[difftool "diffpdf"]
+    cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
