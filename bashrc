@@ -88,7 +88,6 @@ if [ -e ~/.pythonbrew/ ]; then
 fi
 
 export PATH=$PATH:.:~/.local/bin:~/bin:~/bin/backup
-export CDPATH=:~:~/documenti/unipd
 export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root:~/lab:
 export ROOTLIB=/usr/lib/root
