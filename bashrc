@@ -116,3 +116,6 @@ set page-completions off
 set show-all-if-ambiguous on
 set editing-mode vi
 set keymap vi
+
+#RUBY rvm
+PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
