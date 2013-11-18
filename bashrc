@@ -92,7 +92,7 @@ export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root:~/lab:
 export ROOTLIB=/usr/lib/root
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/:/usr/local/lib:$ROOTLIB
-export EDITOR=gvim
+export EDITOR=~/bin/gvim_fg
 
 #use pyenv!
 export PYENV_ROOT="$HOME/.pyenv"
