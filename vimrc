@@ -14,6 +14,7 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 filetype plugin indent on
+set cindent
 set expandtab
 set backspace=indent,eol,start
 set noerrorbells
