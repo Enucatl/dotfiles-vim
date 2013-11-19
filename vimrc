@@ -93,4 +93,4 @@ map <F3> :NERDTreeToggle<CR>
 "ctags
 "A-] - Open the definition in a vertical split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-tags+=tags;$HOME
+tags+=tags
