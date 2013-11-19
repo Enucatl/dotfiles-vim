@@ -82,3 +82,10 @@ nmap <UP> :bp<CR>0
 
 " avoid C-j clash between ultisnips and vim-latex
 imap <C-j> <Plug>IMAP_JumpForward
+
+" NERD_tree config
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
+map <F3> :NERDTreeToggle<CR>
