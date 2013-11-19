@@ -20,6 +20,7 @@ Create symlinks:
     ln -s ~/.vim/bash_aliases ~/.bash_aliases
     ln -s ~/.vim/bash_completion ~/.bash_completion
     ln -s ~/.vim/gvim_fg ~/bin/gvim_fg
+    ln -s ~/.vim/ctags ~/.ctags
 
 Switch to the `~/.vim` directory, and fetch submodules:
 
