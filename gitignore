@@ -1,5 +1,8 @@
-.*.swo
-.*.swp
+.DS_Store
+Thumbs.db
+*.sw[po]
+*.py[co]
 *~
-*.pyc
+# Vim persistent undo files
+*.un~
 tags

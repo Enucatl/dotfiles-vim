@@ -2,6 +2,8 @@
     name = Matteo Abis
     email = gmatteo..abis@gmail.com
 [alias]
+    unstage = reset HEAD
+    co = checkout
     pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
     diffwords = diff --color-words
     ours = "!f() { git checkout --ours $@ && git add $@; }; f"
@@ -17,16 +19,24 @@
     editor = gvim -f
     pager = less -r
     whitespace = trailing-space,space-before-tab
+[merge]
+# Per @jferris: `ff = only` means Git will never implicitly do a merge commit, including while
+# doing git pull. If I'm unexpectedly out of sync when I git pull, I get this
+# message:
+# fatal: Not possible to fast-forward, aborting.
+# At that point, I know that I've forgotten to do something in my normal
+# workflow, and I retrace my steps.
+    ff = always
 [push]
     default = simple
 [color]
     ui = auto
     interactive = auto
-[branch]
-    autosetuprebase=always
 [advice]
     pushNonFastForward = false
     commitBeforeMerge = false
     implicitIdentity = false
 [difftool "diffpdf"]
     cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
+[help]
+    autocorrect = 1
