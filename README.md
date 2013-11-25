@@ -29,8 +29,16 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule init
     git submodule update
 
-How to remove submodules?
-Go to the ROOT of the project. Define a `submodulepath` shell variable (no trailing slash):
+# Add a submodule
+Example:
+
+    :::bash
+    cd ~/.vim
+    git submodule init
+    git submodule add git://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
+
+# Remove a submodule
+`cd ~/.vim`, then define a `submodulepath` shell variable with the folder name (no trailing slash):
 
     :::bash
     git config -f .git/config --remove-section submodule.$submodulepath
