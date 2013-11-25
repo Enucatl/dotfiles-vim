@@ -94,10 +94,6 @@ export ROOTLIB=/usr/lib/root
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/:/usr/local/lib:$ROOTLIB
 export EDITOR=~/bin/gvim_fg
 
-#use pyenv!
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 #more functions:
 source func_cd
@@ -116,6 +112,13 @@ set page-completions off
 set show-all-if-ambiguous on
 set editing-mode vi
 set keymap vi
+
+#Python pyenv
+if [ -e ~/.pyenv/ ]; then
+    export PYENV_ROOT=$HOME/.pyenv
+    PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+fi
 
 #RUBY rvm
 if [ -e ~/.rvm/ ]; then
