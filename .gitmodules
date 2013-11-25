@@ -43,3 +43,6 @@
 [submodule "bundle/autotag"]
 	path = bundle/autotag
 	url = https://github.com/vim-scripts/AutoTag.git
+[submodule "bundle/python-indent"]
+	path = bundle/python-indent
+	url = https://github.com/gotgenes/vim-yapif.git
