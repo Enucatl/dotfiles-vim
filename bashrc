@@ -87,11 +87,11 @@ if [ -e ~/.pythonbrew/ ]; then
     source ~/.pythonbrew/etc/bashrc
 fi
 
-export PATH=$PATH:.:~/.local/bin:~/bin:~/bin/backup
+export PATH=~/.local/bin:~/bin:~/bin/backup:$PATH
 export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root:~/lab:
 export ROOTLIB=/usr/lib/root
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/:/usr/local/lib:$ROOTLIB
+export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$ROOTLIB:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
 
