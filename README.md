@@ -3,7 +3,7 @@ Warning: it will remove your configuration files! Make sure you have a
 backup.
 
     :::bash
-    git clone git@bitbucket.org:Enucatl/dotfiles-vim.git ~/.vim
+    git clone https://bitbucket.org/Enucatl/dotfiles-vim.git ~/.vim
     make clean
     make install
 
