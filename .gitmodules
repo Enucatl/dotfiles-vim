@@ -21,10 +21,10 @@
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/vim-spec-macros"]
 	path = bundle/vim-spec-macros
-	url = git@bitbucket.org:Enucatl/vim-spec-macros.git
+	url = https://bitbucket.org/Enucatl/vim-spec-macros.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = git@github.com:Enucatl/ultisnips.git
+	url = git://github.com/Enucatl/ultisnips.git
 [submodule "bundle/vim-haskellmode"]
 	path = bundle/vim-haskellmode
 	url = https://github.com/lukerandall/haskellmode-vim.git
@@ -33,7 +33,7 @@
 	url = git://github.com/orenhe/pylint.vim.git
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
-	url = git@github.com:Enucatl/vim-latex.git
+	url = git://github.com/Enucatl/vim-latex.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
