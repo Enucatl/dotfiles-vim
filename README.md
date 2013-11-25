@@ -9,13 +9,6 @@ backup.
     make clean
     make install
 
-Switch to the `~/.vim` directory, and fetch submodules:
-
-    :::bash
-    cd ~/.vim
-    git submodule init
-    git submodule update
-
 # Add a submodule
 Example:
 
