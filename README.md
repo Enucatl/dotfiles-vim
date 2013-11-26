@@ -10,28 +10,39 @@ backup.
     make install
 
 # Vim plugins
-The following vim plugins will be installed
+##Installed plugins
 
-- [vim-pathogen](https://github.com/tpope/vim-pathogen)
-- [gundo.vim](https://github.com/sjl/gundo.vim)
-- [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+- [vim-pathogen](https://github.com/tpope/vim-pathogen) manage the other
+  plugins.
+- [gundo.vim](https://github.com/sjl/gundo.vim) improved undo with a full
+  undo tree.
+- [nerdcommenter](https://github.com/scrooloose/nerdcommenter) comments in
+  all programming languages.
 - [tlib\_vim](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
-- [vim-surround](https://github.com/tpope/vim-surround)
-- [a.vim](https://github.com/vim-scripts/a.vim)
-- [vim-repeat](https://github.com/tpope/vim-repeat)
-- [vim-spec-macros](https://bitbucket.org/Enucatl/vim-spec-macros)
-- [ultisnips](git://github.com/Enucatl/ultisnips)
-- [vim-haskellmode](https://github.com/lukerandall/haskellmode-vim)
-- [pylint](git://github.com/orenhe/pylint.vim)
-- [vim-latex](git://github.com/Enucatl/vim-latex)
-- [vim-fugitive](git://github.com/tpope/vim-fugitive)
-- [nerdtree](https://github.com/scrooloose/nerdtree)
-- [autotag](https://github.com/vim-scripts/AutoTag)
-- [python-indent](https://github.com/gotgenes/vim-yapif)
+- [vim-surround](https://github.com/tpope/vim-surround) surround with
+  parentheses, brackets, braces and tags.
+- [a.vim](https://github.com/vim-scripts/a.vim) alternate between `.cpp` and `.h` with
+  `:A`
+- [vim-repeat](https://github.com/tpope/vim-repeat) powerful `.` command.
+- [vim-spec-macros](https://bitbucket.org/Enucatl/vim-spec-macros) colors for certif
+  spec macros.
+- [ultisnips](git://github.com/Enucatl/ultisnips) code snippets for many
+  languages.
+- [vim-haskellmode](https://github.com/lukerandall/haskellmode-vim) haskell
+  tools.
+- [pylint](git://github.com/orenhe/pylint.vim) check the python code with
+  pylint.
+- [vim-latex](git://github.com/Enucatl/vim-latex) the vim LaTeX suite.
+- [vim-fugitive](git://github.com/tpope/vim-fugitive) git integration.
+- [nerdtree](https://github.com/scrooloose/nerdtree) navigate project files
+  inside vim.
+- [autotag](https://github.com/vim-scripts/AutoTag) automatically update
+  ctags upon saving a file.
+- [python-indent](https://github.com/gotgenes/vim-yapif) improved python
+  indentation.
 
-# Edit the vim plugins
-## Add a submodule
+## Add a plugin
 Example:
 
     :::bash
@@ -39,7 +50,7 @@ Example:
     git submodule init
     git submodule add git://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
 
-## Remove a submodule
+## Remove a plugin
 `cd ~/.vim`, then define a `submodulepath` shell variable with the folder name (no trailing slash):
 
     :::bash
