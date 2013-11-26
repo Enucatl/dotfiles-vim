@@ -1,4 +1,8 @@
 set nocompatible
+
+"load pathogen from the submodules
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 set background=light
 set history=2000
 syntax enable
