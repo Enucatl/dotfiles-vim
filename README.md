@@ -11,6 +11,7 @@ backup.
 
 # Vim plugins
 The following vim plugins will be installed
+
     - [vim-pathogen](https://github.com/tpope/vim-pathogen)
     - [gundo.vim](https://github.com/sjl/gundo.vim)
     - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
