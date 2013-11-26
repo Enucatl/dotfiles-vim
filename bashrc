@@ -125,8 +125,3 @@ if [ -e ~/.rvm/ ]; then
     PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
     source ~/.rvm/scripts/rvm
 fi
-
-#extra configuration file with site specific info
-if [ -f ~/.thisbashrc ]; then
-    source ~/.thisbashrc
-fi
