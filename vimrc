@@ -57,6 +57,9 @@ nnoremap <F5> :GundoToggle<CR>
 
 call pathogen#infect()
 
+"solarized conflict
+set t_Co=16
+
 " for VIM-latex-suite usage
 let g:Tex_MultipleCompileFormats = 'dvi,ps'
 let g:Tex_DefaultTargetFormat='pdf'
