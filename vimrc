@@ -56,6 +56,7 @@ set pastetoggle=<F3>
 nnoremap <F5> :GundoToggle<CR>
 
 call pathogen#infect()
+call pathogen#helptags()
 
 "solarized conflict
 set t_Co=16
