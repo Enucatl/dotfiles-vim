@@ -111,4 +111,13 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  " bind K to Ag to grep word under cursor
+  nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+  "use grep if ag is not installed
+else
+  " bind K to grep word under cursor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 endif
