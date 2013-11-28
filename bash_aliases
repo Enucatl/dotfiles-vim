@@ -15,3 +15,6 @@ alias c='clear'
 alias cclear='cd && clear'
 alias convert300='convert -density 300'
 alias R='R --no-save --no-restore-data --quiet'
+
+#the silver surfer with grep colorscheme
+alias ag='ag --color-match "1;31" --color-line-number 32 --color-path 35'
