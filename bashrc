@@ -98,11 +98,6 @@ export ROOTLIB=/usr/lib/root
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$ROOTLIB:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
-
-#more functions:
-source func_cd
-source func_mcd
-
 setxkbmap -option caps:escape
 shopt -s cdspell
 shopt -s extglob
@@ -137,3 +132,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if [ -e ~/.pyenv/ ]; then
     PATH=~/.cabal/bin:$PATH
 fi
+
+#cd..... and mcd functions:
+if [ -f ~/bin/func_mcd ]; then
+    source ~/bin/func_mcd
+fi
+if [ -f ~/bin/func_cd ]; then
+    source ~/bin/func_cd
+fi
+

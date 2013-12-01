@@ -64,7 +64,7 @@ let g:haddock_browser = "firefox"
 "python pylint
 autocmd FileType python compiler pylint
 
-"solarized conflict
+"avoid solarized conflict with 256 colors in the terminal
 set t_Co=16
 
 " for VIM-latex-suite usage
