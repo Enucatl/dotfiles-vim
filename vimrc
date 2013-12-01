@@ -118,3 +118,9 @@ else
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 endif
+
+"ctags
+"tags file name
+set tags=./tags
+"generate tags
+nnoremap <F8> :!ctags -R --exclude .*ignore .
