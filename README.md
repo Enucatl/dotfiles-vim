@@ -51,13 +51,7 @@ Example:
     git submodule add git://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
 
 ## Remove a plugin
-`cd ~/.vim`, then define a `submodulepath` shell variable with the folder name (no trailing slash):
+`cd ~/.vim`, then use the `remove_submodule.sh` script.
 
     :::bash
-    git config -f .git/config --remove-section submodule.$submodulepath
-    git config -f .gitmodules --remove-section submodule.$submodulepath
-    git add .gitmodules
-    git rm --cached $submodulepath
-    git commit -m "Remove submodule"
-    rm -rf $submodulepath
-    rm -rf .git/modules/$submodulepath
+    ./remove_submodule.sh bundle/unwanted_plugin
