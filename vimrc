@@ -1,62 +1,103 @@
 set nocompatible
+set noerrorbells
 
-"load pathogen from the submodules
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-
+"background theme light/dark
 set background=light
-set history=2000
+
+"avoid solarized conflict with 256 colors in the terminal
+set t_Co=16
+
+"detect filetype and use syntax highlighting
 syntax enable
-set foldenable
-"set hlsearch
-set autoindent
-set smartindent
+filetype plugin indent on
+
+"Delete in normal mode to switch off highlighting till next search and clear messages...
+set hlsearch
+nmap <silent> <BS> [Cancel highlighting] :nohlsearch <CR>
+
 set autowrite
 set nojoinspaces
 set shiftround
+set backspace=indent,eol,start
+set magic
+set showmatch
+set showmode
+set linebreak
+set virtualedit=all
+set hidden
+
+"maximum text width=76 characters
+set textwidth=76
+
+"fold on every indent
+set foldenable
+set foldmethod=indent
+
+"indent with 4 spaces
+set cindent
+set expandtab
+set autoindent
+set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
-filetype plugin indent on
-set cindent
-set expandtab
-set backspace=indent,eol,start
-set noerrorbells
-set magic
-set showmatch
-set showmode
-set textwidth=76
-set linebreak
+
+"Backup options:
+set history=2000
+set undolevels=1000 "maximum number of changes that can be undone
+
+"window minimum height
+set wmh=0
+
+"don't open these files:
 set wildignore=*.swp,*.bak,*.pyc,*.pdf,*.idx,*.ps,*.dvi
 set suffixes=.pdf,.aux,.bak,.dvi,.gz,.idx,.log,.ps,.swp,.tar
+
+"make shortcut 
 map <S-m> :!make<CR>
-set virtualedit=all
-nnoremap <silent> <F8> :TlistToggle <CR>
-let Tlist_Exit_OnlyWindow=1
-set hidden
-set foldmethod=indent
-"LaTeX Suite options:
-set grepprg=grep\ -nH\ $*
-set wmh=0
-let g:tex_flavor='latex'
-let mapleader=','
-"set iskeyword+=:
-"
-"Backup options:
-set undolevels=1000 "maximum number of changes that can be undone
-"
-"
-"" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
+
+"paste mode useful to paste raw text without indentation problems
+set pastetoggle=<F3> 
+
+" Forward/back one file...
+nmap <DOWN> :bn<CR>0
+nmap <UP> :bp<CR>0
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-set pastetoggle=<F3> 
-nnoremap <F5> :GundoToggle<CR>
+"" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
 
+"leader character
+let mapleader=','
+
+"-----------------------------------
+"Plugins configuration
+"-----------------------------------
+"load pathogen from the submodules
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
+
+"LaTeX Suite options:
+let g:tex_flavor='latex'
+"compile formats
+let g:Tex_MultipleCompileFormats = 'dvi,ps'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_FormatDependency_ps='dvi,ps'
+let g:Tex_FormatDependency_pdf='dvi,ps,pdf'
+let g:Tex_CompileRule_dvi='latex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_ps='dvips -o $*.ps $*.dvi'
+let g:Tex_CompileRule_pdf='ps2pdf $*.ps'
+let g:Tex_ViewRule_pdf='okular'
+" avoid C-j clash between ultisnips and vim-latex
+imap <C-j> <Plug>IMAP_JumpForward
+
+
+"open the gundo tree with F5
+nnoremap <F5> :GundoToggle<CR>
 
 "Haskell
 let g:haddock_browser = "firefox"
@@ -71,39 +112,12 @@ autocmd FileType r imap <buffer> <LEFT> <-
 "python pylint
 autocmd FileType python compiler pylint
 
-"avoid solarized conflict with 256 colors in the terminal
-set t_Co=16
-
-" for VIM-latex-suite usage
-let g:Tex_MultipleCompileFormats = 'dvi,ps'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_FormatDependency_ps='dvi,ps'
-let g:Tex_FormatDependency_pdf='dvi,ps,pdf'
-let g:Tex_CompileRule_dvi='latex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_ps='dvips -o $*.ps $*.dvi'
-let g:Tex_CompileRule_pdf='ps2pdf $*.ps'
-let g:Tex_ViewRule_pdf='okular'
-
-"Delete in normal mode to switch off highlighting till next search and clear messages...
-nmap <silent> <BS> [Cancel highlighting] :nohlsearch <CR>
-
-" Forward/back one file...
-nmap <DOWN> :bn<CR>0
-nmap <UP> :bp<CR>0
-
-" avoid C-j clash between ultisnips and vim-latex
-imap <C-j> <Plug>IMAP_JumpForward
-
 " NERD_tree config
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-map <F3> :NERDTreeToggle<CR>
-
-"ctags
-"A-] - Open the definition in a vertical split
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <F4> :NERDTreeToggle<CR>
 
 " The Silver Searcher
 if executable('ag')
@@ -122,6 +136,7 @@ if executable('ag')
   "use grep if ag is not installed
 else
   " bind K to grep word under cursor
+  set grepprg=grep\ -nH\ $*
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 endif
@@ -131,3 +146,6 @@ endif
 set tags=./tags
 "generate tags
 nnoremap <F9> :!ctags -R --exclude .*ignore .<CR>
+"A-] - Open the definition in a vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
