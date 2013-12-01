@@ -130,4 +130,4 @@ endif
 "tags file name
 set tags=./tags
 "generate tags
-nnoremap <F8> :!ctags -R --exclude .*ignore .
+nnoremap <F9> :!ctags -R --exclude .*ignore .<CR>
