@@ -52,3 +52,6 @@
 [submodule "bundle/vim-ag"]
 	path = bundle/vim-ag
 	url = https://github.com/rking/ag.vim.git
+[submodule "bundle/hasksyn"]
+	path = bundle/hasksyn
+	url = https://github.com/travitch/hasksyn.git

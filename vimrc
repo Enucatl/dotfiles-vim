@@ -58,6 +58,12 @@ nnoremap <F5> :GundoToggle<CR>
 call pathogen#infect()
 call pathogen#helptags()
 
+"Haskell
+let g:haddock_browser = "firefox"
+
+"python pylint
+autocmd FileType python compiler pylint
+
 "solarized conflict
 set t_Co=16
 
@@ -70,16 +76,6 @@ let g:Tex_CompileRule_dvi='latex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps='dvips -o $*.ps $*.dvi'
 let g:Tex_CompileRule_pdf='ps2pdf $*.ps'
 let g:Tex_ViewRule_pdf='okular'
-
-"Haskell
-" use ghc functionality for haskell files
-au Bufenter *.hs compiler ghc
-let g:haddock_browser = "firefox"
-
-
-"python pylint
-autocmd FileType python compiler pylint
-
 
 "Delete in normal mode to switch off highlighting till next search and clear messages...
 nmap <silent> <BS> [Cancel highlighting] :nohlsearch <CR>
