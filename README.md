@@ -56,8 +56,8 @@ Example:
     :::bash
     git config -f .git/config --remove-section submodule.$submodulepath
     git config -f .gitmodules --remove-section submodule.$submodulepath
-    git rm --cached $submodulepath
     git add .gitmodules
+    git rm --cached $submodulepath
     git commit -m "Remove submodule"
     rm -rf $submodulepath
     rm -rf .git/modules/$submodulepath
