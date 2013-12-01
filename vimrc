@@ -109,9 +109,6 @@ autocmd FileType haskell imap <buffer> <RIGHT> ->
 "Insert arrows with left/right
 autocmd FileType r imap <buffer> <LEFT> <-
 
-"python pylint
-autocmd FileType python compiler pylint
-
 " NERD_tree config
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
@@ -149,3 +146,12 @@ nnoremap <F9> :!ctags -R --exclude .*ignore .<CR>
 "A-] - Open the definition in a vertical split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+"syntastic file syntax checking
+let g:syntastic_python_checkers=['pylint', 'pep8']
+let g:syntastic_enable_signs=0
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
