@@ -129,3 +129,11 @@ if [ -e ~/.rvm/ ]; then
     PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
     source ~/.rvm/scripts/rvm
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Added for haskell local modules
+if [ -e ~/.pyenv/ ]; then
+    PATH=~/.cabal/bin:$PATH
+fi
