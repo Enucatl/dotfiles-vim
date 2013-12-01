@@ -60,6 +60,13 @@ call pathogen#helptags()
 
 "Haskell
 let g:haddock_browser = "firefox"
+"Insert arrows with left/right
+autocmd FileType haskell imap <buffer> <LEFT> <-
+autocmd FileType haskell imap <buffer> <RIGHT> ->
+
+"R
+"Insert arrows with left/right
+autocmd FileType r imap <buffer> <LEFT> <-
 
 "python pylint
 autocmd FileType python compiler pylint
