@@ -136,7 +136,7 @@ endif
 
 "ctags
 "tags file name
-set tags=./tags
+set tags+=tags;/
 "generate tags
 nnoremap <F9> :!ctags -R --exclude .*ignore .<CR>
 "A-] - Open the definition in a vertical split
