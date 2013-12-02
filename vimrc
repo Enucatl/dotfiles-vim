@@ -11,10 +11,6 @@ set t_Co=16
 syntax enable
 filetype plugin indent on
 
-"Delete in normal mode to switch off highlighting till next search and clear messages...
-set hlsearch
-nmap <silent> <BS> [Cancel highlighting] :nohlsearch <CR>
-
 set autowrite
 set nojoinspaces
 set shiftround
