@@ -3,13 +3,14 @@
     email = gmatteo..abis@gmail.com
 [alias]
     unstage = reset HEAD
+    ci = commit
     co = checkout
     pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
     diffwords = diff --color-words
     ours = "!f() { git checkout --ours $@ && git add $@; }; f"
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    s = status
+    s = status -sb
     export = "!f() { name=${PWD##*/}-$(git describe --always --abbrev=4 $1); git archive --prefix=$name -o $name.tar.gz $1; }; f"
 [core]
     excludesfile = ~/.gitignore
@@ -28,7 +29,7 @@
 # workflow, and I retrace my steps.
     ff = always
 [push]
-    default = simple
+    default = tracking
 [color]
     ui = auto
     interactive = auto
