@@ -42,7 +42,8 @@ load-plugins=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use"--disable=all --enable=classes
 # --disable=W"
-disable=design,C0103,W0142,W0105,W0702
+# R0201 method could be a function
+disable=design,C0103,W0142,W0105,W0702,R0201
 
 
 [REPORTS]
