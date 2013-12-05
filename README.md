@@ -18,6 +18,8 @@ backup.
   undo tree.
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter) comments in
   all programming languages.
+- [nerdtree](https://github.com/scrooloose/nerdtree) navigate the project
+  files on a side bar
 - [tlib\_vim](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [vim-surround](https://github.com/tpope/vim-surround) surround with
@@ -29,8 +31,8 @@ backup.
   spec macros.
 - [ultisnips](git://github.com/Enucatl/ultisnips) code snippets for many
   languages.
-- [vim-haskellmode](https://github.com/lukerandall/haskellmode-vim) haskell
-  tools.
+- [hasksyn](https://github.com/travitch/hasksyn) haskell syntax and
+  indentation.
 - [pylint](git://github.com/orenhe/pylint.vim) check the python code with
   pylint.
 - [vim-latex](git://github.com/Enucatl/vim-latex) the vim LaTeX suite.
@@ -41,6 +43,10 @@ backup.
   ctags upon saving a file.
 - [python-indent](https://github.com/gotgenes/vim-yapif) improved python
   indentation.
+- [vim-ag](https://github.com/rking/ag.vim) use the silver searcher in vim with :Ag .
+- [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) the solarized colorscheme
+- [syntastic](https://github.com/scrooloose/syntastic) automatic syntax
+  checks upon save for many file types.
 
 ## Add a plugin
 Example:
