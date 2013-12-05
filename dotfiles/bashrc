@@ -140,4 +140,6 @@ fi
 if [ -f ~/bin/func_cd ]; then
     source ~/bin/func_cd
 fi
-
+if [ -f ~/bin/func_sortdu ]; then
+    source ~/bin/func_sortdu
+fi
