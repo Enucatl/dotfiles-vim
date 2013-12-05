@@ -1,19 +1,24 @@
 .PHONY: clean install
-TARGETS=~/bin/func_cd ~/bin/func_mcd ~/.Rprofile ~/.xmobarrc ~/.xmonad/xmonad.hs ~/.gitconfig ~/.gitignore ~/.vimrc ~/.gvimrc ~/.pentadactylrc ~/.bashrc ~/.bash_aliases ~/.bash_completion ~/bin/gvim_fg ~/.ctags ~/.pylintrc ~/.agignore
+
+TARGETS=~/.Rprofile ~/.xmobarrc ~/.xmonad/xmonad.hs ~/.gitconfig ~/.gitignore ~/.vimrc ~/.gvimrc ~/.pentadactylrc ~/.bashrc ~/.bash_aliases ~/.bash_completion ~/bin/gvim_fg ~/.ctags ~/.pylintrc ~/.agignore ~/bin/func_cd ~/bin/func_mcd ~/bin/func_sortdu
 
 install: ${TARGETS}
 	git submodule init
 	git submodule update
 
-~/bin/%: %
+~/bin:
 	mkdir -p ~/bin
-	ln -s ~/.vim/$< $@
 
-~/.xmonad/%: %
+~/.xmonad:
 	mkdir -p ~/.xmonad
+
+~/bin/%: bin/% | ~/bin
 	ln -s ~/.vim/$< $@
 
-~/.%: %
+~/.xmonad/%: dotfiles/% | ~/.xmonad
+	ln -s ~/.vim/$< $@
+
+~/.%: dotfiles/%
 	ln -s ~/.vim/$< $@
 
 clean:
