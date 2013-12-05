@@ -1,1 +1,6 @@
-/home/abis/.vim/func_mcd
+# filename: sortdu
+# mkdir newdir then cd into it
+# usage: sortdu <dir>
+function sortdu {
+    command du --max-depth 1 -h "$1" | sort -rh
+} # end of sortdu
