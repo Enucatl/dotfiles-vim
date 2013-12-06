@@ -98,7 +98,7 @@ export ROOTLIB=/usr/lib/root
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$ROOTLIB:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
-setxkbmap -option caps:escape
+setxkbmap -option caps:swapescape
 shopt -s cdspell
 shopt -s extglob
 shopt -s cmdhist
