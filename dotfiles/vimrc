@@ -96,7 +96,7 @@ imap <C-j> <Plug>IMAP_JumpForward
 
 
 "open the gundo tree with F5
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F6> :GundoToggle<CR>
 
 "Haskell
 let g:haddock_browser = "firefox"
