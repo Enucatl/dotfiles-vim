@@ -81,4 +81,5 @@ echo $* >&2
     fi
 }
 
+echo $test_command
 main
