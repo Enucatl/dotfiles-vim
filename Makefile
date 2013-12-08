@@ -1,25 +1,34 @@
-.PHONY: clean install
+.PHONY: clean install backup
 
-TARGETS=~/.Rprofile ~/.xmobarrc ~/.xmonad/xmonad.hs ~/.gitconfig ~/.gitignore ~/.vimrc ~/.gvimrc ~/.pentadactylrc ~/.bashrc ~/.bash_aliases ~/.bash_completion ~/bin/gvim_fg ~/.ctags ~/.pylintrc ~/.agignore ~/bin/func_cd ~/bin/func_mcd ~/bin/pdftobook ~/bin/func_sortdu
+TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu
+FOLDER=~
+BACKUP_FILE=.dotfiles.backup.tar
 
-install: ${TARGETS}
+install: $(addprefix ${FOLDER}/, ${TARGETS})
 	git submodule init
 	git submodule update
 
-~/bin:
-	mkdir -p ~/bin
+${FOLDER}/bin:
+	mkdir -p ${FOLDER}/bin
 
-~/.xmonad:
-	mkdir -p ~/.xmonad
+${FOLDER}/.xmonad:
+	mkdir -p ${FOLDER}/.xmonad
 
-~/bin/%: bin/% | ~/bin
-	ln -s ~/.vim/$< $@
+${FOLDER}/.vim:
+	mkdir -p ${FOLDER}/.vim
 
-~/.xmonad/%: dotfiles/% | ~/.xmonad
-	ln -s ~/.vim/$< $@
+${FOLDER}/bin/%: bin/% | ~/bin
+	ln -s ${FOLDER}/.vim/$< $@
 
-~/.%: dotfiles/%
-	ln -s ~/.vim/$< $@
+${FOLDER}/.xmonad/%: dotfiles/% | ~/.xmonad
+	ln -s ${FOLDER}/.vim/$< $@
+
+${FOLDER}/.%: dotfiles/%
+	ln -s ${FOLDER}/.vim/$< $@
 
 clean:
 	rm -f ${TARGETS}
+
+backup:
+	cd ${FOLDER}; tar rf ${BACKUP_FILE} --ignore-failed-read ${TARGETS}
+	@echo "Any files that would be overwritten are saved to ${FOLDER}/${BACKUP_FILE}"
