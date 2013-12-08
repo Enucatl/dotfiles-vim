@@ -25,9 +25,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = git://github.com/Enucatl/ultisnips.git
-[submodule "bundle/pylint"]
-	path = bundle/pylint
-	url = git://github.com/orenhe/pylint.vim.git
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = git://github.com/Enucatl/vim-latex.git
