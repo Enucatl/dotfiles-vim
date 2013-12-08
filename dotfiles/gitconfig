@@ -5,6 +5,11 @@
     unstage = reset HEAD
     ci = commit
     co = checkout
+    amend = commit --amend
+    aa = add --all
+    pullff = pull --ff-only
+    fa = fetch --all
+    b = branch
     pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
     diffwords = diff --color-words
     ours = "!f() { git checkout --ours $@ && git add $@; }; f"
