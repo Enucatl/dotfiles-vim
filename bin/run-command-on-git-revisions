@@ -13,7 +13,7 @@
 set -e
 
 if [[ $1 == -v ]]; then
-verbose=1
+    verbose=1
     shift
 fi
 start_ref=$1
@@ -28,27 +28,29 @@ main() {
 
 
 abort_if_dirty_repo() {
+    set +e
     staged_not_committed=$(git diff-index --quiet --cached HEAD)
     if [[ $staged_not_committed -ne 0 ]]; then
-echo "You have staged but not committed changes that would be lost! Aborting."
+        echo "You have staged but not committed changes that would be lost! Aborting."
         exit 1
     fi
-not_staged_not_committed=$(git diff-files --quiet)
+    not_staged_not_committed=$(git diff-files --quiet)
     if [[ $not_staged_not_committed -ne 0 ]]; then
-echo "You have unstaged changes that would be lost! Aborting."
-        exit 2
+        echo "You have unstaged changes that would be lost! Aborting."
+        exit 1
     fi
-untracked=$(git ls-files --exclude-standard --others)
+    untracked=$(git ls-files --exclude-standard --others)
     if [ -n "$untracked" ]; then
-echo "You have untracked files that could be overwritten! Aborting."
-        exit 3
+        echo "You have untracked files that could be overwritten! Aborting."
+        exit 1
     fi
+    set -e
 }
 
 
 enforce_usage() {
     if [ -z "$test_command" ]; then
-usage
+        usage
         exit $E_BADARGS
     fi
 }
@@ -61,23 +63,24 @@ run_tests() {
     revs=`log_command git rev-list --reverse ${start_ref}..${end_ref}`
 
     for rev in $revs; do
-debug "Checking out: $(git log --oneline -1 $rev)"
+        debug "Checking out: $(git log --oneline -1 $rev)"
         log_command git checkout --quiet $rev
         log_command $test_command
         log_command git reset --hard
     done
-log_command git checkout --quiet $end_ref
+    log_command git checkout --quiet $end_ref
     debug "OK for all revisions!"
 }
 
 log_command() {
     debug "=> $*"
-    eval $*
+    eval "$@"
 }
 
 debug() {
     if [ $verbose ]; then
-echo $* >&2
+        echo $* >&2
+
     fi
 }
 
