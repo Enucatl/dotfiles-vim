@@ -14,7 +14,7 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
+HISTSIZE=50000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -49,6 +49,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# append git output when inside a git repo
 PS1='${debian_chroot:+($debian_chroot)}\A \u@\h:\w`__git_ps1`\$ '
 unset color_prompt force_color_prompt
 
@@ -77,8 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# some more aliases
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -91,14 +90,14 @@ if [ -e ~/.pythonbrew/ ]; then
     source ~/.pythonbrew/etc/bashrc
 fi
 
-export PATH=~/.local/bin:~/bin:~/bin/backup:$PATH
+export PATH=./bin:~/.local/bin:~/bin:~/bin/backup:$PATH
 export HISTIGNORE="c:clear:exit"
-export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root:~/lab:
+export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root
 export ROOTLIB=/usr/lib/root
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$ROOTLIB:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
-setxkbmap -option caps:swapescape
+setxkbmap -option caps:escape
 shopt -s cdspell
 shopt -s extglob
 shopt -s cmdhist
@@ -126,20 +125,22 @@ if [ -e ~/.rvm/ ]; then
 fi
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+PATH=/usr/local/heroku/bin:$PATH
 
 ### Added for haskell local modules
-if [ -e ~/.pyenv/ ]; then
+if [ -e ~/.cabal/ ]; then
     PATH=~/.cabal/bin:$PATH
 fi
 
-#cd..... and mcd functions:
+# custom bash functions
 if [ -f ~/bin/func_mcd ]; then
     source ~/bin/func_mcd
 fi
+
 if [ -f ~/bin/func_cd ]; then
     source ~/bin/func_cd
 fi
+
 if [ -f ~/bin/func_sortdu ]; then
     source ~/bin/func_sortdu
 fi
