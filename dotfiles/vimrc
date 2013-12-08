@@ -11,6 +11,9 @@ set t_Co=16
 syntax enable
 filetype plugin indent on
 
+"no start message
+set shortmess=atI
+
 set autowrite
 set nojoinspaces
 set shiftround
