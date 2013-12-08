@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 path=${1%/}
 echo $path
 

@@ -47,6 +47,7 @@ backup.
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) the solarized colorscheme
 - [syntastic](https://github.com/scrooloose/syntastic) automatic syntax
   checks upon save for many file types.
+- [vim-speeddating](https://github.com/tpope/vim-speeddating) use CTRL-A/CTRL-X to increment dates, times, and more
 
 ## Add a plugin
 Example:
