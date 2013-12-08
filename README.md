@@ -51,6 +51,7 @@ Just restore `~/.dotfiles.backup.tar` if you don't like these settings.
 - [vim-speeddating](https://github.com/tpope/vim-speeddating) use CTRL-A/CTRL-X to increment dates, times, and more
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired) ]q is :cnext, [q
   is :cprevious ... and more
+- [ctrlP](http://kien.github.io/ctrlp.vim/) Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 
 
 ## Add a plugin
