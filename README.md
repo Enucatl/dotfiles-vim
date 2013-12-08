@@ -48,6 +48,8 @@ backup.
 - [syntastic](https://github.com/scrooloose/syntastic) automatic syntax
   checks upon save for many file types.
 - [vim-speeddating](https://github.com/tpope/vim-speeddating) use CTRL-A/CTRL-X to increment dates, times, and more
+- [vim-unimpaired](https://github.com/tpope/vim-unimpaired) ]q is :cnext, [q
+  is :cprevious ... and more
 
 ## Add a plugin
 Example:
