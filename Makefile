@@ -27,7 +27,7 @@ ${FOLDER}/.%: dotfiles/%
 	ln -s ${FOLDER}/.vim/$< $@
 
 clean:
-	rm -f ${TARGETS}
+	rm -f $(addprefix ${FOLDER}/, ${TARGETS})
 
 backup:
 	cd ${FOLDER}; tar rf ${BACKUP_FILE} --ignore-failed-read ${TARGETS}
