@@ -1,10 +1,11 @@
 .PHONY: clean install backup
 
-TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu bin/run-command-on-git-revisions
+TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu bin/run-command-on-git-revisions bin/pullifupstream
 FOLDER=~
 BACKUP_FILE=.dotfiles.backup.tar
+END_TARGETS=$(addprefix ${FOLDER}/, ${TARGETS})
 
-install: $(addprefix ${FOLDER}/, ${TARGETS})
+install: ${END_TARGETS}
 	git submodule init
 	git submodule update
 
@@ -27,7 +28,7 @@ ${FOLDER}/.%: dotfiles/%
 	ln -s ${FOLDER}/.vim/$< $@
 
 clean:
-	rm -f $(addprefix ${FOLDER}/, ${TARGETS})
+	rm -f ${END_TARGETS}
 
 backup:
 	cd ${FOLDER}; tar rf ${BACKUP_FILE} --ignore-failed-read ${TARGETS}
