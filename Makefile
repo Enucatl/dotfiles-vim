@@ -1,27 +1,27 @@
-.PHONY: clean install backup
+.PHONY: clean install backup submodules
 
-TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu bin/run-command-on-git-revisions bin/pullifupstream
+TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu bin/run-command-on-git-revisions bin/pullifupstream .pentadactyl/colors/solarized-light.penta .pentadactyl/colors/solarized-dark.penta
 FOLDER=~
-BACKUP_FILE=.dotfiles.backup.tar
+SUBFOLDERS=$(addprefix ${FOLDER}/, .vim .xmonad .pentadactyl/colors bin)
 END_TARGETS=$(addprefix ${FOLDER}/, ${TARGETS})
+BACKUP_FILE=.dotfiles.backup.tar
 
-install: ${END_TARGETS}
+install: submodules ${END_TARGETS}
+
+submodules:
 	git submodule init
 	git submodule update
 
-${FOLDER}/bin:
-	mkdir -p ${FOLDER}/bin
+${SUBFOLDERS}:
+	mkdir -p $@
 
-${FOLDER}/.xmonad:
-	mkdir -p ${FOLDER}/.xmonad
-
-${FOLDER}/.vim:
-	mkdir -p ${FOLDER}/.vim
-
-${FOLDER}/bin/%: bin/% | ~/bin
+${FOLDER}/.pentadactyl/%: dotfiles/pentadactyl-solarized/% | ${FOLDER}/.pentadactyl/colors
 	ln -s ${FOLDER}/.vim/$< $@
 
-${FOLDER}/.xmonad/%: dotfiles/% | ~/.xmonad
+${FOLDER}/bin/%: bin/% | ${FOLDER}/bin
+	ln -s ${FOLDER}/.vim/$< $@
+
+${FOLDER}/.xmonad/%: dotfiles/% | ${FOLDER}/.xmonad
 	ln -s ${FOLDER}/.vim/$< $@
 
 ${FOLDER}/.%: dotfiles/%

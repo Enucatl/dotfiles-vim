@@ -64,3 +64,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "dotfiles/pentadactyl-solarized"]
+	path = dotfiles/pentadactyl-solarized
+	url = https://github.com/claytron/pentadactyl-solarized.git

@@ -1,1 +1,14 @@
 set complete=sfbS
+" use a different color scheme
+
+colorscheme solarized-light
+
+" Focus first input.. fast
+map i gi
+
+" Open help, prefs, addons, downloads in new tab
+set newtab=all
+
+" Pattern for next/prev links
+set nextpattern=\\bnastępn,\\bdalej,\\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b,\\bsucc,\\bavanti
+set previouspattern=\\bpoprzedni,\\bwstecz,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$,\\bprec
