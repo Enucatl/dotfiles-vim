@@ -1,4 +1,5 @@
 # Install
+
 Try it now: it will back up your dotfiles before overwriting anything!
 Just restore `~/.dotfiles.backup.tar` if you don't like these settings.
 
@@ -9,6 +10,14 @@ Just restore `~/.dotfiles.backup.tar` if you don't like these settings.
     make backup  
     make clean
     make install
+
+
+# Color themes
+
+The solarized colorscheme is installed for
+[vim](https://github.com/altercation/vim-colors-solarized) and
+[pentadactyl](https://github.com/claytron/pentadactyl-solarized). It doesn't
+really fit with the other colors of firefox though.
 
 
 # Vim plugins
@@ -29,8 +38,8 @@ Just restore `~/.dotfiles.backup.tar` if you don't like these settings.
 - [a.vim](https://github.com/vim-scripts/a.vim) alternate between `.cpp` and
   `.h` with `:A`
 - [vim-repeat](https://github.com/tpope/vim-repeat) powerful `.` command.
-- [vim-spec-macros](https://bitbucket.org/Enucatl/vim-spec-macros) colors for certif
-  spec macros.
+- [vim-spec-macros](https://bitbucket.org/Enucatl/vim-spec-macros) colors
+  for certif spec macros.
 - [ultisnips](git://github.com/Enucatl/ultisnips) code snippets for many
   languages.
 - [hasksyn](https://github.com/travitch/hasksyn) haskell syntax and
@@ -44,14 +53,17 @@ Just restore `~/.dotfiles.backup.tar` if you don't like these settings.
   ctags upon saving a file.
 - [python-indent](https://github.com/gotgenes/vim-yapif) improved python
   indentation.
-- [vim-ag](https://github.com/rking/ag.vim) use the silver searcher in vim with `:Ag`
-- [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) the solarized colorscheme
+- [vim-ag](https://github.com/rking/ag.vim) use the silver searcher in vim
+  with `:Ag`
+- [vim-colors-solarized]() the solarized colorscheme
 - [syntastic](https://github.com/scrooloose/syntastic) automatic syntax
   checks upon save for many file types.
-- [vim-speeddating](https://github.com/tpope/vim-speeddating) use CTRL-A/CTRL-X to increment dates, times, and more
+- [vim-speeddating](https://github.com/tpope/vim-speeddating) use
+  CTRL-A/CTRL-X to increment dates, times, and more
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired) ]q is :cnext, [q
   is :cprevious ... and more
-- [ctrlP](http://kien.github.io/ctrlp.vim/) Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+- [ctrlP](http://kien.github.io/ctrlp.vim/) Full path fuzzy file, buffer,
+  mru, tag, ... finder for Vim.
 
 
 ## Add a plugin
@@ -61,6 +73,7 @@ Example:
     cd ~/.vim
     git submodule init
     git submodule add git://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
+
 
 ## Remove a plugin
 `cd ~/.vim`, then use the `remove_submodule.sh` script.
