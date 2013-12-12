@@ -89,12 +89,6 @@ let mapleader=','
 "faster : with ;!
 nnoremap ; :
 
-" Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 "-----------------------------------
 "Plugins configuration
 "-----------------------------------
@@ -114,9 +108,6 @@ let g:Tex_CompileRule_dvi='latex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps='dvips -o $*.ps $*.dvi'
 let g:Tex_CompileRule_pdf='ps2pdf $*.ps'
 let g:Tex_ViewRule_pdf='okular'
-" avoid C-j clash between ultisnips and vim-latex
-imap <C-j> <Plug>IMAP_JumpForward
-
 
 "open the gundo tree with F5
 nnoremap <F6> :GundoToggle<CR>
@@ -167,6 +158,11 @@ set tags+=tags;/
 nnoremap <F9> :!ctags -R --exclude .*ignore .<CR>
 "A-] - Open the definition in a vertical split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+"ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "syntastic file syntax checking
 let g:syntastic_python_checkers=['pylint', 'pep8']
