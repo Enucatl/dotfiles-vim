@@ -1,4 +1,11 @@
 set nocompatible
+
+"no .swp files
+set nobackup
+set noswapfile
+
+"no beeps
+set visualbell      
 set noerrorbells
 
 "background theme light/dark
@@ -17,12 +24,15 @@ set shortmess=atI
 set autowrite
 set nojoinspaces
 set shiftround
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " allow backspacing on everything in insert mode
 set magic
-set showmatch
+set showmatch                   " show matching parenthesis
 set showmode
 set linebreak
 set virtualedit=all
+
+"hides buffers instead of closing them, so that you can open more files
+"without having to write the previous buffer
 set hidden
 
 "maximum text width=76 characters
@@ -35,10 +45,10 @@ set foldmethod=indent
 "indent with 4 spaces
 set cindent
 set expandtab
-set autoindent
+set autoindent      " always indent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=4       " a tab is four spaces
+set shiftwidth=4    " number of spaces for autoindenting
 set softtabstop=4
 set smarttab
 
@@ -72,6 +82,15 @@ nnoremap Y y$
 
 "leader character
 let mapleader=','
+
+"faster : with ;!
+nnoremap ; :
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 "-----------------------------------
 "Plugins configuration
