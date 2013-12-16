@@ -64,6 +64,8 @@ really fit with the other colors of firefox though.
   is :cprevious ... and more
 - [ctrlP](http://kien.github.io/ctrlp.vim/) Full path fuzzy file, buffer,
   mru, tag, ... finder for Vim.
+- [vim-markdown](http://plasticboy.com/markdown-vim-mode/) For markdown
+syntax
 
 
 ## Add a plugin
