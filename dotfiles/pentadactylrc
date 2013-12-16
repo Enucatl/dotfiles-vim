@@ -12,3 +12,5 @@ set newtab=all
 " Pattern for next/prev links
 set nextpattern=\\bnastępn,\\bdalej,\\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b,\\bsucc,\\bavanti
 set previouspattern=\\bpoprzedni,\\bwstecz,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$,\\bprec
+
+nnoremap ; :
