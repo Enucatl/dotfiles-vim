@@ -13,4 +13,4 @@ set newtab=all
 set nextpattern=\\bnastępn,\\bdalej,\\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b,\\bsucc,\\bavanti
 set previouspattern=\\bpoprzedni,\\bwstecz,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$,\\bprec
 
-nnoremap ; :
+nmap -builtin ; :
