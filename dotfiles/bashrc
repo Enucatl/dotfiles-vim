@@ -118,12 +118,6 @@ if [ -e ~/.pyenv/ ]; then
     eval "$(pyenv init -)"
 fi
 
-#RUBY rvm
-if [ -e ~/.rvm/ ]; then
-    PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
-    source ~/.rvm/scripts/rvm
-fi
-
 ### Added by the Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
@@ -144,3 +138,10 @@ fi
 if [ -f ~/bin/func_sortdu ]; then
     source ~/bin/func_sortdu
 fi
+
+#RUBY rvm
+if [ -e ~/.rvm/ ]; then
+    PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
+    source ~/.rvm/scripts/rvm
+fi
+
