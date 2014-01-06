@@ -190,7 +190,7 @@ notes=FIXME,XXX,TODO
 max-line-length=79
 
 # Regexp for a line that is allowed to be longer than the limit.
-ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+ignore-long-lines=^\s*(# )?<?http??://\S+>?$
 
 # Maximum number of lines in a module
 max-module-lines=1000
