@@ -6,3 +6,4 @@ Thumbs.db
 # Vim persistent undo files
 *.un~
 tags
+*.egg-info
