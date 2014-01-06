@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export PATH=~/.local/bin:~/bin:~/bin/backup:$PATH
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -90,7 +92,6 @@ if [ -e ~/.pythonbrew/ ]; then
     source ~/.pythonbrew/etc/bashrc
 fi
 
-export PATH=./bin:~/.local/bin:~/bin:~/bin/backup:$PATH
 export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root
 export ROOTLIB=/usr/lib/root
@@ -126,6 +127,12 @@ if [ -e ~/.cabal/ ]; then
     PATH=~/.cabal/bin:$PATH
 fi
 
+#RUBY rvm
+if [ -e ~/.rvm/ ]; then
+    PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
+    source ~/.rvm/scripts/rvm
+fi
+
 # custom bash functions
 if [ -f ~/bin/func_mcd ]; then
     source ~/bin/func_mcd
@@ -138,10 +145,3 @@ fi
 if [ -f ~/bin/func_sortdu ]; then
     source ~/bin/func_sortdu
 fi
-
-#RUBY rvm
-if [ -e ~/.rvm/ ]; then
-    PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
-    source ~/.rvm/scripts/rvm
-fi
-
