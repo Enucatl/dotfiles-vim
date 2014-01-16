@@ -66,6 +66,12 @@ really fit with the other colors of firefox though.
   mru, tag, ... finder for Vim.
 - [vim-markdown](http://plasticboy.com/markdown-vim-mode/) For markdown
 syntax
+- [vim-ragtag](https://github.com/tpope/vim-ragtag) XML/eRuby surround shortcuts
+syntax
+- [vim-rails](https://github.com/tpope/vim-rails) Rails plugin by Tim Pope
+syntax
+- [vim-bundler](https://github.com/tpope/vim-bundler) Run ruby bundle from vim
+syntax
 
 
 ## Add a plugin
