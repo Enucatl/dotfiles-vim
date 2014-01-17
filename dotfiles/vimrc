@@ -115,12 +115,16 @@ nnoremap <F6> :GundoToggle<CR>
 "Haskell
 let g:haddock_browser = "firefox"
 "Insert arrows with left/right
-autocmd FileType haskell imap <buffer> <LEFT> <-
-autocmd FileType haskell imap <buffer> <RIGHT> ->
+autocmd FileType haskell imap <buffer> <LEFT> <- 
+autocmd FileType haskell imap <buffer> <RIGHT> -> 
+
+"Arrow with right in ruby
+autocmd FileType ruby imap <buffer> <RIGHT> =>
+autocmd FileType eruby imap <buffer> <RIGHT> =>
 
 "R
 "Insert arrows with left/right
-autocmd FileType r imap <buffer> <LEFT> <-
+autocmd FileType r imap <buffer> <LEFT> <- 
 
 " NERD_tree config
 let NERDTreeChDirMode=2

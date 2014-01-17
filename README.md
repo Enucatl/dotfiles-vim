@@ -72,6 +72,9 @@ syntax
 syntax
 - [vim-bundler](https://github.com/tpope/vim-bundler) Run ruby bundle from vim
 syntax
+- [vim-ruby](https://github.com/vim-ruby) Ruby plugin
+- [html5](https://github.com/othree/) update the html options with the
+html5 tags
 
 
 ## Add a plugin
