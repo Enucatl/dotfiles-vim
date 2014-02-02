@@ -75,6 +75,8 @@ syntax
 - [vim-ruby](https://github.com/vim-ruby) Ruby plugin
 - [html5](https://github.com/othree/) update the html options with the
 html5 tags
+- [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
+coffeescript syntax
 
 
 ## Add a plugin
