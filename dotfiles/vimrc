@@ -114,19 +114,13 @@ nnoremap <F6> :GundoToggle<CR>
 
 "Haskell
 let g:haddock_browser = "firefox"
+
 "Insert arrows with left/right
-autocmd FileType haskell imap <buffer> <LEFT> <- 
-autocmd FileType haskell imap <buffer> <RIGHT> -> 
+autocmd FileType haskell,ruby,eruby,haml,coffee imap <buffer> <LEFT> <- 
+autocmd FileType haskell,ruby,eruby,haml,coffee imap <buffer> <RIGHT> -> 
 
-"Arrow with right in ruby
-autocmd FileType ruby imap <buffer> <RIGHT> ->
-autocmd FileType eruby imap <buffer> <RIGHT> ->
-autocmd FileType ruby imap <buffer> <RIGHT><RIGHT> =>
-autocmd FileType eruby imap <buffer> <RIGHT><RIGHT> =>
-
-"Arrow with right in coffeescript
-autocmd FileType coffee imap <buffer> <RIGHT> ->
-autocmd FileType coffee imap <buffer> <RIGHT><RIGHT> =>
+"Thick arrows with right right
+autocmd FileType coffee,ruby,eruby,haml imap <buffer> <RIGHT><RIGHT> =>
 
 "R
 "Insert arrows with left/right
