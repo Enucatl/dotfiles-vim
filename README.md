@@ -77,6 +77,7 @@ syntax
 html5 tags
 - [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
 coffeescript syntax
+- [vim-haml](https://github.com/tpope/vim-haml) haml syntax
 
 
 ## Add a plugin
