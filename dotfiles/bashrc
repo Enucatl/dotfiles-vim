@@ -119,6 +119,10 @@ if [ -e ~/.pyenv/ ]; then
     eval "$(pyenv init -)"
 fi
 
+# Intel compiler
+PATH=/opt/intel/composerxe/bin:$PATH
+LD_LIBRARY_PATH=/opt/intel/lib/ia32:$LD_LIBRARY_PATH
+
 ### Added by the Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
