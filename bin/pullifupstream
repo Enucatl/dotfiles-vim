@@ -3,5 +3,7 @@
 result=$(git remote | grep "upstream")
 if [[ -n $result ]]; then
     git pullupstream
+else
+    git checkout master && git pull
 fi
 exit 0

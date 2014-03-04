@@ -24,13 +24,13 @@
 	url = https://bitbucket.org/Enucatl/vim-spec-macros.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = git://github.com/Enucatl/ultisnips.git
+	url = https://github.com/Enucatl/ultisnips.git
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
-	url = git://github.com/Enucatl/vim-latex.git
+	url = https://github.com/Enucatl/vim-latex.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
