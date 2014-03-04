@@ -94,3 +94,9 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/vim-sexp"]
+	path = bundle/vim-sexp
+	url = https://github.com/guns/vim-sexp.git
+[submodule "bundle/vim-sexp-tpope-mappings"]
+	path = bundle/vim-sexp-tpope-mappings
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git

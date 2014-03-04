@@ -79,6 +79,9 @@ html5 tags
 coffeescript syntax
 - [vim-haml](https://github.com/tpope/vim-haml) haml syntax
 - [vim-less](https://github.com/groenewege/vim-less) less syntax
+- [vim-sexp](https://github.com/guns/vim-sexp) with
+[mappings](https://github.com/tpope/vim-sexp-mappings-for-regular-people)
+for higher level definitions of text elements
 
 ## Add a plugin
 Example:
