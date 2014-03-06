@@ -65,6 +65,7 @@ set wmh=0
 "don't open these files:
 set wildignore+=*.swp,*.bak,*.pyc,*.pdf,*.idx,*.ps,*.dvi,*/out/**,*/vendor/**
 set wildignore+=*/build/**,*/dist/**
+set wildignore+=*.fls,*.fdb_latexmk
 set suffixes=.pdf,.aux,.bak,.dvi,.gz,.idx,.log,.ps,.swp,.tar
 
 "make shortcut 
