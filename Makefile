@@ -1,6 +1,6 @@
 .PHONY: clean install backup submodules
 
-TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu bin/run-command-on-git-revisions bin/pullifupstream .pentadactyl/colors/solarized-light.penta .pentadactyl/colors/solarized-dark.penta .config/ipython/profile_default/startup/load_math.py
+TARGETS=.Rprofile .xmobarrc .xmonad/xmonad.hs .gitconfig .gitignore .vimrc .gvimrc .pentadactylrc .bashrc .bash_aliases .bash_completion bin/gvim_fg bin/remove_submodule.sh .ctags .pylintrc .agignore bin/func_cd bin/func_mcd bin/pdftobook bin/func_sortdu bin/run-command-on-git-revisions bin/pullifupstream .pentadactyl/colors/solarized-light.penta .pentadactyl/colors/solarized-dark.penta .config/ipython/profile_default/startup/load_math.py
 FOLDER=~
 SUBFOLDERS=$(addprefix ${FOLDER}/, .vim .xmonad .pentadactyl/colors .config/ipython/profile_default/startup bin)
 END_TARGETS=$(addprefix ${FOLDER}/, ${TARGETS})
