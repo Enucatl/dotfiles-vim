@@ -22,9 +22,6 @@
 [submodule "bundle/vim-spec-macros"]
 	path = bundle/vim-spec-macros
 	url = https://bitbucket.org/Enucatl/vim-spec-macros.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/Enucatl/ultisnips.git
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = https://github.com/Enucatl/vim-latex.git
