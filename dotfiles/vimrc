@@ -170,7 +170,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "syntastic file syntax checking
-let g:syntastic_python_checkers=['pylint', 'pep8']
+let g:syntastic_python_checkers=['pep8']
 let g:syntastic_enable_signs=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
