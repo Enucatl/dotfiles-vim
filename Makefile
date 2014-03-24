@@ -10,6 +10,7 @@ install: submodules ${END_TARGETS}
 
 submodules:
 	git submodule init
+	git submodule sync
 	git submodule update
 
 ${SUBFOLDERS}:
