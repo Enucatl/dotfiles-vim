@@ -82,6 +82,7 @@ coffeescript syntax
 - [vim-sexp](https://github.com/guns/vim-sexp) with
 [mappings](https://github.com/tpope/vim-sexp-mappings-for-regular-people)
 for higher level definitions of text elements
+- [vim-mako](https://github.com/sophacles/vim-bundle-mako) mako syntax
 
 ## Add a plugin
 Example:

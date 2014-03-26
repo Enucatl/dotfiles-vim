@@ -103,3 +103,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/Enucatl/vim-snippets.git
+[submodule "bundle/vim-mako"]
+	path = bundle/vim-mako
+	url = https://github.com/sophacles/vim-bundle-mako.git
