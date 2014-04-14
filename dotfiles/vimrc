@@ -8,7 +8,7 @@ set nobackup
 set noswapfile
 
 "no beeps
-set visualbell      
+set novisualbell      
 set noerrorbells
 
 "background theme light/dark
@@ -68,8 +68,8 @@ set wildignore+=*/build/**,*/dist/**
 set wildignore+=*.fls,*.fdb_latexmk
 set suffixes=.pdf,.aux,.bak,.dvi,.gz,.idx,.log,.ps,.swp,.tar
 
-"make shortcut 
-map <S-m> :!make<CR>
+"shift-M make shortcut 
+map <S-m> :make<CR>
 
 "paste mode useful to paste raw text without indentation problems
 set pastetoggle=<F3> 
