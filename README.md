@@ -83,6 +83,8 @@ coffeescript syntax
 [mappings](https://github.com/tpope/vim-sexp-mappings-for-regular-people)
 for higher level definitions of text elements
 - [vim-mako](https://github.com/sophacles/vim-bundle-mako) mako syntax
+- [vim-javascript](https://github.com/pangloss/vim-javascript.git)
+javascript indentation and syntax
 
 ## Add a plugin
 Example:
