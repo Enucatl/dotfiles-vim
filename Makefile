@@ -6,7 +6,7 @@ SUBFOLDERS=$(addprefix ${FOLDER}/, .vim .xmonad .pentadactyl/colors .config/ipyt
 END_TARGETS=$(addprefix ${FOLDER}/, ${TARGETS})
 BACKUP_FILE=.dotfiles.backup.tar
 
-install: submodules ${END_TARGETS} ${SUBFOLDERS}
+install: ${SUBFOLDERS} ${END_TARGETS} submodules
 
 submodules:
 	git submodule init

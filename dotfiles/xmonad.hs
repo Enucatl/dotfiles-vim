@@ -24,13 +24,10 @@ myBorderWidth = 0
 myKeys (XConfig {modMask = modm}) = M.fromList $
   [ ((modm, xK_f), spawn "firefox")
   {-, ((modm, xK_t), spawn "thunderbird")-}
-  , ((0, xF86XK_AudioPlay), spawn "cmus-remote -u")
-  , ((0, xF86XK_AudioStop), spawn "cmus-remote -s")
-  , ((0, xF86XK_Mail), spawn "cmus-remote --next")
-  , ((0, xF86XK_HomePage), spawn "cmus-remote --prev")
-  {-, ((0, xF86XK_Mail), runOrRaise "thunderbird" (className =? "Thunderbird"))-}
-  {-, ((modm, xK_r), spawn "konsole -e ranger ~ ~")-}
-  {-, ((modm, xK_m), spawn "konsole -e cmus")-}
+  {-, ((0, xF86XK_AudioPlay), spawn "cmus-remote -u")-}
+  {-, ((0, xF86XK_AudioStop), spawn "cmus-remote -s")-}
+  {-, ((0, xF86XK_Mail), spawn "cmus-remote --next")-}
+  {-, ((0, xF86XK_HomePage), spawn "cmus-remote --prev")-}
   , ((modm, xK_m), runOrRaise "konsole -e cmus" (title =? "~ : cmus"))
   , ((modm, xK_r), runOrRaise "konsole -e ranger ~ ~" (title =? "~ : ranger"))
   , ((modm, xK_p), spawn "krunner")
@@ -78,10 +75,6 @@ main = do
 startup :: X()
 startup = do
     setWMName "LG3D"
-    {-spawn "skype"-}
-    spawn "thunderbird"
-    spawn "konsole -e cmus"
-    spawn "konsole -e ranger ~ ~"
     spawn "konsole"
     spawn "firefox"
 
