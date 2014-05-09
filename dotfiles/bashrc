@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export PATH=~/.local/bin:~/bin:~/bin/backup:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/bin/backup:$PATH
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -91,7 +91,7 @@ fi
 export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root
 export ROOTLIB=/usr/lib/root
-export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$ROOTLIB:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$ROOTLIB:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
 setxkbmap -option caps:escape
