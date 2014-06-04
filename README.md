@@ -85,6 +85,8 @@ for higher level definitions of text elements
 - [vim-mako](https://github.com/sophacles/vim-bundle-mako) mako syntax
 - [vim-javascript](https://github.com/pangloss/vim-javascript.git)
 javascript indentation and syntax
+- [vim-jade](https://github.com/digitaltoad/vim-jade) highlighting for the
+    jade template engine
 
 ## Add a plugin
 Example:
