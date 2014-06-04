@@ -111,4 +111,4 @@
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade.git
+	url = https://github.com/Enucatl/vim-jade.git
