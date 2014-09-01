@@ -87,6 +87,8 @@ for higher level definitions of text elements
 javascript indentation and syntax
 - [vim-jade](https://github.com/digitaltoad/vim-jade) highlighting for the
     jade template engine
+- [vim-puppet](https://github.com/rodjek/vim-puppet) the puppet manifest
+    language
 
 ## Add a plugin
 Example:
