@@ -1,7 +1,4 @@
 set complete=sfbS
-" use a different color scheme
-
-colorscheme solarized-light
 
 " Focus first input.. fast
 map i gi
