@@ -145,3 +145,5 @@ fi
 if [ -f ~/bin/func_sortdu ]; then
     source ~/bin/func_sortdu
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
