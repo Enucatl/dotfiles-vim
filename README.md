@@ -60,7 +60,6 @@ really fit with the other colors of firefox though.
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired) ]q is :cnext, [q is :cprevious ... and more
 
 ## Add a plugin
-Example:
 
     :::bash
     cd ~/.vim
