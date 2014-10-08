@@ -29,8 +29,6 @@ really fit with the other colors of firefox though.
   undo tree.
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter) comments in
   all programming languages.
-- [nerdtree](https://github.com/scrooloose/nerdtree) navigate the project
-  files on a side bar
 - [tlib\_vim](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [vim-surround](https://github.com/tpope/vim-surround) surround with
