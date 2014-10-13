@@ -1,4 +1,4 @@
-options(repos = c(CRAN = "http://cran.uk.r-project.org/"))
+options(repos = c(CRAN = "http://stat.ethz.ch/CRAN/"))
 
 setHook(packageEvent("grDevices", "onLoad"),
         function(...) grDevices::X11.options(type='cairo'))
