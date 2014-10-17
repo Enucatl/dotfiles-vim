@@ -79,7 +79,7 @@ nmap <DOWN> :bn<CR>0
 nmap <UP> :bp<CR>0
 
 " For when you forget to sudo.. Really Write the file.
-cmap w!! w !sudo tee % >/dev/null
+cmap w!! :SudoWrite
 
 "" Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
