@@ -34,6 +34,13 @@ really fit with the other colors of firefox though.
 - [python-indent](https://github.com/gotgenes/vim-yapif) improved python indentation
 - [syntastic](https://github.com/scrooloose/syntastic) automatic syntax checks upon save
 - [ultisnips](git://github.com/Enucatl/ultisnips) code snippets for many languages
+- [vim-abolish](https://github.com/tpope/vim-abolish) `:%Subvert/facilit{y,ies}/building{,s}/g`
+From a conceptual level, one way to think about how this substitution works
+is to imagine that in the braces you are declaring the requirements for
+turning that word from singular to plural. In the facility example, the same
+base letters in both the singular and plural form of the word are facilit To
+turn "facility" to a plural word you must change the y to ies so you specify
+`{y,ies}` in the braces.
 - [vim-ag](https://github.com/rking/ag.vim) use [the silver searcher](https://github.com/ggreer/the_silver_searcher) in vim with `:Ag`
 - [vim-bundler](https://github.com/tpope/vim-bundler) Run ruby bundle from vim syntax
 - [vim-coffee-script](https://github.com/kchmck/vim-coffee-script) coffeescript syntax
