@@ -38,11 +38,12 @@ really fit with the other colors of firefox though.
 - [vim-bundler](https://github.com/tpope/vim-bundler) Run ruby bundle from vim syntax
 - [vim-coffee-script](https://github.com/kchmck/vim-coffee-script) coffeescript syntax
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) the solarized colorscheme
-- [vim-fugitive](git://github.com/tpope/vim-fugitive) git commands from inside vim
+- [vim-dispatch](https://github.com/tpope/vim-dispatch) Kick off builds and test suites asynchronously
+- [vim-fugitive](https://github.com/tpope/vim-fugitive) git commands from inside vim
 - [vim-haml](https://github.com/tpope/vim-haml) haml syntax
 - [vim-jade](https://github.com/digitaltoad/vim-jade) jade syntax
 - [vim-javascript](https://github.com/pangloss/vim-javascript.git) javascript syntax
-- [vim-latex](git://github.com/Enucatl/vim-latex) the LaTeX suite
+- [vim-latex](https://github.com/Enucatl/vim-latex) the LaTeX suite
 - [vim-less](https://github.com/groenewege/vim-less) less syntax
 - [vim-mako](https://github.com/sophacles/vim-bundle-mako) mako syntax
 - [vim-markdown](http://plasticboy.com/markdown-vim-mode/) markdown syntax

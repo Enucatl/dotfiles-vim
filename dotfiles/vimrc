@@ -155,8 +155,10 @@ endif
 "ctags
 "tags file name
 set tags+=tags;/
+" vim-dispatch to run compilers asynchronously
+nnoremap <F9> :Dispatch<CR>
 "generate tags
-nnoremap <F9> :!ctags -R --exclude .*ignore .<CR>
+nnoremap <F8> :!ctags -R --exclude .*ignore .<CR>
 "A-] - Open the definition in a vertical split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
