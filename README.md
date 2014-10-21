@@ -45,7 +45,8 @@ turn "facility" to a plural word you must change the y to ies so you specify
 - [vim-bundler](https://github.com/tpope/vim-bundler) Run ruby bundle from vim syntax
 - [vim-coffee-script](https://github.com/kchmck/vim-coffee-script) coffeescript syntax
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) the solarized colorscheme
-- [vim-dispatch](https://github.com/tpope/vim-dispatch) Kick off builds and test suites asynchronously
+- [vim-dispatch](https://github.com/tpope/vim-dispatch) Kick off builds and
+    test suites asynchronously with `:Dispatch` (also mapped to `F9`)
 - [vim-eunuch](https://github.com/tpope/vim-eunuch) Vim sugar for the UNIX
     shell commands that need it the most. `:Remove`, `:SudoWrite`,
     `:Mkdir`...
