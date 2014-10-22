@@ -1,0 +1,71 @@
+require 'rake'
+require 'rake/clean'
+require 'pathname'
+
+SOURCE_FILES = `git ls-files bin dotfiles`.split("\n")
+OUTPUT_FOLDER = ENV["HOME"]
+
+def destination file_name
+  if Pathname(file_name).each_filename.first == "bin"
+    File.join(OUTPUT_FOLDER, file_name)
+  elsif Pathname(file_name).each_filename.first == "dotfiles"
+    File.join(OUTPUT_FOLDER, file_name.pathmap("%{^dotfiles/,.}p"))
+  end
+end
+
+DEST_FILES = SOURCE_FILES.map{|f| destination f }
+CLOBBER.include(DEST_FILES)
+
+task :default => [:links, "submodule:init", "submodule:upstream"]
+
+task :links => DEST_FILES
+
+SOURCE_FILES.each do |source_file|
+  destination_file = destination source_file
+  file destination_file => source_file do
+    mkdir_p destination_file.pathmap("%d")
+    sh "ln -sb #{Pathname(source_file).realpath} #{destination_file}"
+  end
+end
+
+namespace :submodule do
+  SUBMODULES_WITH_UPSTREAM = [
+    {
+      path: "bundle/vim-latex",
+      upstream: "https://github.com/jcf/vim-latex.git",
+      ssh: "git@github.com:Enucatl/vim-latex.git",
+    },
+    {
+      path: "bundle/python-indent",
+      upstream: "https://github.com/gotgenes/vim-yapif.git",
+      ssh: "git@github.com:Enucatl/vim-yapif.git",
+    },
+    {
+      path: "bundle/vim-snippets",
+      upstream: "https://github.com/honza/vim-snippets.git",
+      ssh: "git@github.com:Enucatl/vim-snippets.git",
+    },
+    {
+      path: "bundle/vim-jade",
+      upstream: "https://github.com/digitaltoad/vim-jade.git",
+      ssh: "git@github.com:Enucatl/vim-jade.git",
+    },
+  ]
+
+  task :upstream do
+    SUBMODULES_WITH_UPSTREAM.each do |submodule|
+      Dir.chdir(submodule[:path]) do
+        if `git remote show | grep upstream`.empty?
+          sh "git remote add upstream #{submodule[:upstream]}"
+        end
+        sh "git remote set-url --push origin #{submodule[:ssh]}"
+      end
+    end
+  end
+
+  task :init do
+    sh "git submodule init"
+    sh "git submodule sync"
+    sh "git submodule update"
+  end
+end
