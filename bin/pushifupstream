@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+result=$(git remote | grep "upstream")
+if [[ -n $result ]]; then
+    git push ssh master
+fi
+exit 0
