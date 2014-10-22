@@ -1,23 +1,16 @@
 # Install
 
-Try it now: it will back up your dotfiles before overwriting anything!
-Just restore `~/.dotfiles.backup.tar` if you don't like these settings.
+Files that would be overwritten are first copied to a version with a `~`
+appended to the file name. The `.vim` folder is backed up by tar:
 
     :::bash
-    cd; tar cf .dotfiles.backup.tar .vim
+    sudo apt-get install rake git
+    cd
+    tar cf ~/.vim.backup.tar ~/.vim
+    rm -r .vim
     git clone https://bitbucket.org/Enucatl/dotfiles-vim.git .vim
     cd .vim
-    make backup  
-    make clean
-    make install
-
-
-# Color themes
-
-The solarized colorscheme is installed for
-[vim](https://github.com/altercation/vim-colors-solarized) and
-[pentadactyl](https://github.com/claytron/pentadactyl-solarized). It doesn't
-really fit with the other colors of firefox though.
+    rake
 
 
 # Vim plugins
@@ -76,9 +69,20 @@ turn "facility" to a plural word you must change the y to ies so you specify
     git submodule init
     git submodule add git://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
 
-
 ## Remove a plugin
 `cd ~/.vim`, then use the `remove_submodule.sh` script.
 
     :::bash
     ./remove_submodule.sh bundle/unwanted_plugin
+
+## Update plugins
+`cd ~/.vim`, then use the `git-submodule` command.
+
+    :::bash
+    git submodule foreach pullifupstream
+
+you might need to solve merge conflicts in rare cases. If you were me, you
+could then also do
+
+    :::bash
+    git submodule foreach pushifupstream

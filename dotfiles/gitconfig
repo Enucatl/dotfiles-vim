@@ -10,7 +10,7 @@
     pullff = pull --ff-only
     fa = fetch --all
     b = branch
-    pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+    pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge -X theirs upstream/master"
     diffwords = diff --color-words
     ours = "!f() { git checkout --ours $@ && git add $@; }; f"
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"

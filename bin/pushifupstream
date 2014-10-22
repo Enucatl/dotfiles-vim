@@ -2,6 +2,6 @@
 
 result=$(git remote | grep "upstream")
 if [[ -n $result ]]; then
-    git push ssh master
+    git push
 fi
 exit 0
