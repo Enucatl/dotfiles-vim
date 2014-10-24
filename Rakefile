@@ -36,11 +36,6 @@ namespace :submodule do
       ssh: "git@github.com:Enucatl/vim-latex.git",
     },
     {
-      path: "bundle/python-indent",
-      upstream: "https://github.com/gotgenes/vim-yapif.git",
-      ssh: "git@github.com:Enucatl/vim-yapif.git",
-    },
-    {
       path: "bundle/vim-snippets",
       upstream: "https://github.com/honza/vim-snippets.git",
       ssh: "git@github.com:Enucatl/vim-snippets.git",
