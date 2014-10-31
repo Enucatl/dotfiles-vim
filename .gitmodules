@@ -115,3 +115,6 @@
 [submodule "bundle/python-indent"]
 	path = bundle/python-indent
 	url = https://github.com/gotgenes/vim-yapif.git
+[submodule "bundle/vim-r"]
+	path = bundle/vim-r
+	url = https://github.com/vim-scripts/Vim-R-plugin.git
