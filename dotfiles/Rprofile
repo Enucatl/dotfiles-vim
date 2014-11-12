@@ -6,11 +6,15 @@ options(device='x11')
 
 setHook(packageEvent("ggplot2", "attach"),
     function(...) {
-        require(grid)
-        require(extrafont)
+        suppressMessages(require(grid))
+        suppressMessages(require(extrafont))
         suppressMessages(loadfonts())
         theme_set(theme_bw(base_size=24) + theme(
             legend.key.size=unit(2, 'lines'),
             text=element_text(family='CM Roman')
             ))
         })
+
+if (interactive()) {
+    suppressMessages(require(devtools))
+}
