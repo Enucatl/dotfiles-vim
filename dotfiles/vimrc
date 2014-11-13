@@ -117,7 +117,7 @@ nnoremap <F6> :GundoToggle<CR>
 let g:haddock_browser = "firefox"
 
 "Insert arrows with left/right
-autocmd FileType haskell,ruby,eruby,haml,coffee,puppet,r imap <buffer> <LEFT> <- 
+autocmd FileType haskell,ruby,eruby,haml,coffee,puppet,r imap <buffer> <LEFT> <-
 autocmd FileType haskell,ruby,eruby,haml,coffee,puppet imap <buffer> <RIGHT> ->
 
 "Thick arrows with right right
