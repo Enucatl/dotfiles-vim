@@ -193,6 +193,7 @@ let g:ctrlp_max_files=0
 
 " set vim-r-plugin to 
 let r_indent_align_args = 0
+let vimrplugin_assign = 0
 
 " Set vim-r-plugin to mimics ess :
 let r_indent_ess_comments = 0
