@@ -189,3 +189,11 @@ nnoremap <leader>t :CtrlPTag<CR>
 "ctrlP options
 " Set no max file limit
 let g:ctrlp_max_files=0
+
+
+" set vim-r-plugin to 
+let r_indent_align_args = 0
+
+" Set vim-r-plugin to mimics ess :
+let r_indent_ess_comments = 0
+let r_indent_ess_compatible = 0

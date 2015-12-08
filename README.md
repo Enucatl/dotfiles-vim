@@ -52,6 +52,7 @@ turn "facility" to a plural word you must change the y to ies so you specify
 - [vim-mako](https://github.com/sophacles/vim-bundle-mako) mako syntax
 - [vim-markdown](http://plasticboy.com/markdown-vim-mode/) markdown syntax
 - [vim-puppet](https://github.com/rodjek/vim-puppet) the puppet manifest syntax
+- [Vim-R-plugin](https://github.com/vim-scripts/Vim-R-plugin) and [R-Vim-runtime](https://github.com/jalvesaq/R-Vim-runtime.git) for vim indenting and syntax highlighting
 - [vim-ragtag](https://github.com/tpope/vim-ragtag) HTML/XML/eRuby surround tags
 - [vim-rails](https://github.com/tpope/vim-rails) rails syntax
 - [vim-repeat](https://github.com/tpope/vim-repeat) more powerful `.` command
