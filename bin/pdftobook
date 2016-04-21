@@ -13,10 +13,10 @@ FILE=$(basename "$1" .pdf)
 set -vx
 set -e
 
-pdfjam "$FILE.pdf" --trim "3.5cm 2cm 3.5cm 1.5cm" --noautoscale false --outfile $FILE-crop.pdf &> /dev/null
+pdfjam "$FILE.pdf" --trim "3.5cm 0.8cm 3.5cm 1cm" --noautoscale false --outfile $FILE-crop.pdf &> /dev/null
 pdftops "$FILE-crop.pdf" &> /dev/null
 psbook "$FILE-crop.ps" "book-$FILE.ps" &> /dev/null
 ps2pdf "book-$FILE.ps" "book-$FILE.pdf" &> /dev/null
 pdfnup "book-$FILE.pdf" --nup 2x1 &> /dev/null
-pdftk "book-$FILE-nup.pdf" cat 1-endE output "ready-$FILE.pdf"
+pdftk "book-$FILE-nup.pdf" cat 1-endeast output "ready-$FILE.pdf"
 rm "$FILE-crop.pdf" "$FILE-crop.ps" "book-$FILE.ps" "book-$FILE.pdf" "book-$FILE-nup.pdf"
