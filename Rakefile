@@ -68,7 +68,10 @@ namespace :submodule do
   end
 end
 
-desc "backup any existing file that would be overwritten"
-file File.join(OUTPUT_FOLDER, "dotfiles.vim.backup.tar") do |f|
+BACKUP_ARCHIVE = File.join(OUTPUT_FOLDER, "dotfiles.vim.backup.tar")
+file BACKUP_ARCHIVE do |f|
   sh "tar cf #{f.name} #{DEST_FILES.join(" ")}; true"
 end
+
+desc "backup any existing file that would be overwritten"
+task :backup => BACKUP_ARCHIVE

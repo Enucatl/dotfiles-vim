@@ -1,14 +1,13 @@
 # Install
 
-Files that would be overwritten are first copied to a version with a `~`
-appended to the file name. The `.vim` folder is backed up by tar:
+Config files can be backed up to a tar archive with the `rake backup` task.
+They will be saved to `~/dotfiles.vim.backup.tar`.
 
     sudo apt-get install rake git
     cd
-    tar cf ~/.vim.backup.tar ~/.vim
-    rm -r .vim
     git clone https://bitbucket.org/Enucatl/dotfiles-vim.git .vim
     cd .vim
+    rake backup
     rake
 
 
