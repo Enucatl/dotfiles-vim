@@ -150,3 +150,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="/home/matteo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# setup cuda paths
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+export CUDA_HOME=/usr/local/cuda
