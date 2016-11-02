@@ -18,6 +18,7 @@ CLOBBER.include(DEST_FILES)
 
 task :default => [:links, "submodule:init", "submodule:upstream"]
 
+desc "make the links in the home folder"
 task :links => DEST_FILES
 
 SOURCE_FILES.each do |source_file|
@@ -47,6 +48,7 @@ namespace :submodule do
     },
   ]
 
+  desc "set upstream repositories for submodules"
   task :upstream do
     SUBMODULES_WITH_UPSTREAM.each do |submodule|
       Dir.chdir(submodule[:path]) do
@@ -58,9 +60,18 @@ namespace :submodule do
     end
   end
 
+  desc "initialize submodules"
   task :init do
     sh "git submodule init"
     sh "git submodule sync"
     sh "git submodule update"
   end
 end
+
+BACKUP_ARCHIVE = File.join(OUTPUT_FOLDER, "dotfiles.vim.backup.tar")
+file BACKUP_ARCHIVE do |f|
+  sh "tar cf #{f.name} #{DEST_FILES.join(" ")}; true"
+end
+
+desc "backup any existing file that would be overwritten"
+task :backup => BACKUP_ARCHIVE

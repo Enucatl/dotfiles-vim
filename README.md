@@ -1,15 +1,13 @@
 # Install
 
-Files that would be overwritten are first copied to a version with a `~`
-appended to the file name. The `.vim` folder is backed up by tar:
+Config files can be backed up to a tar archive with the `rake backup` task.
+They will be saved to `~/dotfiles.vim.backup.tar`.
 
-    :::bash
     sudo apt-get install rake git
     cd
-    tar cf ~/.vim.backup.tar ~/.vim
-    rm -r .vim
     git clone https://bitbucket.org/Enucatl/dotfiles-vim.git .vim
     cd .vim
+    rake backup
     rake
 
 
@@ -65,7 +63,6 @@ turn "facility" to a plural word you must change the y to ies so you specify
 
 ## Add a plugin
 
-    :::bash
     cd ~/.vim
     git submodule init
     git submodule add git://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
@@ -73,17 +70,14 @@ turn "facility" to a plural word you must change the y to ies so you specify
 ## Remove a plugin
 `cd ~/.vim`, then use the `remove_submodule.sh` script.
 
-    :::bash
     ./remove_submodule.sh bundle/unwanted_plugin
 
 ## Update plugins
 `cd ~/.vim`, then use the `git-submodule` command.
 
-    :::bash
     git submodule foreach pullifupstream
 
 you might need to solve merge conflicts in rare cases. If you were me, you
 could then also do
 
-    :::bash
     git submodule foreach pushifupstream

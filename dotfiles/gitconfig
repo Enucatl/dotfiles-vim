@@ -46,3 +46,5 @@
     cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
 [help]
     autocorrect = 1
+[credential]
+	helper = lastpass
