@@ -90,8 +90,7 @@ fi
 
 export HISTIGNORE="c:clear:exit"
 export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root
-export ROOTLIB=/usr/lib/root
-export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$ROOTLIB:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
 setxkbmap -option caps:escape
@@ -144,6 +143,12 @@ fi
 
 if [ -f ~/bin/func_sortdu ]; then
     source ~/bin/func_sortdu
+fi
+
+# configure FSL for brain imaging
+if [ -f /usr/share/fsl/5.0/etc/fslconf/fsl.sh ]; then
+    source /usr/share/fsl/5.0/etc/fslconf/fsl.sh
+    LD_LIBRARY_PATH=/usr/lib/fsl/5.0:$LD_LIBRARY_PATH
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

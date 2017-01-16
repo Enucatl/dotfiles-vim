@@ -53,7 +53,7 @@ myManageHook = composeAll . concat $
   , [isDialog --> doCenterFloat]
   ] where
 
-    myFloats = ["Canvas", "XBoard", "Gimp", "R_x11", "ij-ImageJ"]
+    myFloats = ["Canvas", "XBoard", "Gimp", "R_x11", "ij-ImageJ", "plasmashell"]
     myOtherFloats = []
     myIgnores = [] --["Qt-subapplication","Plasma"]
     myOtherIgnores = []
