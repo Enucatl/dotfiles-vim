@@ -28,8 +28,6 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
   {-, ((0, xF86XK_AudioStop), spawn "cmus-remote -s")-}
   {-, ((0, xF86XK_Mail), spawn "cmus-remote --next")-}
   {-, ((0, xF86XK_HomePage), spawn "cmus-remote --prev")-}
-  , ((modm, xK_m), runOrRaise "konsole -e cmus" (title =? "~ : cmus"))
-  , ((modm, xK_r), runOrRaise "konsole -e ranger ~ ~" (title =? "~ : ranger"))
   , ((modm, xK_p), spawn "krunner")
   {-, ((modm .|. shiftMask, xK_q), spawn "dbus-send --print-reply --dest=org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout int32:1 int32:0 int32:1")-}
   ]
@@ -39,7 +37,7 @@ myManageHook = composeAll . concat $
   , [ className =? "Firefox" --> doShift "web"]
   , [ title =? "~ : ranger" --> doShift "dolphin"]
   , [ title =? "~ : cmus" --> doShift "music"]
-  , [ className =? "Konsole" --> doShift "code"]
+  , [ className =? "konsole" --> doShift "code"]
   , [ className =? "Thunderbird" --> doShift "email"]
   , [ title =? "JDownloader" --> doShift "7"]
   , [ className =? "Skype" --> doShift "6"]
@@ -75,8 +73,6 @@ main = do
 startup :: X()
 startup = do
     setWMName "LG3D"
-    spawn "konsole"
-    spawn "firefox"
 
 kdeOverride :: Query Bool
 kdeOverride = ask >>= \w -> liftX $ do

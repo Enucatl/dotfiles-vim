@@ -122,12 +122,12 @@ LD_LIBRARY_PATH=/opt/intel/lib/ia32:$LD_LIBRARY_PATH
 PATH=/usr/local/heroku/bin:$PATH
 
 ### Added for haskell local modules
-if [ -e ~/.cabal/ ]; then
+if [ -d ~/.cabal/bin ]; then
     PATH=~/.cabal/bin:$PATH
 fi
 
 #RUBY rvm
-if [ -e ~/.rvm/ ]; then
+if [ -d ~/.rvm/ ]; then
     PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
     source ~/.rvm/scripts/rvm
 fi
@@ -144,14 +144,6 @@ fi
 if [ -f ~/bin/func_sortdu ]; then
     source ~/bin/func_sortdu
 fi
-
-# configure FSL for brain imaging
-if [ -f /usr/share/fsl/5.0/etc/fslconf/fsl.sh ]; then
-    source /usr/share/fsl/5.0/etc/fslconf/fsl.sh
-    LD_LIBRARY_PATH=/usr/lib/fsl/5.0:$LD_LIBRARY_PATH
-fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="/home/matteo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
