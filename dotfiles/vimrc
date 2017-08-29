@@ -166,6 +166,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsUsePythonVersion = 3
 
 "syntastic file syntax checking
 let g:syntastic_python_checkers=['pep8']
