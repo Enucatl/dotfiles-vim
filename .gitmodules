@@ -115,6 +115,3 @@
 [submodule "bundle/R-Vim-runtime"]
 	path = bundle/R-Vim-runtime
 	url = https://github.com/jalvesaq/R-Vim-runtime.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
