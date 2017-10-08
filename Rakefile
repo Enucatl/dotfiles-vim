@@ -36,16 +36,6 @@ namespace :submodule do
       upstream: "https://github.com/jcf/vim-latex.git",
       ssh: "git@github.com:Enucatl/vim-latex.git",
     },
-    {
-      path: "bundle/vim-snippets",
-      upstream: "https://github.com/honza/vim-snippets.git",
-      ssh: "git@github.com:Enucatl/vim-snippets.git",
-    },
-    {
-      path: "bundle/vim-jade",
-      upstream: "https://github.com/digitaltoad/vim-jade.git",
-      ssh: "git@github.com:Enucatl/vim-jade.git",
-    },
   ]
 
   desc "set upstream repositories for submodules"

@@ -5,7 +5,7 @@ They will be saved to `~/dotfiles.vim.backup.tar`.
 
     sudo apt-get install rake git
     cd
-    git clone https://bitbucket.org/Enucatl/dotfiles-vim.git .vim
+    git clone --recursive git@github.com:Enucatl/dotfiles-vim.git .vim
     cd .vim
     rake backup
     rake
@@ -43,7 +43,6 @@ turn "facility" to a plural word you must change the y to ies so you specify
     `:Mkdir`...
 - [vim-fugitive](https://github.com/tpope/vim-fugitive) git commands from inside vim
 - [vim-haml](https://github.com/tpope/vim-haml) haml syntax
-- [vim-jade](https://github.com/digitaltoad/vim-jade) jade syntax
 - [vim-javascript](https://github.com/pangloss/vim-javascript.git) javascript syntax
 - [vim-latex](https://github.com/Enucatl/vim-latex) the LaTeX suite
 - [vim-less](https://github.com/groenewege/vim-less) less syntax
