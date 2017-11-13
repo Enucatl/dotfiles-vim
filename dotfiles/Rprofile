@@ -10,8 +10,16 @@ setHook(packageEvent("ggplot2", "attach"),
         suppressMessages(require(extrafont))
         suppressMessages(loadfonts())
         theme_set(theme_bw(base_size=24) + theme(
-            legend.key.size=unit(2, 'lines'),
-            text=element_text(family='CM Roman')
+            legend.key.size=unit(1, 'lines'),
+            text=element_text(face='plain', family='CM Roman'),
+            legend.title=element_text(face='plain'),
+            axis.line=element_line(color='black'),
+            axis.title.y=element_text(vjust=0.1),
+            axis.title.x=element_text(vjust=0.1),
+            panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(),
+            legend.key = element_blank(),
+            panel.border = element_blank()
             ))
         })
 

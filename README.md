@@ -3,7 +3,7 @@
 Config files can be backed up to a tar archive with the `rake backup` task.
 They will be saved to `~/dotfiles.vim.backup.tar`.
 
-    sudo apt-get install rake git
+    sudo apt install rake git
     cd
     git clone --recursive git@github.com:Enucatl/dotfiles-vim.git .vim
     cd .vim
