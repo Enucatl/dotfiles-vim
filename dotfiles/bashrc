@@ -121,6 +121,17 @@ LD_LIBRARY_PATH=/opt/intel/lib/ia32:$LD_LIBRARY_PATH
 ### Added by the Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
+### Added for CUDA
+if [ -d /usr/local/cuda/extras/CUPTI/lib64 ]; then
+    LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+fi
+
+### Added for CUDA
+if [ -d /usr/local/cuda-9.1/bin ]; then
+    PATH=/usr/local/cuda-9.1/bin:$PATH
+    export CUDA_HOME=/usr/local/cuda
+fi
+
 ### Added for haskell local modules
 if [ -d ~/.cabal/bin ]; then
     PATH=~/.cabal/bin:$PATH
@@ -147,7 +158,3 @@ fi
 
 export NVM_DIR="/home/matteo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# setup cuda paths
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
-export CUDA_HOME=/usr/local/cuda
