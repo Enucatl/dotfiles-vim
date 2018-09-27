@@ -10,7 +10,7 @@ setHook(packageEvent("ggplot2", "attach"),
         suppressMessages(require(extrafont))
         suppressMessages(loadfonts())
         theme_set(theme_bw(base_size=24) + theme(
-            legend.key.size=unit(1, 'lines'),
+            legend.key.size=unit(1.5, 'lines'),
             text=element_text(face='plain', family='CM Roman'),
             legend.title=element_text(face='plain'),
             axis.line=element_line(color='black'),
