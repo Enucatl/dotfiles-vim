@@ -12,7 +12,7 @@ They will be saved to `~/dotfiles.vim.backup.tar`.
 
 
 # Vim plugins
-##Installed plugins
+## Installed plugins
 
 - [autotag](https://github.com/vim-scripts/AutoTag) automatically update ctags upon saving a file
 - [a.vim](https://github.com/vim-scripts/a.vim) alternate between `.cpp` and `.h` with `:A`
