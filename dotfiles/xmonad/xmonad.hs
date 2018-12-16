@@ -40,6 +40,7 @@ myManageHook = composeAll . concat $
   , [ className =? "konsole" --> doShift "code"]
   , [ className =? "Thunderbird" --> doShift "email"]
   , [ title =? "JDownloader" --> doShift "7"]
+  , [ className =? "TelegramDesktop" --> doShift "7"]
   , [ className =? "Skype" --> doShift "6"]
   , [ className =? "Dolphin" --> doShift "dolphin"]
   , [ className =? "Amarok" --> doShift "music"]
