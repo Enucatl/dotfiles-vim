@@ -22,7 +22,7 @@ myFocusedBorderColor = "#66ff66"
 myBorderWidth = 0
 
 myKeys (XConfig {modMask = modm}) = M.fromList $
-  [ ((modm, xK_f), spawn "firefox")
+  --[ ((modm, xK_f), spawn "firefox")
   {-, ((modm, xK_t), spawn "thunderbird")-}
   {-, ((0, xF86XK_AudioPlay), spawn "cmus-remote -u")-}
   {-, ((0, xF86XK_AudioStop), spawn "cmus-remote -s")-}
@@ -51,7 +51,7 @@ myManageHook = composeAll . concat $
   , [isDialog --> doCenterFloat]
   ] where
 
-    myFloats = ["Canvas", "XBoard", "Gimp", "R_x11", "ij-ImageJ", "plasmashell"]
+    myFloats = ["Canvas", "XBoard", "gimp", "Gimp", "R_x11", "ij-ImageJ", "plasmashell"]
     myOtherFloats = []
     myIgnores = [] --["Qt-subapplication","Plasma"]
     myOtherIgnores = []
@@ -79,3 +79,4 @@ kdeOverride = ask >>= \w -> liftX $ do
     override <- getAtom "_KDE_NET_WM_WINDOW_TYPE_OVERRIDE"
     wt <- getProp32s "_NET_WM_WINDOW_TYPE" w
     return $ maybe False (elem $ fromIntegral override) wt
+

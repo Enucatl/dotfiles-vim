@@ -83,13 +83,7 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-#pythonbrew support
-if [ -e ~/.pythonbrew/ ]; then
-    source ~/.pythonbrew/etc/bashrc
-fi
-
 export HISTIGNORE="c:clear:exit"
-export PYTHONPATH=$PYTHONPATH:.:~/bin:/usr/lib/root
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
 export EDITOR=~/bin/gvim_fg
 
@@ -114,23 +108,8 @@ if [ -e ~/.pyenv/ ]; then
     eval "$(pyenv init -)"
 fi
 
-# Intel compiler
-PATH=/opt/intel/composerxe/bin:$PATH
-LD_LIBRARY_PATH=/opt/intel/lib/ia32:$LD_LIBRARY_PATH
-
 ### Added by the Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
-
-### Added for CUDA
-if [ -d /usr/local/cuda/extras/CUPTI/lib64 ]; then
-    LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
-fi
-
-### Added for CUDA
-if [ -d /usr/local/cuda-9.1/bin ]; then
-    PATH=/usr/local/cuda-9.1/bin:$PATH
-    export CUDA_HOME=/usr/local/cuda
-fi
 
 ### Added for haskell local modules
 if [ -d ~/.cabal/bin ]; then
