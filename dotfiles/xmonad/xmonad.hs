@@ -11,25 +11,24 @@ import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.ManageHelpers
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Layout
+import XMonad.Layout.Reflect
+import XMonad.Layout.OneBig
+import XMonad.Layout.LayoutScreens
 
-myLayout = Full ||| tiled
-    where
-    tiled  = Tall 1 (3/100) 0.618
+
+
+myLayout = Full |||  OneBig (2/3) (2/3)
 
 myWorkspaces = ["web","email","code","music","5","6","7","dolphin","9"]
 
 myFocusedBorderColor = "#66ff66"
-myBorderWidth = 0
+myBorderWidth = 1
 
-myKeys (XConfig {modMask = modm}) = M.fromList $
-  --[ ((modm, xK_f), spawn "firefox")
-  {-, ((modm, xK_t), spawn "thunderbird")-}
-  {-, ((0, xF86XK_AudioPlay), spawn "cmus-remote -u")-}
-  {-, ((0, xF86XK_AudioStop), spawn "cmus-remote -s")-}
-  {-, ((0, xF86XK_Mail), spawn "cmus-remote --next")-}
-  {-, ((0, xF86XK_HomePage), spawn "cmus-remote --prev")-}
-  , ((modm, xK_p), spawn "krunner")
-  {-, ((modm .|. shiftMask, xK_q), spawn "dbus-send --print-reply --dest=org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout int32:1 int32:0 int32:1")-}
+myKeys (XConfig {modMask = modm}) = M.fromList $ [
+  ((modm, xK_p), spawn "krunner")
+  , ((modm .|. shiftMask,                 xK_space), layoutScreens 4 (reflectVert $ reflectHoriz $ OneBig (2/3) (2/3)))
+  , ((modm .|. controlMask .|. shiftMask, xK_space), rescreen)
   ]
 
 myManageHook = composeAll . concat $
