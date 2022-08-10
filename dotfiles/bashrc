@@ -108,6 +108,9 @@ if [ -e ~/.pyenv/ ]; then
     eval "$(pyenv init -)"
 fi
 
+#Python use ubuntu CA bundle instead of its own
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
 ### Added by the Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
