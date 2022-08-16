@@ -34,8 +34,13 @@ def main(common_name, ttl, vault_token, vault_addr, output_key, output_cert):
         pprint(r)
         certificate = r["data"]["certificate"]
         private_key = r["data"]["private_key"]
+        ca_chain = r["data"]["ca_chain"]
         with open(output_cert, "w") as out:
             out.write(certificate)
+            out.write("\n")
+            for item in ca_chain:
+                out.write(item)
+                out.write("\n")
         with open(output_key, "w") as out:
             out.write(private_key)
     else:
