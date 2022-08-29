@@ -144,3 +144,9 @@ fi
 
 export NVM_DIR="/home/matteo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# HashiCorp Vault
+export VAULT_ADDR=https://vault.home.arpa:8200
+
+#recommended by man gpg-agent
+export GPG_TTY=$(tty)

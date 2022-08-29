@@ -7,6 +7,7 @@ import requests
 
 @click.command()
 @click.argument("common_name")
+@click.option("--alt_names", default="", help="alt_names for the certificate")
 @click.option("--ttl", default="8760h", help="certificate validity")
 @click.option(
     "--vault_token",
@@ -20,10 +21,11 @@ import requests
 @click.option(
     "--output_cert", default="cert.pem", help="output file for the certificate"
 )
-def main(common_name, ttl, vault_token, vault_addr, output_key, output_cert):
+def main(common_name, alt_names, ttl, vault_token, vault_addr, output_key, output_cert):
     url = f"{vault_addr}/v1/pki_int/issue/home-dot-arpa"
     headers = {"X-Vault-Token": vault_token}
     data = {
+        "alt_names": alt_names,
         "common_name": common_name,
         "ttl": ttl,
     }
