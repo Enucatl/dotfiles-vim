@@ -50,13 +50,7 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-vim.keymap.set("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-
--- Git
-vim.keymap.set("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", opts)
 
 -- Comment
-vim.keymap.set("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-vim.keymap.set("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+vim.keymap.set("n", "<leader>c<space>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
