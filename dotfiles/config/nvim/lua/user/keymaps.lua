@@ -50,7 +50,7 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", opts)
+vim.keymap.set("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
 
 -- Comment
 vim.keymap.set("n", "<leader>c<space>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
