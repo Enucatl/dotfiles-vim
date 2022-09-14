@@ -7,9 +7,6 @@ alias rm='rm -I'
 alias mv='mv -i'
 alias cp='cp -i'
 alias root='root -l'
-alias ssh='ssh -Y'
-alias python='python -t -W ignore::DeprecationWarning'
-alias ipython='ipython --colors LightBG'
 alias py='jupyter console'
 alias c='clear'
 alias cclear='cd && clear'
@@ -18,6 +15,3 @@ alias R='R --no-save --no-restore-data --quiet'
 
 #the silver surfer with grep colorscheme
 alias ag='ag --color-match "1;31" --color-line-number 32 --color-path 35'
-
-#vi is nvim-qt
-alias vi='nvim-qt'
