@@ -52,7 +52,6 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 vim.keymap.set("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", opts)
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
