@@ -85,7 +85,7 @@ fi
 
 export HISTIGNORE="c:clear:exit"
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
-export EDITOR=~/bin/gvim_fg
+export EDITOR=~/usr/bin/nvim-qt
 
 setxkbmap -option caps:escape
 shopt -s cdspell
