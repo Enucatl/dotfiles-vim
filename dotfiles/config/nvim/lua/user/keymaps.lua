@@ -50,4 +50,4 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-vim.keymap.set("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
+vim.keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
