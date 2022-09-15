@@ -2,7 +2,11 @@ require 'rake'
 require 'rake/clean'
 require 'pathname'
 
-SOURCE_FILES = `git ls-files bin dotfiles`.split("\n")
+SOURCE_FILES = Dir.glob(["bin/*", "dotfiles/*"]).select { |f| File.file?(f) }
+SOURCE_FOLDERS = [
+  "dotfiles/config/nvim",
+]
+SOURCES = SOURCE_FILES + SOURCE_FOLDERS
 OUTPUT_FOLDER = ENV["HOME"]
 
 def destination file_name
@@ -13,7 +17,7 @@ def destination file_name
   end
 end
 
-DEST_FILES = SOURCE_FILES.map{|f| destination f }
+DEST_FILES = SOURCES.map{|f| destination f }
 CLOBBER.include(DEST_FILES)
 
 task :default => [:links]
@@ -21,7 +25,7 @@ task :default => [:links]
 desc "make the links in the home folder"
 task :links => DEST_FILES
 
-SOURCE_FILES.each do |source_file|
+SOURCES.each do |source_file|
   destination_file = destination source_file
   file destination_file => source_file do
     mkdir_p destination_file.pathmap("%d")

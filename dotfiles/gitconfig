@@ -7,8 +7,6 @@
     co = checkout
     amend = commit --amend
     aa = add --all
-    pullff = pull --ff-only
-    fa = fetch --all
     b = branch
     pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge -X theirs upstream/master"
     diffwords = diff --color-words
@@ -20,9 +18,9 @@
 [core]
     excludesfile = ~/.gitignore
 [content]
-    editor = gvim -w
+    editor = vi --nofork
 [core]
-    editor = gvim -f
+    editor = vi --nofork
     pager = less -r
     whitespace = trailing-space,space-before-tab
 [merge]
@@ -40,8 +38,6 @@
     cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
 [help]
     autocorrect = 1
-[credential]
-	helper = lastpass
 [submodule]
 	recurse = true
 [init]
