@@ -1,1 +1,2 @@
 .net*
+dotfiles/config/nvim/plugin
