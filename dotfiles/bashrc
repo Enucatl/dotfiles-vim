@@ -91,7 +91,9 @@ export HISTIGNORE="c:clear:exit"
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
 export EDITOR=/usr/bin/vi
 
-setxkbmap -option caps:escape
+if [ -f /usr/bin/setxkbmap ]; then
+    setxkbmap -option caps:escape
+fi
 shopt -s cdspell
 shopt -s extglob
 shopt -s cmdhist
