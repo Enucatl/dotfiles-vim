@@ -156,3 +156,8 @@ export VAULT_ADDR=https://vault.home.arpa:8200
 
 #recommended by man gpg-agent
 export GPG_TTY=$(tty)
+
+# cuda
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda
