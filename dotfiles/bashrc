@@ -124,6 +124,11 @@ export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 ### Added by the Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
+### Add for rust cargo
+if [ -d ~/.cargo/bin ]; then
+    PATH=~/.cargo/bin:$PATH
+fi
+
 ### Added for haskell local modules
 if [ -d ~/.cabal/bin ]; then
     PATH=~/.cabal/bin:$PATH
