@@ -44,3 +44,9 @@
 	defaultBranch = main
 [pull]
 	ff = only
+[gpg]
+    program = bpb
+[commit]
+    gpgSign = true
+[tag]
+    forceSignAnnotated = true
