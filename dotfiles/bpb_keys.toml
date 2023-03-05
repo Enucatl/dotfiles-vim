@@ -1,0 +1,7 @@
+[public]
+key = "ac938dee9cc46bfcaea6c586e55c2a972ed85eaf929147d264256a818d130b91"
+userid = "Matteo Abis <1423701+Enucatl@users.noreply.github.com>"
+timestamp = 1678043198
+
+[secret]
+program = "vault kv get -mount=secret -field secret::key bpb"
