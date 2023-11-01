@@ -7,16 +7,29 @@ export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 # ... or force ignoredups and ignorespace
 export HISTCONTROL=ignoreboth
+export HISTIGNORE="c:clear:exit"
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=50000
+# Eternal bash history  
+# https://stackoverflow.com/a/19533853
+#
+export HISTTIMEFORMAT="[%F %T] "
+# Set size to unlimited
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+# Change the file location because certain bash sessions truncate .bash_history
+# file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -91,7 +104,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export HISTIGNORE="c:clear:exit"
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
 export EDITOR=/usr/bin/vi
 
@@ -104,25 +116,14 @@ shopt -s cmdhist
 set bell-style none
 set -o vi
 set -o ignoreeof
-PROMPT_COMMAND='history -a'
 
 set page-completions off
 set show-all-if-ambiguous on
 set editing-mode vi
 set keymap vi
 
-#Python pyenv
-if [ -e ~/.pyenv/ ]; then
-    export PYENV_ROOT=$HOME/.pyenv
-    PATH=$PYENV_ROOT/bin:$PATH
-    eval "$(pyenv init -)"
-fi
-
 #Python use ubuntu CA bundle instead of its own
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-
-### Added by the Heroku Toolbelt
-PATH=/usr/local/heroku/bin:$PATH
 
 ### Add for rust cargo
 if [ -d ~/.cargo/bin ]; then
