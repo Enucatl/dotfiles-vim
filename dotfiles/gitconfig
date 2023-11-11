@@ -21,10 +21,10 @@ export = "!f() { name=${PWD##*/}-$(git describe --always --abbrev=4 $1); git arc
 excludesfile = ~/.gitignore
 
 [content]
-editor = vi --nofork
+editor = vim --nofork
 
 [core]
-editor = vi --nofork
+editor = vim --nofork
 pager = less -r
 whitespace = trailing-space,space-before-tab
 
