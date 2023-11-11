@@ -135,6 +135,11 @@ if [ -d ~/.cabal/bin ]; then
     PATH=~/.cabal/bin:$PATH
 fi
 
+#add neovim to PATH
+if [ -d ~/bin/nvim-linux64/bin/ ]; then
+    PATH=~/bin/nvim-linux64/bin:$PATH
+fi
+
 #RUBY rvm
 if [ -d ~/.rvm/ ]; then
     PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting

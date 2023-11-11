@@ -74,7 +74,7 @@ return packer.startup(function(use)
     -- LSP
     use { "neovim/nvim-lspconfig" } -- enable LSP
     use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
-    use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
+    use { "nvimtools/none-ls.nvim" } -- for formatters and linters
     use { "RRethy/vim-illuminate" }
     use { "rodjek/vim-puppet" }
 
@@ -88,24 +88,24 @@ return packer.startup(function(use)
     use { "tpope/vim-fugitive" }
 
     -- copilot
-    use {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
-        end,
-    }
-    use {
-        "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua" },
-        config = function ()
-            require("copilot_cmp").setup()
-        end
-    }
+    --[[ use { ]]
+    --[[     "zbirenbaum/copilot.lua", ]]
+    --[[     cmd = "Copilot", ]]
+    --[[     event = "InsertEnter", ]]
+    --[[     config = function() ]]
+    --[[         require("copilot").setup({ ]]
+    --[[             suggestion = { enabled = false }, ]]
+    --[[             panel = { enabled = false }, ]]
+    --[[         }) ]]
+    --[[     end, ]]
+    --[[ } ]]
+    --[[ use { ]]
+    --[[     "zbirenbaum/copilot-cmp", ]]
+    --[[     after = { "copilot.lua" }, ]]
+    --[[     config = function () ]]
+    --[[         require("copilot_cmp").setup() ]]
+    --[[     end ]]
+    --[[ } ]]
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
