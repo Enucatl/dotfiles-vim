@@ -105,7 +105,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
-export EDITOR=/usr/bin/vi
+export EDITOR=vi
 
 if [ -f /usr/bin/setxkbmap ]; then
     setxkbmap -option caps:escape
