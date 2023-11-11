@@ -11,4 +11,4 @@ They will be saved to `~/dotfiles.vim.backup.tar`.
     rake
 
 # Neovim
-Inspired by https://github.com/LunarVim/nvim-basic-ide
+Configured with https://github.com/LunarVim/LunarVim
