@@ -2,6 +2,10 @@ lvim.leader = ","
 lvim.colorscheme = "solarized-flat"
 lvim.format_on_save.enabled = true
 
+local opts = { silent = true }
+vim.keymap.set("n", "<Up>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<Down>", ":bprevious<CR>", opts)
+
 vim.opt.guifont = "Inconsolata Nerd Font Mono:h18"
 vim.opt.background = "light"
 
