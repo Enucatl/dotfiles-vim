@@ -1,52 +1,68 @@
 [user]
-    name = Matteo Abis
-    email = 1423701+Enucatl@users.noreply.github.com
+name = Matteo Abis
+email = 1423701+Enucatl@users.noreply.github.com
+
 [alias]
-    unstage = reset HEAD
-    ci = commit
-    co = checkout
-    amend = commit --amend
-    aa = add --all
-    b = branch
-    pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge -X theirs upstream/master"
-    diffwords = diff --color-words
-    ours = "!f() { git checkout --ours $@ && git add $@; }; f"
-    theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-	lg = log --color --graph --pretty=format:'%Cred%h %G?%Creset  %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    s = status -sb
-    export = "!f() { name=${PWD##*/}-$(git describe --always --abbrev=4 $1); git archive --prefix=$name -o $name.tar.gz $1; }; f"
+unstage = reset HEAD
+ci = commit
+co = checkout
+amend = commit --amend
+aa = add --all
+b = branch
+pullupstream = !"git fetch origin -v; git fetch upstream -v; git merge -X theirs upstream/master"
+diffwords = diff --color-words
+ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+lg = log --color --graph --pretty=format:'%Cred%h %G?%Creset  %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+s = status -sb
+export = "!f() { name=${PWD##*/}-$(git describe --always --abbrev=4 $1); git archive --prefix=$name -o $name.tar.gz $1; }; f"
+
 [core]
-    excludesfile = ~/.gitignore
+excludesfile = ~/.gitignore
+
 [content]
-    editor = vi --nofork
+editor = vi --nofork
+
 [core]
-    editor = vi --nofork
-    pager = less -r
-    whitespace = trailing-space,space-before-tab
+editor = vi --nofork
+pager = less -r
+whitespace = trailing-space,space-before-tab
+
 [merge]
-    ff = always
+ff = always
+
 [push]
-    default = tracking
+default = tracking
+
 [color]
-    ui = auto
-    interactive = auto
+ui = auto
+interactive = auto
+
 [advice]
-    pushNonFastForward = false
-    commitBeforeMerge = false
-    implicitIdentity = false
+pushNonFastForward = false
+commitBeforeMerge = false
+implicitIdentity = false
+
 [difftool "diffpdf"]
-    cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
+cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
+
 [help]
-    autocorrect = 1
+autocorrect = 1
+
 [submodule]
-	recurse = true
+recurse = true
+
 [init]
-	defaultBranch = main
+defaultBranch = main
+
 [pull]
-	ff = only
+ff = only
+
 [gpg]
-    program = bpb
+program = bpb
+
 [commit]
-    gpgSign = true
+gpgSign = true
+
 [tag]
-    forceSignAnnotated = true
+forceSignAnnotated = true

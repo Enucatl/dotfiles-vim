@@ -1,3 +1,7 @@
+# Use a simpler rust replacement for GPG signing git commits
+# https://andre.arko.net/2021/02/06/signing-git-commits-without-gpg/
+# https://github.com/tyrchen/bpb
+
 [public]
 key = "ac938dee9cc46bfcaea6c586e55c2a972ed85eaf929147d264256a818d130b91"
 userid = "Matteo Abis <1423701+Enucatl@users.noreply.github.com>"
