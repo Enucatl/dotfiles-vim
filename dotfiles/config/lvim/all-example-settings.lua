@@ -1513,7 +1513,6 @@ lvim.lazy.opts.spec["1"]["9"]["1"] = "Tastyep/structlog.nvim"
 lvim.lazy.opts.spec["1"]["9"].commit = "45b26a2"
 lvim.lazy.opts.spec["1"]["9"].lazy = true
 lvim.lazy.opts.ui.border = "rounded"
-lvim.leader = "space"
 lvim.log.level = "info"
 lvim.log.override_notify = false
 lvim.log.viewer.cmd = "lnav"
