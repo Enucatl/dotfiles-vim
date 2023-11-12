@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
   client.server_capabilities.hoverProvider = false
 end
 
-require("lvim.lsp.manager").ruff_lsp.setup {
+require("lspconfig").ruff_lsp.setup {
   on_attach = on_attach,
 }
 
