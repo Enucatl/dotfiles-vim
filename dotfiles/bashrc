@@ -7,6 +7,26 @@ export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Set the terminal window title.
+# Inspired by
+# https://stackoverflow.com/questions/71459823/how-to-change-the-terminal-title-to-currently-running-process
+if [[ "${TERM}" != 'linux' ]]; then
+  # Force the terminal type, to work around GUI terminal
+  # emulators that set $TERM wrongly to a type that doesn't
+  # support status line, e.g. "xterm-256color"
+
+  SL_TERM='xterm-pcolor'
+  SL_START="$(TERM=${SL_TERM}; tput tsl)"
+  SL_END="$(TERM=${SL_TERM}; tput fsl)"
+
+  SL_CMD='[${HOSTNAME%%.*}] ${PWD/#${HOME}/\~}'
+  SL_CMD+=' $(STATUS=${?}; [[ ${STATUS} != 0 ]] && echo -n " [ERROR: ${STATUS}]")'
+
+  PROMPT_COMMAND="echo -n \"${SL_START}${SL_CMD}${SL_END}\""
+  unset SL_TERM SL_START SL_END SL_CMD
+else
+  unset PROMPT_COMMAND
+fi
 # append to the history file, don't overwrite it
 shopt -s histappend
 
