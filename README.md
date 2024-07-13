@@ -1,5 +1,4 @@
 # Install
-
 Config files can be backed up to a tar archive with the `rake backup` task.
 They will be saved to `~/dotfiles.vim.backup.tar`.
 
