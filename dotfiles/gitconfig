@@ -73,6 +73,7 @@ recurse = true
 
 [tag]
 forceSignAnnotated = true
+gpgsign = true
 
 [user]
 name = Matteo Abis

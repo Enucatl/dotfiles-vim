@@ -9,5 +9,12 @@ They will be saved to `~/dotfiles.vim.backup.tar`.
     rake backup
     rake
 
+# SSH key allowed signers
+Add the key to the SSH allowed signers for git verification
+
+```bash
+echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_ed25519.pub)" >> $(git config gpg.ssh.allowedsignersfile)
+```
+
 # Neovim
 Configured with https://github.com/LunarVim/LunarVim
