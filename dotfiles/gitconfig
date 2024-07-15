@@ -47,6 +47,9 @@ cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
 [gpg]
 format = ssh
 
+[gpg "ssh"]
+allowedSignersFile = ~/.ssh/allowed_ssh_signers
+
 [help]
 autocorrect = 1
 
@@ -75,3 +78,4 @@ forceSignAnnotated = true
 name = Matteo Abis
 email = 1423701+Enucatl@users.noreply.github.com
 signingkey = ~/.ssh/id_ed25519.pub
+
