@@ -84,12 +84,15 @@ lvim.plugins = {
     "linux-cultist/venv-selector.nvim",
     dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
     opts = {
-      -- Your options go here
-      name = ".venv",
-      venvwrapper_path = "/opt/home/user/venv/",
-      -- auto_refresh = false
+      settings = {
+        search = {
+          opt_venvs = {
+            command = "fd --type symlink python$ /opt/home/user/venv/"
+          }
+        }
+      }
     },
-    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    branch = "regexp",
     keys = {
       -- Keymap to open VenvSelector to pick a venv.
       { "<leader>vs", "<cmd>VenvSelect<cr>" },
