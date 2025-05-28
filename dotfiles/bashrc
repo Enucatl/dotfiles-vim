@@ -160,12 +160,6 @@ if [ -d ~/bin/nvim-linux64/bin/ ]; then
     PATH=~/bin/nvim-linux64/bin:$PATH
 fi
 
-#RUBY rvm
-if [ -d ~/.rvm/ ]; then
-    PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
-    source ~/.rvm/scripts/rvm
-fi
-
 # custom bash functions
 if [ -f ~/bin/func_mcd ]; then
     source ~/bin/func_mcd
@@ -197,6 +191,10 @@ export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export CUDA_HOME=/usr/local/cuda
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+#RUBY rvm
+if [ -d ~/.rvm/ ]; then
+    PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
+    source ~/.rvm/scripts/rvm
+fi
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
