@@ -32,9 +32,6 @@ ui = auto
 [commit]
 gpgSign = true
 
-[content]
-editor = vim --nofork
-
 [core]
 editor = vim --nofork
 excludesfile = ~/.gitignore
