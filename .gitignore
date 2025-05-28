@@ -1,2 +1,3 @@
 .net*
 dotfiles/config/lvim/lazy-lock.json
+repomix-output.xml
