@@ -38,7 +38,7 @@ verbose = true
 [core]
 editor = vim --nofork
 excludesfile = ~/.gitignore
-pager = less -r
+pager = diff-so-fancy | less --tabs=4 -RF
 whitespace = trailing-space,space-before-tab,space-in-empty-line
 
 [difftool "diffpdf"]
@@ -55,6 +55,9 @@ autocorrect = prompt
 
 [init]
 defaultBranch = main
+
+[interactive]
+diffFilter = diff-so-fancy --patch
 
 [maintenance]
 auto = true
@@ -90,4 +93,3 @@ sort = -version:refname
 name = Matteo Abis
 email = 1423701+Enucatl@users.noreply.github.com
 signingkey = ~/.ssh/id_ed25519.pub
-
