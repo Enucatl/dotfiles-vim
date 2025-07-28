@@ -12,6 +12,8 @@ ci = commit
 co = checkout
 diffwords = diff --color-words
 export = "!f() { name=${PWD##*/}-$(git describe --always --abbrev=4 $1); git archive --prefix=$name -o $name.tar.gz $1; }; f"
+graph = log --all --graph --decorate --oneline
+ignore = "!gi() { for template in \"$@\"; do echo \"# Downloading .gitignore for $template...\"; curl -fsL \"https://raw.githubusercontent.com/github/gitignore/main/$template.gitignore\"; done; }; gi"
 lg = log --color --graph --pretty=format:'%Cred%h %G?%Creset  %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ours = "!f() { git checkout --ours $@ && git add $@; }; f"
 pullupstream = !"git fetch origin --verbose; git fetch upstream --verbose; git merge --strategy-option theirs upstream/master"
@@ -31,12 +33,13 @@ ui = auto
 
 [commit]
 gpgSign = true
+verbose = true
 
 [core]
 editor = vim --nofork
 excludesfile = ~/.gitignore
 pager = less -r
-whitespace = trailing-space,space-before-tab
+whitespace = trailing-space,space-before-tab,space-in-empty-line
 
 [difftool "diffpdf"]
 cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
@@ -48,22 +51,32 @@ format = ssh
 allowedSignersFile = ~/.ssh/allowed_ssh_signers
 
 [help]
-autocorrect = 1
+autocorrect = prompt
 
 [init]
 defaultBranch = main
+
+[maintenance]
+auto = true
+strategy = incremental
 
 [merge]
 ff = always
 
 [pull]
 ff = only
+rebase = true
 
 [push]
+autoSetupRemote = true
 default = tracking
 
 [rerere]
 enabled = true
+autoUpdate = true
+
+[status]
+branch = true
 
 [submodule]
 recurse = true
@@ -71,6 +84,7 @@ recurse = true
 [tag]
 forceSignAnnotated = true
 gpgsign = true
+sort = -version:refname
 
 [user]
 name = Matteo Abis
