@@ -14,4 +14,4 @@ alias convert300='convert -density 300'
 alias R='R --no-save --no-restore-data --quiet'
 
 # setup nvim-qt with lunarvim
-alias vi='nvim-qt --nvim ~/.local/bin/lvim'
+alias vi='nvim-qt --nvim ~/.local/bin/lvim 2>/dev/null'
