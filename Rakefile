@@ -15,10 +15,10 @@ require 'rake/clean'
 require 'pathname'
 
 # Define the source files by globbing bin and dotfiles directories.
-SOURCE_FILES = Dir.glob(['bin/*', 'dotfiles/*']).select { |f| File.file?(f) }
+SOURCE_FILES = Dir.glob(['bin/*', 'dotfiles/*', 'dotfiles/gnupg/*', 'dotfiles/ssh/*']).select { |f| File.file?(f) }
 # Define source folders that need special handling.
 SOURCE_FOLDERS = [
-  'dotfiles/config/lvim'
+  'dotfiles/config/lvim',
 ]
 # Combine source files and folders into a single array.
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
