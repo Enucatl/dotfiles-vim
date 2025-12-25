@@ -1,2 +1,11 @@
 Host *.home.arpa
   ForwardAgent yes
+
+Host dropbear.*.home.arpa
+  User root
+
+Host proxmox.home.arpa
+  User root
+
+Host pve-desktop.home.arpa
+  User root
