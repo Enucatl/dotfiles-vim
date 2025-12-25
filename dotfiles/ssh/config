@@ -3,6 +3,7 @@ Host *.home.arpa
 
 Host dropbear.*.home.arpa
   User root
+  Port 2222
 
 Host proxmox.home.arpa
   User root
