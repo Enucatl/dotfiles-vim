@@ -6,7 +6,6 @@ GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
 BLUE='\033[0;34m'
 YELLOW='\033[0;33m'
-NO_COLOR='\033[0m'
 
 width1=5
 width2=6

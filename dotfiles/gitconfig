@@ -36,7 +36,7 @@ gpgSign = true
 verbose = true
 
 [core]
-editor = vim --nofork
+editor = lvim
 excludesfile = ~/.gitignore
 pager = diff-so-fancy | less --tabs=4 -RF
 whitespace = trailing-space,space-before-tab,space-in-empty-line
@@ -64,7 +64,7 @@ auto = true
 strategy = incremental
 
 [merge]
-ff = always
+ff = only
 
 [pull]
 ff = only
@@ -72,7 +72,7 @@ rebase = true
 
 [push]
 autoSetupRemote = true
-default = tracking
+default = upstream
 
 [rerere]
 enabled = true

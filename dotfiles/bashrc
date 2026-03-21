@@ -125,19 +125,14 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
-export EDITOR=vi
+export EDITOR=lvim
+export VISUAL='nvim-qt --nvim ~/.local/bin/lvim'
 
 shopt -s cdspell
 shopt -s extglob
 shopt -s cmdhist
-set bell-style none
 set -o vi
 set -o ignoreeof
-
-set page-completions off
-set show-all-if-ambiguous on
-set editing-mode vi
-set keymap vi
 
 #Python use ubuntu CA bundle instead of its own
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
