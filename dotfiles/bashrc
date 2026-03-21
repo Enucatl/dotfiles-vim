@@ -183,11 +183,6 @@ export VAULT_ADDR=https://hcv.home.arpa:8200
 #recommended by man gpg-agent
 export GPG_TTY=$(tty)
 
-# cuda
-export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export CUDA_HOME=/usr/local/cuda
-
 #RUBY rvm
 if [ -d ~/.rvm/ ]; then
     PATH=~/.rvm/bin:$PATH # Add RVM to PATH for scripting
@@ -195,3 +190,5 @@ if [ -d ~/.rvm/ ]; then
 fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export COMPOSE_ENV_FILES=../.env,./.env
