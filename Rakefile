@@ -19,6 +19,7 @@ SOURCE_FILES = Dir.glob(['bin/*', 'dotfiles/*', 'dotfiles/gnupg/*', 'dotfiles/ss
 # Define source folders that need special handling.
 SOURCE_FOLDERS = [
   'dotfiles/config/lvim',
+  'dotfiles/config/kitty',
 ]
 # Combine source files and folders into a single array.
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
