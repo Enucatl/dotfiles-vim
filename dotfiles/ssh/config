@@ -5,7 +5,7 @@ Host dropbear.*.home.arpa
   User root
   Port 2222
 
-Host proxmox.home.arpa
+Host proxmox*.home.arpa
   User root
 
 Host pve-desktop.home.arpa

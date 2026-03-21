@@ -93,3 +93,5 @@ sort = -version:refname
 name = Matteo Abis
 email = 1423701+Enucatl@users.noreply.github.com
 signingkey = ~/.ssh/id_ed25519.pub
+[safe]
+	directory = /export/complex/wolf
