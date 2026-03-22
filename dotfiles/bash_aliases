@@ -15,3 +15,6 @@ alias R='R --no-save --no-restore-data --quiet'
 
 # setup nvim-qt with lunarvim
 alias vi='nvim-qt --nvim ~/.local/bin/lvim 2>/dev/null'
+
+# use kitten ssh for clipboard/graphics forwarding when available (kitty terminal)
+command -v kitten &>/dev/null && alias ssh='kitten ssh'
