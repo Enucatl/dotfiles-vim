@@ -1,5 +1,5 @@
 set editing-mode vi
-set keymap vi
 set bell-style none
 set show-all-if-ambiguous on
 set page-completions off
+set enable-bracketed-paste on
