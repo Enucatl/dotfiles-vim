@@ -41,6 +41,10 @@ excludesfile = ~/.gitignore
 pager = delta
 whitespace = trailing-space,space-before-tab,space-in-empty-line
 
+[delta]
+navigate = true
+light = true
+
 [difftool "diffpdf"]
 cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
 
@@ -63,9 +67,6 @@ diffFilter = delta --color-only
 auto = true
 strategy = incremental
 
-[delta]
-navigate = true
-
 [merge]
 conflictStyle = zdiff3
 ff = only
@@ -80,6 +81,9 @@ default = upstream
 [rerere]
 enabled = true
 autoUpdate = true
+
+[safe]
+	directory = /export/complex/wolf
 
 [status]
 branch = true
@@ -96,5 +100,3 @@ sort = -version:refname
 name = Matteo Abis
 email = 1423701+Enucatl@users.noreply.github.com
 signingkey = ~/.ssh/id_ed25519.pub
-[safe]
-	directory = /export/complex/wolf
