@@ -12,6 +12,7 @@ alias c='clear'
 alias cclear='cd && clear'
 alias convert300='convert -density 300'
 alias R='R --no-save --no-restore-data --quiet'
+alias codex='codex --dangerously-bypass-approvals-and-sandbox'
 
 # setup nvim-qt with lunarvim
 alias vi='nvim-qt --nvim ~/.local/bin/lvim 2>/dev/null'

@@ -15,7 +15,7 @@ require 'rake/clean'
 require 'pathname'
 
 # Define the source files by globbing bin and dotfiles directories.
-SOURCE_FILES = Dir.glob(['bin/*', 'dotfiles/*', 'dotfiles/gnupg/*', 'dotfiles/ssh/*']).select { |f| File.file?(f) }
+SOURCE_FILES = Dir.glob(['bin/*', 'dotfiles/*', 'dotfiles/gnupg/*', 'dotfiles/ssh/*', 'dotfiles/codex/*']).select { |f| File.file?(f) }
 # Define source folders that need special handling (auto-discovered).
 SOURCE_FOLDERS = Dir.glob('dotfiles/config/*').select { |f| File.directory?(f) }
 # Combine source files and folders into a single array.
