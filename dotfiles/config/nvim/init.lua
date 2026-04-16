@@ -10,8 +10,8 @@ vim.opt.termguicolors = true
 
 -- === Keymaps ===
 local opts = { silent = true }
-vim.keymap.set("n", "<leader>n", ":bnext<CR>", opts)
-vim.keymap.set("n", "<leader>p", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<Up>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<Down>", ":bprevious<CR>", opts)
 
 -- === Bootstrap lazy.nvim ===
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
