@@ -36,7 +36,7 @@ gpgSign = true
 verbose = true
 
 [core]
-editor = lvim
+editor = nvim
 excludesfile = ~/.gitignore
 pager = delta
 whitespace = trailing-space,space-before-tab,space-in-empty-line
