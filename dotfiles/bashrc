@@ -125,8 +125,8 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
-export EDITOR=lvim
-export VISUAL='nvim-qt --nvim ~/.local/bin/lvim'
+export EDITOR=vi
+export VISUAL=vi
 
 shopt -s cdspell
 shopt -s extglob
