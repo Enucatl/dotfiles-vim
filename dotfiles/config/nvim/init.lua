@@ -35,15 +35,6 @@ require("lazy").setup({
   { "tpope/vim-repeat" },
   { "tpope/vim-surround" },
 
-  -- Treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = { "python", "rust", "lua" },
-        highlight = { enable = true },
-      })
-    end },
-
   -- LSP + Mason
   { "williamboman/mason.nvim", config = function() require("mason").setup() end },
   { "williamboman/mason-lspconfig.nvim",
@@ -52,17 +43,19 @@ require("lazy").setup({
       require("mason-lspconfig").setup({ ensure_installed = { "pyright", "ruff" } })
 
       -- Pyright: completions + type checking
-      require("lspconfig").pyright.setup({
+      vim.lsp.config("pyright", {
         settings = { python = { analysis = { typeCheckingMode = "basic" } } },
       })
+      vim.lsp.enable("pyright")
 
       -- Ruff: linting/formatting only
-      require("lspconfig").ruff.setup({
+      vim.lsp.config("ruff", {
         on_attach = function(c)
           c.server_capabilities.hoverProvider = false
           c.server_capabilities.completionProvider = false
         end,
       })
+      vim.lsp.enable("ruff")
     end },
 
   -- Formatting with conform.nvim
