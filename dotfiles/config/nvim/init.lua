@@ -1,4 +1,10 @@
 -- === Leader & Basic Settings ===
+local system_runtime = "/usr/share/nvim/runtime"
+if vim.fn.filereadable(system_runtime .. "/syntax/syntax.vim") == 1 then
+  vim.env.VIMRUNTIME = system_runtime
+  vim.opt.runtimepath:prepend(system_runtime)
+end
+
 vim.g.mapleader = ","
 vim.opt.guifont = "Inconsolata:h18"
 vim.opt.background = "light"
@@ -74,7 +80,7 @@ require("lazy").setup({
         rust = { "rustfmt" },
       },
       format_on_save = { timeout_ms = 1000, lsp_fallback = true },
-    end },
+    } },
 
   -- venv-selector
   { "linux-cultist/venv-selector.nvim",
