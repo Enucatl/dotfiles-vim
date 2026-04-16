@@ -1,7 +1,3 @@
-# don't open binaries or latex crap files with vi
-complete -f -X '*.@(log|dvi|toc|pdf|ps|aux|idx|bbl|out|idx|blg)' gvim vim vi
-
-# 
 if [ -d ~/.bash_completion.d ]; then
     for f in ~/.bash_completion.d/*; do
         source $f
