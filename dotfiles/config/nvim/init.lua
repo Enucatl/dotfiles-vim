@@ -1,10 +1,4 @@
 -- === Leader & Basic Settings ===
-local system_runtime = "/usr/share/nvim/runtime"
-if vim.fn.filereadable(system_runtime .. "/syntax/syntax.vim") == 1 then
-  vim.env.VIMRUNTIME = system_runtime
-  vim.opt.runtimepath:prepend(system_runtime)
-end
-
 vim.g.mapleader = ","
 vim.opt.guifont = "Inconsolata:h18"
 vim.opt.background = "light"
