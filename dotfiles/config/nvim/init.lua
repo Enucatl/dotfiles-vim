@@ -3,7 +3,6 @@ vim.g.mapleader = ","
 vim.opt.guifont = "Inconsolata:h18"
 vim.opt.background = "light"
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
@@ -34,6 +33,14 @@ require("lazy").setup({
   { "tpope/vim-fugitive", cmd = { "G", "Git", "Gdiffsplit" } },
   { "tpope/vim-repeat" },
   { "tpope/vim-surround" },
+  { "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>f", function() require("telescope.builtin").find_files() end, desc = "Find files" },
+      { "<leader>g", function() require("telescope.builtin").live_grep() end, desc = "Live grep" },
+      { "<leader>b", function() require("telescope.builtin").buffers() end, desc = "Buffers" },
+    },
+  },
 
   -- LSP + Mason
   { "williamboman/mason.nvim", config = function() require("mason").setup() end },
