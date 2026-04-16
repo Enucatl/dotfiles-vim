@@ -3,6 +3,7 @@ vim.g.mapleader = ","
 vim.opt.guifont = "Inconsolata:h18"
 vim.opt.background = "light"
 vim.opt.number = true
+vim.opt.relativenumber = false
 vim.opt.cursorline = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
