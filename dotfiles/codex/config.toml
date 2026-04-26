@@ -1,0 +1,43 @@
+approvals_reviewer = "user"
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "medium"
+
+[model_providers.ollama-complex]
+name = "ollama"
+base_url = "http://complex.home.arpa:8111/v1"
+
+[profiles.qwen]
+model = "qwen"
+model_provider = "ollama-complex"
+approvals_reviewer = "user"
+
+[projects."/export/docker"]
+trust_level = "trusted"
+
+[projects."/opt/complex"]
+trust_level = "trusted"
+
+[projects."/export/complex"]
+trust_level = "trusted"
+
+[projects."/opt/docker"]
+trust_level = "trusted"
+
+[projects."/home/user"]
+trust_level = "trusted"
+
+[notice]
+hide_full_access_warning = true
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+
+[tui]
+theme = "solarized-light"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
