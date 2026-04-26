@@ -15,6 +15,75 @@ approvals_reviewer = "user"
 [projects."/export/docker"]
 trust_level = "trusted"
 
+[projects."/export/docker/airflow"]
+trust_level = "trusted"
+
+[projects."/export/docker/authelia"]
+trust_level = "trusted"
+
+[projects."/export/docker/checkmk"]
+trust_level = "trusted"
+
+[projects."/export/docker/compose-security-baseline"]
+trust_level = "trusted"
+
+[projects."/export/docker/crabberbot"]
+trust_level = "trusted"
+
+[projects."/export/docker/duplicati"]
+trust_level = "trusted"
+
+[projects."/export/docker/echo-server"]
+trust_level = "trusted"
+
+[projects."/export/docker/grafana-loki"]
+trust_level = "trusted"
+
+[projects."/export/docker/iventoy"]
+trust_level = "trusted"
+
+[projects."/export/docker/kms"]
+trust_level = "trusted"
+
+[projects."/export/docker/monerod"]
+trust_level = "trusted"
+
+[projects."/export/docker/paperless-ai"]
+trust_level = "trusted"
+
+[projects."/export/docker/protonmail-bridge"]
+trust_level = "trusted"
+
+[projects."/export/docker/puppet-control-repo"]
+trust_level = "trusted"
+
+[projects."/export/docker/qbittorrent"]
+trust_level = "trusted"
+
+[projects."/export/docker/rclone"]
+trust_level = "trusted"
+
+[projects."/export/docker/rss-to-telegram-bot"]
+trust_level = "trusted"
+
+[projects."/export/docker/send-bills"]
+trust_level = "trusted"
+
+[projects."/export/docker/teamspeak"]
+trust_level = "trusted"
+
+[projects."/export/docker/telegram-bot-api"]
+trust_level = "trusted"
+
+[projects."/export/docker/tor-i2pd"]
+trust_level = "trusted"
+
+[projects."/export/docker/traefik"]
+trust_level = "trusted"
+
+[projects."/export/docker/unifi-network-application"]
+trust_level = "trusted"
+
 [projects."/opt/complex"]
 trust_level = "trusted"
 
@@ -22,6 +91,75 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/opt/docker"]
+trust_level = "trusted"
+
+[projects."/opt/docker/airflow"]
+trust_level = "trusted"
+
+[projects."/opt/docker/authelia"]
+trust_level = "trusted"
+
+[projects."/opt/docker/checkmk"]
+trust_level = "trusted"
+
+[projects."/opt/docker/compose-security-baseline"]
+trust_level = "trusted"
+
+[projects."/opt/docker/crabberbot"]
+trust_level = "trusted"
+
+[projects."/opt/docker/duplicati"]
+trust_level = "trusted"
+
+[projects."/opt/docker/echo-server"]
+trust_level = "trusted"
+
+[projects."/opt/docker/grafana-loki"]
+trust_level = "trusted"
+
+[projects."/opt/docker/iventoy"]
+trust_level = "trusted"
+
+[projects."/opt/docker/kms"]
+trust_level = "trusted"
+
+[projects."/opt/docker/monerod"]
+trust_level = "trusted"
+
+[projects."/opt/docker/paperless-ai"]
+trust_level = "trusted"
+
+[projects."/opt/docker/protonmail-bridge"]
+trust_level = "trusted"
+
+[projects."/opt/docker/puppet-control-repo"]
+trust_level = "trusted"
+
+[projects."/opt/docker/qbittorrent"]
+trust_level = "trusted"
+
+[projects."/opt/docker/rclone"]
+trust_level = "trusted"
+
+[projects."/opt/docker/rss-to-telegram-bot"]
+trust_level = "trusted"
+
+[projects."/opt/docker/send-bills"]
+trust_level = "trusted"
+
+[projects."/opt/docker/teamspeak"]
+trust_level = "trusted"
+
+[projects."/opt/docker/telegram-bot-api"]
+trust_level = "trusted"
+
+[projects."/opt/docker/tor-i2pd"]
+trust_level = "trusted"
+
+[projects."/opt/docker/traefik"]
+trust_level = "trusted"
+
+[projects."/opt/docker/unifi-network-application"]
 trust_level = "trusted"
 
 [projects."/home/user"]
