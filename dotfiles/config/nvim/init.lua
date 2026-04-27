@@ -12,6 +12,10 @@ vim.opt.termguicolors = true
 local opts = { silent = true }
 vim.keymap.set("n", "<Up>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<Down>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- === Bootstrap lazy.nvim ===
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
