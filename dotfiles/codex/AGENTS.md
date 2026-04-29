@@ -22,3 +22,4 @@ The commit body should explain what changed and why. Draw from the conversation:
 
 - Use type annotations.
 - Before committing, run `uv run ruff format .`.
+- Always use pytest for tests
