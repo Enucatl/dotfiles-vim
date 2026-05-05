@@ -14,13 +14,13 @@ codex_hooks = true
 [[hooks.UserPromptSubmit]]
 [[hooks.UserPromptSubmit.hooks]]
 type = "command"
-command = 'python3 "$HOME/.codex/camillo_memory.py"'
+command = 'python3 "$HOME/.codex/camillo/camillo_memory.py"'
 timeout = 5
 
 [[hooks.Stop]]
 [[hooks.Stop.hooks]]
 type = "command"
-command = 'python3 "$HOME/.codex/camillo_memory.py"'
+command = 'python3 "$HOME/.codex/camillo/camillo_memory.py"'
 timeout = 5
 
 [model_providers.ollama-complex]

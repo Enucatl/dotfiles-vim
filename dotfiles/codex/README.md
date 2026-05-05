@@ -11,7 +11,7 @@ There are no required environment variables. Optional overrides:
 - `CAMILLO_MEMORY_TIMEOUT_MS`: HTTP timeout in milliseconds. Default: `1500`
 - `CAMILLO_MEMORY_STATE_DIR`: local state directory for pending/sent turn
   markers. Default:
-  `$XDG_STATE_HOME/codex/camillo-memory` or `~/.local/state/codex/camillo-memory`
+  `$XDG_STATE_HOME/codex/camillo` or `~/.local/state/codex/camillo`
 
-Install the dotfiles so `~/.codex/config.toml` and `~/.codex/camillo_memory.py`
+Install the dotfiles so `~/.codex/config.toml` and `~/.codex/camillo`
 are linked into place, then restart Codex.

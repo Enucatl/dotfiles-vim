@@ -124,8 +124,8 @@ def state_root() -> Path:
         return Path(base).expanduser()
     xdg_state = os.environ.get("XDG_STATE_HOME", "").strip()
     if xdg_state:
-        return Path(xdg_state).expanduser() / "codex" / "camillo-memory"
-    return Path.home() / ".local" / "state" / "codex" / "camillo-memory"
+        return Path(xdg_state).expanduser() / "codex" / "camillo"
+    return Path.home() / ".local" / "state" / "codex" / "camillo"
 
 
 def resolve_namespace(cwd: str, pending: dict[str, object]) -> str:
@@ -215,7 +215,7 @@ def write_text_atomically(path: Path, text: str) -> None:
 
 def log_failure(message: str) -> None:
     digest = hashlib.sha256(message.encode("utf-8")).hexdigest()[:8]
-    print(f"[camillo-memory:{digest}] {message}", file=sys.stderr)
+    print(f"[camillo:{digest}] {message}", file=sys.stderr)
 
 
 if __name__ == "__main__":
