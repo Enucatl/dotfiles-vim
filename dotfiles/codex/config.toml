@@ -194,7 +194,7 @@ trust_level = "trusted"
 
 [otel]
 environment = "home"
-trace_exporter = { otlp-http = { endpoint = "phoenix-otlp.docker.home.arpa", protocol = "binary", tls = { client-certificate = "~/.config/home-arpa/mtls/codex.crt", client-private-key = "~/.config/home-arpa/mtls/codex.key" } } }
+trace_exporter = { otlp-http = { endpoint = "https://phoenix-otlp.docker.home.arpa:6006/v1/traces", protocol = "binary", tls = { client-certificate = "/home/user/.config/home-arpa/mtls/codex.crt", client-private-key = "/home/user/.config/home-arpa/mtls/codex.key" } } }
 metrics_exporter = "none"
 log_user_prompt = true
 
