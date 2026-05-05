@@ -2,6 +2,9 @@ approvals_reviewer = "user"
 model = "gpt-5.4-mini"
 model_reasoning_effort = "medium"
 plan_mode_reasoning_effort = "medium"
+analytics.enabled = false
+check_for_update_on_startup = false
+commit_attribution = ""
 
 [model_providers.ollama-complex]
 name = "ollama"
@@ -188,6 +191,12 @@ trust_level = "trusted"
 
 [projects."/home/user/code/yt-dlp"]
 trust_level = "trusted"
+
+[otel]
+environment = "home"
+trace_exporter = { otlp-http = { endpoint = "phoenix-otlp.docker.home.arpa", protocol = "binary", tls = { client-certificate = "~/.config/home-arpa/mtls/codex.crt", client-private-key = "~/.config/home-arpa/mtls/codex.key" } } }
+metrics_exporter = "none"
+log_user_prompt = true
 
 [notice]
 hide_full_access_warning = true
