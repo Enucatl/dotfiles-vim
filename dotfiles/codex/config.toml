@@ -41,6 +41,9 @@ trust_level = "trusted"
 [projects."/export/docker/authelia"]
 trust_level = "trusted"
 
+[projects."/export/docker/camillo"]
+trust_level = "trusted"
+
 [projects."/export/docker/checkmk"]
 trust_level = "trusted"
 
@@ -117,6 +120,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/opt/docker/authelia"]
+trust_level = "trusted"
+
+[projects."/opt/docker/camillo"]
 trust_level = "trusted"
 
 [projects."/opt/docker/checkmk"]
