@@ -15,9 +15,17 @@ require 'rake/clean'
 require 'pathname'
 
 # Define the source files by globbing bin and dotfiles directories.
-SOURCE_FILES = Dir.glob(['bin/*', 'dotfiles/*', 'dotfiles/gnupg/*', 'dotfiles/ssh/*', 'dotfiles/codex/*']).select { |f| File.file?(f) }
+SOURCE_FILES = Dir.glob([
+  'bin/*',
+  'dotfiles/*',
+  'dotfiles/gnupg/*',
+  'dotfiles/ssh/*',
+  'dotfiles/codex/**/*'
+]).select { |f| File.file?(f) }
 # Define source folders that need special handling (auto-discovered).
-SOURCE_FOLDERS = Dir.glob(['dotfiles/config/*', 'dotfiles/codex/*']).select { |f| File.directory?(f) }
+SOURCE_FOLDERS = Dir.glob([
+  'dotfiles/config/*'
+]).select { |f| File.directory?(f) }
 # Combine source files and folders into a single array.
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
 # Define the output folder as the user's home directory.
@@ -36,7 +44,7 @@ def destination(file_name)
 end
 
 # Define the destination files based on the sources.
-DEST_FILES = SOURCES.map { |f| destination f }
+DEST_FILES = SOURCES.map { |f| destination f }.compact
 # Add destination files to the CLOBBER list for cleanup.
 CLOBBER.include(DEST_FILES)
 

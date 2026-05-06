@@ -13,5 +13,5 @@ There are no required environment variables. Optional overrides:
   markers. Default:
   `$XDG_STATE_HOME/codex/camillo` or `~/.local/state/codex/camillo`
 
-Install the dotfiles so `~/.codex/config.toml` and `~/.codex/camillo`
+Run `rake links` so `~/.codex/config.toml` and `~/.codex/skills/camillo`
 are linked into place, then restart Codex.
