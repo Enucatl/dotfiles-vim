@@ -1,6 +1,6 @@
 ---
 name: camillo
-description: Recall and preserve Camillo memory for substantial coding, debugging, planning, reviews, architecture decisions, project context recall, remembered preferences, durable lessons, corrections, and constraints, without requiring the user to mention Camillo or memory MCP explicitly.
+description: Use Camillo memory for substantial or context-sensitive work where prior project knowledge, user preferences, durable constraints, corrections, runbooks, or architecture decisions could change the answer. At the start of coding, debugging, planning, reviews, architecture work, or project-context questions, recall relevant memories for the current repository namespace. At the end, save only reusable knowledge that should affect future sessions. Skip for trivial one-off commands, simple factual answers, or tasks where remembered context cannot materially help.
 ---
 
 # Camillo Memory

@@ -30,6 +30,11 @@ SOURCE_FOLDERS = Dir.glob([
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
 # Define the output folder as the user's home directory.
 OUTPUT_FOLDER = ENV['HOME']
+# Codex skills can fail to load when skill files are symlinks, so copy this
+# skill into place while keeping the rest of the dotfiles symlinked.
+COPY_FILES = Dir.glob([
+  'dotfiles/codex/skills/camillo/**/*'
+]).select { |f| File.file?(f) }
 
 # Define a method to determine the destination of a file based on its type.
 # files in the bin folder are linked to ~/bin
@@ -60,8 +65,13 @@ SOURCES.each do |source_file|
   file destination_file => source_file do
     # Create the destination folder if it doesn't exist.
     mkdir_p destination_file.pathmap('%d')
-    # Create a symbolic link in the home folder.
-    sh "ln -sb #{Pathname(source_file).realpath} #{destination_file}"
+    if COPY_FILES.include?(source_file)
+      # Copy files that consumers need to see as regular files.
+      cp source_file, destination_file
+    else
+      # Create a symbolic link in the home folder.
+      sh "ln -sb #{Pathname(source_file).realpath} #{destination_file}"
+    end
   end
 end
 
