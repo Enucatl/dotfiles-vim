@@ -7,7 +7,7 @@ check_for_update_on_startup = false
 commit_attribution = ""
 
 [features]
-codex_hooks = true
+hooks = true
 
 [hooks]
 
