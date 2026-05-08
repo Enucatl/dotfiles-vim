@@ -23,6 +23,15 @@ type = "command"
 command = 'python3 "$HOME/.codex/skills/camillo/camillo_memory.py"'
 timeout = 5
 
+[hooks.state]
+
+[hooks.state."/home/user/.codex/config.toml:stop:0:0"]
+enabled = false
+trusted_hash = "sha256:71a8b7bf0c56030234f64dc2766ebea285999d5e75ae49b506bf76aa86315e4e"
+
+[hooks.state."/home/user/.codex/config.toml:user_prompt_submit:0:0"]
+trusted_hash = "sha256:babe17573bad3f0c693ecb8bda7c3a6ccc1ca6f9afad24884a79197141584ae0"
+
 [model_providers.ollama-complex]
 name = "ollama"
 base_url = "http://complex.home.arpa:8111/v1"
