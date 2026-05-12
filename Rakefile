@@ -18,6 +18,7 @@ require 'pathname'
 SOURCE_FILES = Dir.glob([
   'bin/*',
   'dotfiles/*',
+  'dotfiles/config/*',
   'dotfiles/gnupg/*',
   'dotfiles/ssh/*',
   'dotfiles/codex/**/*'
@@ -41,15 +42,17 @@ COPY_FILES = Dir.glob([
 # files in the dotfiles folder are linked to ~ and prefixed with a dot .
 # example: dotfiles/bashrc -> ~/.bashrc
 def destination(file_name)
-  if Pathname(file_name).each_filename.first == 'bin'
+  parts = Pathname(file_name).each_filename.to_a
+
+  if parts.first == 'bin'
     File.join(OUTPUT_FOLDER, file_name)
-  elsif Pathname(file_name).each_filename.first == 'dotfiles'
+  elsif parts.first == 'dotfiles'
     File.join(OUTPUT_FOLDER, file_name.pathmap('%{^dotfiles/,.}p'))
   end
 end
 
 # Define the destination files based on the sources.
-DEST_FILES = SOURCES.map { |f| destination f }.compact
+DEST_FILES = SOURCES.map { |f| destination f }.compact.uniq
 # Add destination files to the CLOBBER list for cleanup.
 CLOBBER.include(DEST_FILES)
 

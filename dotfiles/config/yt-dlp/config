@@ -1,0 +1,13 @@
+# Always extract audio as opus at quality 0.
+-x
+--audio-format opus
+--audio-quality 0
+
+# Preserve file modification times.
+--mtime
+
+# Save all videos under Downloads.
+-o ~/Downloads/%(title)s.%(ext)s
+
+# Use Firefox cookies.
+--cookies-from-browser firefox
