@@ -62,7 +62,7 @@ trust_level = "trusted"
 [projects."/export/docker/crabberbot"]
 trust_level = "trusted"
 
-[projects."/export/docker/duplicati"]
+[projects."/export/docker/backrest"]
 trust_level = "trusted"
 
 [projects."/export/docker/echo-server"]
@@ -143,7 +143,7 @@ trust_level = "trusted"
 [projects."/opt/docker/crabberbot"]
 trust_level = "trusted"
 
-[projects."/opt/docker/duplicati"]
+[projects."/opt/docker/backrest"]
 trust_level = "trusted"
 
 [projects."/opt/docker/echo-server"]
