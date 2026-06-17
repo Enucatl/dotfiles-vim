@@ -224,6 +224,9 @@ trust_level = "trusted"
 [projects."/home/user/code/yt-dlp"]
 trust_level = "trusted"
 
+[projects."/home/user/Downloads"]
+trust_level = "trusted"
+
 [notice]
 hide_full_access_warning = true
 
@@ -241,3 +244,9 @@ url = "https://developers.openai.com/mcp"
 
 [mcp_servers.camillo]
 url = "https://camillo.docker.home.arpa/mcp/"
+
+[marketplaces.ponytail]
+last_updated = "2026-06-17T11:04:03Z"
+last_revision = "45f7d2f83fb430a65fd512a98ad7b14d79e06636"
+source_type = "git"
+source = "https://github.com/DietrichGebert/ponytail.git"

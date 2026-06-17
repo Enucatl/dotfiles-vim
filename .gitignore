@@ -1,3 +1,4 @@
 .net*
-dotfiles/config/lvim/lazy-lock.json
+dotfiles/config/lvim/
+dotfiles/config/nvim/lazy-lock.json
 repomix-output.xml
