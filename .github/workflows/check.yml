@@ -1,0 +1,16 @@
+name: Check
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - run: shellcheck --severity=warning --shell=bash --exclude=SC1090,SC1091 bin/* dotfiles/bashrc dotfiles/bash_aliases dotfiles/bash_completion
+      - run: test/telegram-notify.sh
+      - run: ruby -c Rakefile
+      - run: |
+          curl -fsSL https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz | tar xz
+          XDG_DATA_HOME="$(mktemp -d)" nvim-linux-x86_64/bin/nvim --headless -u dotfiles/config/nvim/init.lua +qa
