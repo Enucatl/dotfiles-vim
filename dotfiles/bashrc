@@ -90,9 +90,9 @@ fi
 
 # append git output when inside a git repo
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;38m\]\A\[\033[00m\] \[\033[0;36m\]\u@\h\[\033[00m\]:\[\033[1;36m\]\w\[\033[00m\]\[\033[2;36m\]`__git_ps1 || true`\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;38m\]\A\[\033[00m\] \[\033[0;36m\]\u@\h\[\033[00m\]:\[\033[1;36m\]\w\[\033[00m\]\[\033[2;36m\]$(__git_ps1 || true)\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\A \u@\h:\w`__git_ps1 || true`\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\A \u@\h:\w$(__git_ps1 || true)\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -107,7 +107,7 @@ fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    eval "`dircolors -b`"
+    eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -124,7 +124,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export LD_LIBRARY_PATH=/usr/lib/:/usr/local/lib:$HOME/lib:$LD_LIBRARY_PATH
 export EDITOR=vi
 export VISUAL=vi
 
@@ -133,9 +132,6 @@ shopt -s extglob
 shopt -s cmdhist
 set -o vi
 set -o ignoreeof
-
-#Python use ubuntu CA bundle instead of its own
-export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 ### Add for rust cargo
 if [ -d ~/.cargo/bin ]; then
@@ -157,10 +153,6 @@ if [ -f ~/bin/func_mcd ]; then
     source ~/bin/func_mcd
 fi
 
-if [ -f ~/bin/func_cd ]; then
-    source ~/bin/func_cd
-fi
-
 if [ -f /etc/profile.d/puppet-agent.sh ]; then
     source /etc/profile.d/puppet-agent.sh
 fi
@@ -176,7 +168,8 @@ export NVM_DIR="$HOME/.nvm"
 export VAULT_ADDR=https://hcv.home.arpa:8200
 
 #recommended by man gpg-agent
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 #RUBY rvm
 if [ -d ~/.rvm/ ]; then

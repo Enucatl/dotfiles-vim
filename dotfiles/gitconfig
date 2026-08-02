@@ -16,7 +16,6 @@ graph = log --all --graph --decorate --oneline
 ignore = "!gi() { for template in \"$@\"; do echo \"# Downloading .gitignore for $template...\"; curl -fsL \"https://raw.githubusercontent.com/github/gitignore/main/$template.gitignore\"; done; }; gi"
 lg = log --color --graph --pretty=format:'%Cred%h %G?%Creset  %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ours = "!f() { git checkout --ours $@ && git add $@; }; f"
-pullupstream = !"git fetch origin --verbose; git fetch upstream --verbose; git merge --strategy-option theirs upstream/master"
 s = status --short --branch
 theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 unstage = reset HEAD

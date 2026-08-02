@@ -73,7 +73,7 @@ SOURCES.each do |source_file|
       cp source_file, destination_file
     else
       # Create a symbolic link in the home folder.
-      sh "ln -sb #{Pathname(source_file).realpath} #{destination_file}"
+      sh 'ln', '-sb', Pathname(source_file).realpath.to_s, destination_file
     end
   end
 end

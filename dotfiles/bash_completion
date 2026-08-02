@@ -1,5 +1,4 @@
-if [ -d ~/.bash_completion.d ]; then
-    for f in ~/.bash_completion.d/*; do
-        source $f
-    done
-fi
+# shellcheck shell=bash
+while IFS= read -r f; do
+    source "$f"
+done < <(compgen -G "$HOME/.bash_completion.d/*")

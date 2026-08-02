@@ -17,4 +17,4 @@ echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_ed25519.
 ```
 
 # Neovim
-Configured with https://github.com/LunarVim/LunarVim
+Configured directly in `~/.config/nvim/init.lua`.
