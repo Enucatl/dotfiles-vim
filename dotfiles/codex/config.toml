@@ -1,5 +1,5 @@
 approvals_reviewer = "user"
-model = "gpt-5.4-mini"
+model = "gpt-5.6-luna"
 model_reasoning_effort = "medium"
 plan_mode_reasoning_effort = "medium"
 analytics.enabled = false
@@ -232,6 +232,7 @@ hide_full_access_warning = true
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
+"gpt-5.4-mini" = "gpt-5.6-luna"
 
 [tui]
 theme = "solarized-light"
@@ -246,7 +247,7 @@ url = "https://developers.openai.com/mcp"
 url = "https://camillo.docker.home.arpa/mcp/"
 
 [marketplaces.ponytail]
-last_updated = "2026-06-17T11:04:03Z"
-last_revision = "45f7d2f83fb430a65fd512a98ad7b14d79e06636"
+last_updated = "2026-08-07T11:22:19Z"
+last_revision = "16f29800fd2681bdf24f3eb4ccffe38be3baec6b"
 source_type = "git"
 source = "https://github.com/DietrichGebert/ponytail.git"
