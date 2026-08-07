@@ -84,7 +84,7 @@ def post_completed_turn(payload: dict[str, object]) -> None:
         payload.get("session_id") or pending.get("session_id") or ""
     ).strip()
     body = {
-        "namespace": resolve_namespace(str(payload.get("cwd") or ""), pending),
+        "workspace": resolve_workspace(str(payload.get("cwd") or ""), pending),
         "session_id": session_id or None,
         "user_msg": user_prompt,
         "ai_msg": assistant,
@@ -128,17 +128,18 @@ def state_root() -> Path:
     return Path.home() / ".local" / "state" / "codex" / "camillo"
 
 
-def resolve_namespace(cwd: str, pending: dict[str, object]) -> str:
-    override = os.environ.get("CAMILLO_MEMORY_NAMESPACE", "").strip()
+def resolve_workspace(cwd: str, pending: dict[str, object]) -> str:
+    """Derive an optional workspace hint from an override or directory root."""
+    override = os.environ.get("CAMILLO_MEMORY_WORKSPACE", "").strip()
     if override:
         return override
 
     git_root = find_git_root(cwd or str(pending.get("cwd") or ""))
     if git_root is not None:
-        return f"repo:{git_root.name}"
+        return git_root.name
 
     fallback = Path(cwd).expanduser()
-    return f"repo:{fallback.name or 'unknown'}"
+    return fallback.name or "unknown"
 
 
 def find_git_root(cwd: str) -> Path | None:
