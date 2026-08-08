@@ -6,7 +6,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: sudo apt-get update && sudo apt-get install -y shellcheck
       - run: shellcheck --severity=warning --shell=bash --exclude=SC1090,SC1091 bin/* dotfiles/bashrc dotfiles/bash_aliases dotfiles/bash_completion
       - run: test/telegram-notify.sh
