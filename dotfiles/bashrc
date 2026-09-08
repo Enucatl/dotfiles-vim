@@ -7,6 +7,12 @@ export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Cursor agent replays `set [+-]o` into interactive bash; keep it out of eternal history.
+if [[ -n "$CURSOR_AGENT" ]]; then
+  unset HISTFILE
+  return
+fi
+
 # Set the terminal window title.
 # Inspired by
 # https://stackoverflow.com/questions/71459823/how-to-change-the-terminal-title-to-currently-running-process
