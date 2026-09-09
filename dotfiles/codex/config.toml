@@ -14,23 +14,23 @@ hooks = true
 [[hooks.UserPromptSubmit]]
 [[hooks.UserPromptSubmit.hooks]]
 type = "command"
-command = 'python3 "$HOME/.codex/skills/camillo/camillo_memory.py"'
+command = 'python3 "$HOME/.agents/skills/camillo/camillo_memory.py"'
 timeout = 5
 
 [[hooks.Stop]]
 [[hooks.Stop.hooks]]
 type = "command"
-command = 'python3 "$HOME/.codex/skills/camillo/camillo_memory.py"'
+command = 'python3 "$HOME/.agents/skills/camillo/camillo_memory.py"'
 timeout = 5
 
 [hooks.state]
 
 [hooks.state."/home/user/.codex/config.toml:stop:0:0"]
 enabled = false
-trusted_hash = "sha256:71a8b7bf0c56030234f64dc2766ebea285999d5e75ae49b506bf76aa86315e4e"
+trusted_hash = "sha256:0f4f7a3b3f8f47bbfc58d388685737fa435ce6497e8abc53bf4731f469be071a"
 
 [hooks.state."/home/user/.codex/config.toml:user_prompt_submit:0:0"]
-trusted_hash = "sha256:babe17573bad3f0c693ecb8bda7c3a6ccc1ca6f9afad24884a79197141584ae0"
+trusted_hash = "sha256:868ae9ad1008420391b2523ad4ddd47dccb11f88774f10660d6c12bd0748e928"
 
 [model_providers.ollama-complex]
 name = "ollama"

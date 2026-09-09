@@ -21,7 +21,8 @@ SOURCE_FILES = Dir.glob([
   'dotfiles/config/*',
   'dotfiles/gnupg/*',
   'dotfiles/ssh/*',
-  'dotfiles/codex/**/*'
+  'dotfiles/codex/**/*',
+  'dotfiles/agents/**/*'
 ]).select { |f| File.file?(f) }
 # Define source folders that need special handling (auto-discovered).
 SOURCE_FOLDERS = Dir.glob([
@@ -31,10 +32,10 @@ SOURCE_FOLDERS = Dir.glob([
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
 # Define the output folder as the user's home directory.
 OUTPUT_FOLDER = ENV['HOME']
-# Codex skills can fail to load when skill files are symlinks, so copy this
-# skill into place while keeping the rest of the dotfiles symlinked.
+# Keep Camillo files regular for compatibility with older Codex loaders.
+LEGACY_CAMILLO_DIR = File.join(OUTPUT_FOLDER, '.codex', 'skills', 'camillo')
 COPY_FILES = Dir.glob([
-  'dotfiles/codex/skills/camillo/**/*'
+  'dotfiles/agents/skills/camillo/**/*'
 ]).select { |f| File.file?(f) }
 
 # Define a method to determine the destination of a file based on its type.
@@ -60,7 +61,9 @@ CLOBBER.include(DEST_FILES)
 task default: :links
 
 desc 'make the links in the home folder'
-task links: DEST_FILES
+task links: DEST_FILES do
+  rm_rf LEGACY_CAMILLO_DIR if File.exist?(LEGACY_CAMILLO_DIR) || File.symlink?(LEGACY_CAMILLO_DIR)
+end
 
 # Define single tasks for each source file to create symbolic links.
 SOURCES.each do |source_file|
