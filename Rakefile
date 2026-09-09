@@ -14,6 +14,10 @@ require 'rake'
 require 'rake/clean'
 require 'pathname'
 
+SKILL_FOLDERS = Dir.glob([
+  'dotfiles/agents/skills/*'
+]).select { |f| File.directory?(f) }
+
 # Define the source files by globbing bin and dotfiles directories.
 SOURCE_FILES = Dir.glob([
   'bin/*',
@@ -23,7 +27,9 @@ SOURCE_FILES = Dir.glob([
   'dotfiles/ssh/*',
   'dotfiles/codex/**/*',
   'dotfiles/agents/**/*'
-]).select { |f| File.file?(f) }
+]).select do |f|
+  File.file?(f) && SKILL_FOLDERS.none? { |folder| f.start_with?("#{folder}/") }
+end
 # Define source folders that need special handling (auto-discovered).
 SOURCE_FOLDERS = Dir.glob([
   'dotfiles/config/*'
@@ -32,11 +38,7 @@ SOURCE_FOLDERS = Dir.glob([
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
 # Define the output folder as the user's home directory.
 OUTPUT_FOLDER = ENV['HOME']
-# Keep Camillo files regular for compatibility with older Codex loaders.
 LEGACY_CAMILLO_DIR = File.join(OUTPUT_FOLDER, '.codex', 'skills', 'camillo')
-COPY_FILES = Dir.glob([
-  'dotfiles/agents/skills/camillo/**/*'
-]).select { |f| File.file?(f) }
 
 # Define a method to determine the destination of a file based on its type.
 # files in the bin folder are linked to ~/bin
@@ -54,8 +56,9 @@ end
 
 # Define the destination files based on the sources.
 DEST_FILES = SOURCES.map { |f| destination f }.compact.uniq
+SKILL_DESTINATIONS = SKILL_FOLDERS.map { |f| destination f }.compact.uniq
 # Add destination files to the CLOBBER list for cleanup.
-CLOBBER.include(DEST_FILES)
+CLOBBER.include(DEST_FILES + SKILL_DESTINATIONS)
 
 # Define the default task to create symbolic links in the home folder.
 task default: :links
@@ -63,6 +66,16 @@ task default: :links
 desc 'make the links in the home folder'
 task links: DEST_FILES do
   rm_rf LEGACY_CAMILLO_DIR if File.exist?(LEGACY_CAMILLO_DIR) || File.symlink?(LEGACY_CAMILLO_DIR)
+
+  SKILL_FOLDERS.each do |source_folder|
+    destination_folder = destination source_folder
+    source_path = Pathname(source_folder).realpath.to_s
+    mkdir_p destination_folder.pathmap('%d')
+    next if File.symlink?(destination_folder) && File.readlink(destination_folder) == source_path
+
+    rm_rf destination_folder if File.exist?(destination_folder) || File.symlink?(destination_folder)
+    sh 'ln', '-s', source_path, destination_folder
+  end
 end
 
 # Define single tasks for each source file to create symbolic links.
@@ -71,13 +84,8 @@ SOURCES.each do |source_file|
   file destination_file => source_file do
     # Create the destination folder if it doesn't exist.
     mkdir_p destination_file.pathmap('%d')
-    if COPY_FILES.include?(source_file)
-      # Copy files that consumers need to see as regular files.
-      cp source_file, destination_file
-    else
-      # Create a symbolic link in the home folder.
-      sh 'ln', '-sb', Pathname(source_file).realpath.to_s, destination_file
-    end
+    # Create a symbolic link in the home folder.
+    sh 'ln', '-sb', Pathname(source_file).realpath.to_s, destination_file
   end
 end
 
