@@ -31,17 +31,9 @@
 - After relevant checks pass, broaden or repeat testing only when failures,
   further edits, or unresolved concerns justify it.
 
-## Delegation
-
-- Do not use subagents unless the user explicitly requests delegation.
-
 ## Communication
 
 - Lead with the main point and use clear, concise paragraphs.
 - Use lists only for genuinely parallel, sequential, or comparative material.
 - Prefer plain language, precise verbs, and active voice. Avoid canned
   transitions, unnecessary headings, and repeated summaries.
-
-## Git Commits
-
-- Create a commit only when the user requests one.
