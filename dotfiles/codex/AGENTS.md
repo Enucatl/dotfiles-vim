@@ -45,7 +45,3 @@
 ## Git Commits
 
 - Create a commit only when the user requests one.
-- Use a Google-style subject: a single imperative line of at most 50
-  characters.
-- Explain what changed and why in the body. Prefer intent, boundaries, and
-  operational tradeoffs over a file inventory.
