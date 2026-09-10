@@ -49,9 +49,3 @@
   characters.
 - Explain what changed and why in the body. Prefer intent, boundaries, and
   operational tradeoffs over a file inventory.
-
-## Python
-
-- Use type annotations.
-- Use pytest for tests.
-- Before committing, run `uv run ruff format .` and the relevant pytest suite.

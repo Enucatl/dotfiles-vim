@@ -1,0 +1,3 @@
+interface:
+  display_name: "Python Code"
+  short_description: "Apply uv conventions to Python code"
