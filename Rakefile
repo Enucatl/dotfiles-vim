@@ -38,7 +38,6 @@ SOURCE_FOLDERS = Dir.glob([
 SOURCES = SOURCE_FILES + SOURCE_FOLDERS
 # Define the output folder as the user's home directory.
 OUTPUT_FOLDER = ENV['HOME']
-LEGACY_CAMILLO_DIR = File.join(OUTPUT_FOLDER, '.codex', 'skills', 'camillo')
 
 # Define a method to determine the destination of a file based on its type.
 # files in the bin folder are linked to ~/bin
@@ -65,8 +64,6 @@ task default: :links
 
 desc 'make the links in the home folder'
 task links: DEST_FILES do
-  rm_rf LEGACY_CAMILLO_DIR if File.exist?(LEGACY_CAMILLO_DIR) || File.symlink?(LEGACY_CAMILLO_DIR)
-
   SKILL_FOLDERS.each do |source_folder|
     destination_folder = destination source_folder
     source_path = Pathname(source_folder).realpath.to_s
