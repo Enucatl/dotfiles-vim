@@ -6,6 +6,10 @@ analytics.enabled = false
 check_for_update_on_startup = false
 commit_attribution = ""
 
+[features.code_mode]
+enabled = true
+default_exec_yield_time_ms = 600000
+
 [model_providers.ollama-complex]
 name = "ollama"
 base_url = "http://complex.home.arpa:8111/v1"

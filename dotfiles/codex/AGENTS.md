@@ -37,3 +37,15 @@
 - Use lists only for genuinely parallel, sequential, or comparative material.
 - Prefer plain language, precise verbs, and active voice. Avoid canned
   transitions, unnecessary headings, and repeated summaries.
+
+## Long-Running Operations
+
+- For long-running commands, builds, tests, installs, deployments, and MCP
+  operations, prefer blocking for a long enough interval rather than repeatedly
+  polling.
+- When using Code Mode, set a long `@exec` `yield_time_ms` for commands expected
+  to take more than a few seconds.
+- If a process remains running after yielding, use the longest practical wait
+  interval rather than repeated short waits.
+- Avoid 1-second or 10-second polling loops unless rapid feedback is genuinely
+  required.
