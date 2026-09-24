@@ -40,12 +40,15 @@
 
 ## Long-Running Operations
 
-- For long-running commands, builds, tests, installs, deployments, and MCP
-  operations, prefer blocking for a long enough interval rather than repeatedly
-  polling.
-- When using Code Mode, set a long `@exec` `yield_time_ms` for commands expected
-  to take more than a few seconds.
-- If a process remains running after yielding, use the longest practical wait
-  interval rather than repeated short waits.
-- Avoid 1-second or 10-second polling loops unless rapid feedback is genuinely
-  required.
+- Any noninteractive shell command reasonably expected to take longer than 10
+  seconds must use the `wake-run` skill. This includes tests, GPU evaluations,
+  builds, benchmarks, installs, and deployments. Do not poll its status or log
+  from the Codex thread.
+- Only the main Codex thread may launch `wake-run`. A subagent that needs a long
+  command must finish its code changes and fast checks, then report the exact
+  finalized command and necessary context to the main thread for launch.
+- Finalize the command before launching it, then follow the installed
+  `wake-run` skill's launch and continuation instructions. Resume the task when
+  its completion notification arrives.
+- For MCP operations and interactive commands that `wake-run` cannot launch,
+  use the longest practical blocking wait instead of repeated status polling.
