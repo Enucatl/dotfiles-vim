@@ -10,6 +10,12 @@ commit_attribution = ""
 enabled = true
 default_exec_yield_time_ms = 600000
 
+[features.multi_agent_v2]
+enabled = true
+min_wait_timeout_ms = 1_500_000
+default_wait_timeout_ms = 1_500_000
+max_wait_timeout_ms = 3_600_000
+
 [model_providers.ollama-complex]
 name = "ollama"
 base_url = "http://complex.home.arpa:8111/v1"
