@@ -40,13 +40,14 @@
 
 ## Long-Running Operations
 
-- Any noninteractive shell command reasonably expected to take longer than 10
-  seconds must use the `wake-run` skill. This includes tests, GPU evaluations,
-  builds, benchmarks, installs, and deployments. Do not poll its status or log
-  from the Codex thread.
-- Only the main Codex thread may launch `wake-run`. A subagent that needs a long
-  command must finish its code changes and fast checks, then report the exact
-  finalized command and necessary context to the main thread for launch.
+- In the main Codex thread, any noninteractive shell command reasonably expected
+  to take longer than 10 seconds must use the `wake-run` skill. This includes
+  tests, GPU evaluations, builds, benchmarks, installs, and deployments. Do not
+  poll its status or log from the Codex thread.
+- Subagents must not launch `wake-run`. They run their own long commands with a
+  long blocking tool wait and report the results to the main thread. If a tool
+  yields before the command exits, continue waiting on that session with the
+  longest practical interval. Do not hand off a command solely due to duration.
 - Finalize the command before launching it, then follow the installed
   `wake-run` skill's launch and continuation instructions. Resume the task when
   its completion notification arrives.
