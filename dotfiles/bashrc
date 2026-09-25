@@ -3,7 +3,8 @@
 # for examples
 
 export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+ssh-add -l >/dev/null 2>&1
+[[ $? -eq 2 ]] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -14,8 +15,8 @@ if [[ -n "$CURSOR_AGENT" ]]; then
   return
 fi
 
-# Termux has no private key; unlock this host's key when its agent is empty.
-if [[ -n "$SSH_TTY" ]]; then
+# Termux has no private key; unlock this host's key in its local agent when empty.
+if [[ -n "$SSH_TTY" && "$SSH_AUTH_SOCK" == "$XDG_RUNTIME_DIR/gcr/ssh" ]]; then
   ssh-add -l >/dev/null 2>&1
   [[ $? -eq 1 ]] && ssh-add ~/.ssh/id_ed25519
 fi
