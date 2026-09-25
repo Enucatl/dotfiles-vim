@@ -205,6 +205,9 @@ trust_level = "trusted"
 [projects."/home/user/Downloads"]
 trust_level = "trusted"
 
+[projects."/home/user/qw38"]
+trust_level = "trusted"
+
 [notice]
 hide_full_access_warning = true
 
