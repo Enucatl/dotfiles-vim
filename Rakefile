@@ -25,6 +25,7 @@ SOURCE_FILES = Dir.glob([
   'dotfiles/config/*',
   'dotfiles/gnupg/*',
   'dotfiles/ssh/*',
+  'dotfiles/claude/**/*',
   'dotfiles/codex/**/*',
   'dotfiles/agents/**/*'
 ]).select do |f|

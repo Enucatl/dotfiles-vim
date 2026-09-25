@@ -1,0 +1,9 @@
+{
+  "model": "haiku",
+  "effortLevel": "medium",
+  "skipDangerousModePermissionPrompt": true,
+  "attribution": {
+    "commit": "",
+    "sessionUrl": false
+  }
+}
