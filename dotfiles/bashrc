@@ -3,6 +3,7 @@
 # for examples
 
 export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
