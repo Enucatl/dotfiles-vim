@@ -14,6 +14,12 @@ if [[ -n "$CURSOR_AGENT" ]]; then
   return
 fi
 
+# Termux has no private key; unlock this host's key when its agent is empty.
+if [[ -n "$SSH_TTY" ]]; then
+  ssh-add -l >/dev/null 2>&1
+  [[ $? -eq 1 ]] && ssh-add ~/.ssh/id_ed25519
+fi
+
 # Set the terminal window title.
 # Inspired by
 # https://stackoverflow.com/questions/71459823/how-to-change-the-terminal-title-to-currently-running-process
