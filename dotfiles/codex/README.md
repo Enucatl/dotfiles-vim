@@ -12,3 +12,6 @@ directly. The task also links the compatible `archify`, `git-commit-message`,
 `homelab-logs`, and `python-code` skills from `~/.agents/skills` into
 `~/.claude/skills` when installed. `wake-run` stays Codex-only because it
 depends on Codex's task queue.
+
+Puppet also installs the Ponytail Claude Code plugin from the same delayed
+release selected for Codex; `~/.claude/settings.json` enables it globally.

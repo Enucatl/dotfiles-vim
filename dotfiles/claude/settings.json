@@ -1,9 +1,21 @@
 {
-  "model": "haiku",
-  "effortLevel": "medium",
-  "skipDangerousModePermissionPrompt": true,
   "attribution": {
     "commit": "",
     "sessionUrl": false
-  }
+  },
+  "model": "haiku",
+  "enabledPlugins": {
+    "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "directory",
+        "path": "/home/user/.local/share/claude/ponytail-marketplace"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "light"
 }
