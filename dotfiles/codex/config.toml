@@ -97,6 +97,21 @@ trust_level = "trusted"
 [projects."/export/docker/unifi-network-application"]
 trust_level = "trusted"
 
+[projects."/export/docker/barbero-scripts"]
+trust_level = "trusted"
+
+[projects."/export/docker/beszel"]
+trust_level = "trusted"
+
+[projects."/export/docker/browser-use"]
+trust_level = "trusted"
+
+[projects."/export/docker/camillo"]
+trust_level = "trusted"
+
+[projects."/export/docker/shared-inference"]
+trust_level = "trusted"
+
 [projects."/opt/complex"]
 trust_level = "trusted"
 
@@ -175,7 +190,25 @@ trust_level = "trusted"
 [projects."/opt/docker/unifi-network-application"]
 trust_level = "trusted"
 
+[projects."/opt/docker/barbero-scripts"]
+trust_level = "trusted"
+
+[projects."/opt/docker/beszel"]
+trust_level = "trusted"
+
+[projects."/opt/docker/browser-use"]
+trust_level = "trusted"
+
+[projects."/opt/docker/camillo"]
+trust_level = "trusted"
+
+[projects."/opt/docker/shared-inference"]
+trust_level = "trusted"
+
 [projects."/home/user"]
+trust_level = "trusted"
+
+[projects."/home/user/code/.claude"]
 trust_level = "trusted"
 
 [projects."/home/user/code/dogtag"]
@@ -184,10 +217,25 @@ trust_level = "trusted"
 [projects."/home/user/code/dotfiles-vim"]
 trust_level = "trusted"
 
+[projects."/home/user/code/enucatl-name-story"]
+trust_level = "trusted"
+
+[projects."/home/user/code/ilpedante-mirror"]
+trust_level = "trusted"
+
 [projects."/home/user/code/proton-bridge"]
 trust_level = "trusted"
 
 [projects."/home/user/code/rmview"]
+trust_level = "trusted"
+
+[projects."/home/user/code/puppet-freeipa"]
+trust_level = "trusted"
+
+[projects."/home/user/code/td"]
+trust_level = "trusted"
+
+[projects."/home/user/code/telegram-ai"]
 trust_level = "trusted"
 
 [projects."/home/user/code/telegram-bot-api"]
