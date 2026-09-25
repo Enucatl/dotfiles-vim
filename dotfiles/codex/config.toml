@@ -273,7 +273,8 @@ theme = "solarized-light"
 url = "https://developers.openai.com/mcp"
 
 [marketplaces.ponytail]
-last_updated = "2026-08-07T11:22:19Z"
-last_revision = "16f29800fd2681bdf24f3eb4ccffe38be3baec6b"
-source_type = "git"
-source = "https://github.com/DietrichGebert/ponytail.git"
+source_type = "local"
+source = "/home/user/.local/share/codex/ponytail-marketplace"
+
+[plugins."ponytail@ponytail"]
+enabled = true
