@@ -7,9 +7,9 @@ description: Query centralized Loki logs for homelab infrastructure such as Prox
 
 Use the centralized Loki instance before attempting to read local logs:
 
-`https://loki.docker.home.arpa/loki/api/v1/query_range`
+`https://loki-read.docker.home.arpa/loki/api/v1/query_range`
 
-Query it directly with LogQL over HTTP, normally using `curl --fail --silent --show-error --get` and `--data-urlencode` for query parameters. Bound every query to a relevant time range and set a reasonable `limit`; use `direction=backward` when recent events are most useful.
+Query it directly with LogQL over HTTP, normally using `curl --fail --silent --show-error --get --cert /home/user/.config/home-arpa/mtls/codex.crt --key /home/user/.config/home-arpa/mtls/codex.key` and `--data-urlencode` for query parameters. Puppet manages the client certificate. Bound every query to a relevant time range and set a reasonable `limit`; use `direction=backward` when recent events are most useful.
 
 ## Known labels
 
