@@ -9,6 +9,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 import uuid
 from pathlib import Path
 
@@ -198,10 +199,12 @@ def detached_popen_kwargs() -> dict[str, object]:
 
 
 def arm_watcher(
-    *, thread_id: str, command: str, cwd: Path, log_dir: Path, codex_bin: str
+    *, thread_id: str, command: str, cwd: Path, log_dir: Path | None, codex_bin: str
 ) -> dict[str, object]:
     resolved_codex = preflight_codex_queue(codex_bin)
     run_id = uuid.uuid4().hex[:12]
+    if log_dir is None:
+        log_dir = Path(tempfile.mkdtemp(prefix="codex-wake-run-"))
     log_file = (log_dir / f"{run_id}.log").resolve()
     log_file.parent.mkdir(parents=True, exist_ok=True)
     worker_args = [
@@ -239,7 +242,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--cwd", default=os.getcwd(), help="Working directory for the command."
     )
     parser.add_argument(
-        "--log-dir", help="Directory for run logs; defaults to <cwd>/.codex-wake-run."
+        "--log-dir",
+        help="Directory for run logs; defaults to a private system temp directory.",
     )
     parser.add_argument("--codex-bin", default="codex", help="Codex CLI executable.")
     parser.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)
@@ -266,11 +270,7 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(
             "CODEX_THREAD_ID is missing; run wake-run from a Codex shell command."
         )
-    log_dir = (
-        Path(args.log_dir).expanduser().resolve()
-        if args.log_dir
-        else cwd / ".codex-wake-run"
-    )
+    log_dir = Path(args.log_dir).expanduser().resolve() if args.log_dir else None
     result = arm_watcher(
         thread_id=thread_id,
         command=args.command,

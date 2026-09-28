@@ -26,6 +26,35 @@ def test_wake_message_contains_result_without_agent_instructions() -> None:
     )
 
 
+def test_default_log_stays_outside_project(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Place default run artifacts in a private system temp directory."""
+    project = tmp_path / "project"
+    project.mkdir()
+    monkeypatch.setattr(wake_run.tempfile, "tempdir", str(tmp_path))
+    monkeypatch.setattr(wake_run, "preflight_codex_queue", lambda _: "codex")
+
+    class Worker:
+        pid = 123
+
+    monkeypatch.setattr(wake_run.subprocess, "Popen", lambda *args, **kwargs: Worker())
+    result = wake_run.arm_watcher(
+        thread_id="thread",
+        command="true",
+        cwd=project,
+        log_dir=None,
+        codex_bin="codex",
+    )
+
+    log_dir = Path(result["log_file"]).parent
+    assert log_dir.parent == tmp_path
+    assert log_dir.name.startswith("codex-wake-run-")
+    assert list(project.iterdir()) == []
+    if os.name != "nt":
+        assert log_dir.stat().st_mode & 0o077 == 0
+
+
 @pytest.mark.skipif(os.name == "nt", reason="POSIX shell behavior")
 def test_posix_command_uses_sh_even_when_user_shell_differs(
     monkeypatch: pytest.MonkeyPatch,

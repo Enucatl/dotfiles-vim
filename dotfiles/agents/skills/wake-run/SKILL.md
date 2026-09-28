@@ -33,7 +33,7 @@ python <skill-dir>/scripts/wake_run.py --command '<exact shell command>'
 - Require a Codex CLI version that supports `codex queue`. The launcher verifies this before starting the experiment.
 - Interpret experiment commands with PowerShell on Windows and `/bin/sh` on POSIX. Do not wrap PowerShell commands in an additional `cmd.exe` layer.
 - Support Windows Codex shims, including `codex.ps1`; invoke `.ps1` shims through PowerShell rather than passing them directly to `CreateProcess`.
-- Store logs under `<cwd>/.codex-wake-run/` unless `--log-dir` is supplied.
+- Store logs in a private directory under the system temp folder unless `--log-dir` is supplied. Keep the command's working directory in the project.
 - Use one detached watcher per experiment. Parallel experiments are allowed only when the user's task actually calls for them.
 - Do not use wake-run to bypass sandboxing, approvals, or command restrictions. The background process inherits the launch environment and its permissions.
 
