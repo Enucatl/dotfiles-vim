@@ -4,5 +4,5 @@
 # Use Firefox cookies.
 --cookies-from-browser firefox
 
---js-runtimes node:/home/user/.nvm/versions/node/v26.1.0/bin/node
+--js-runtimes node
 --remote-components ejs:github
