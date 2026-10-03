@@ -3,8 +3,8 @@
 # for examples
 
 export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
-ssh-add -l >/dev/null 2>&1
-[[ $? -eq 2 ]] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+# Keep forwarded agents that contain the Git signing key; otherwise use GCR.
+ssh-add -L 2>/dev/null | grep -Fq "$(awk '{print $1, $2}' ~/.ssh/id_ed25519.pub)" || export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
