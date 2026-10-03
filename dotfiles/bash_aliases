@@ -1,6 +1,7 @@
 alias c='clear'
 alias cclear='cd && clear'
-alias codex='codex --dangerously-bypass-approvals-and-sandbox'
+# SSH sessions need their own forwarded agent environment, rather than the daemon's.
+alias codex="codex ${SSH_CONNECTION:+--no-daemon }--dangerously-bypass-approvals-and-sandbox"
 alias convert300='convert -density 300'
 alias cp='cp --interactive'
 alias df='df --human-readable --print-type'

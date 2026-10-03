@@ -3,8 +3,10 @@
 # for examples
 
 export PATH=$HOME/node_modules/.bin:$HOME/.local/bin:$HOME/bin:$PATH
-# Keep forwarded agents that contain the Git signing key; otherwise use GCR.
-ssh-add -L 2>/dev/null | grep -Fq "$(awk '{print $1, $2}' ~/.ssh/id_ed25519.pub)" || export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+# Use GCR when available if the current agent lacks the Git signing key.
+if [[ -S "$XDG_RUNTIME_DIR/gcr/ssh" ]] && ! ssh-add -L 2>/dev/null | grep -Fq "$(awk '{print $1, $2}' ~/.ssh/id_ed25519.pub)"; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
