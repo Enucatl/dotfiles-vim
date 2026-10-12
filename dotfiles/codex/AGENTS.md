@@ -58,7 +58,7 @@
 ## Long-Running Operations
 
 - In the main Codex thread, any noninteractive shell command reasonably expected
-  to take longer than 10 seconds must use the `wake-run` skill. This includes
+  to take longer than 30 seconds must use the `wake-run` skill. This includes
   tests, GPU evaluations, builds, benchmarks, installs, and deployments. Do not
   poll its status or log from the Codex thread.
 - Subagents must not launch `wake-run`. They run their own long commands with a

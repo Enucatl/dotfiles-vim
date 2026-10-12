@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import uuid
+from datetime import datetime
 from pathlib import Path
 
 WAKE_HEADER = "[Wake Run Result]"
@@ -201,6 +202,7 @@ def detached_popen_kwargs() -> dict[str, object]:
 def arm_watcher(
     *, thread_id: str, command: str, cwd: Path, log_dir: Path | None, codex_bin: str
 ) -> dict[str, object]:
+    started_at = datetime.now().astimezone().isoformat()
     resolved_codex = preflight_codex_queue(codex_bin)
     run_id = uuid.uuid4().hex[:12]
     if log_dir is None:
@@ -224,8 +226,8 @@ def arm_watcher(
     ]
     worker = subprocess.Popen(worker_args, **detached_popen_kwargs())
     return {
+        "started_at": started_at,
         "status": "armed",
-        "run_id": run_id,
         "worker_pid": worker.pid,
         "log_file": str(log_file),
     }

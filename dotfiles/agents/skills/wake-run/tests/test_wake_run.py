@@ -5,6 +5,7 @@ from __future__ import annotations
 import importlib.util
 import os
 import subprocess
+from datetime import datetime
 from pathlib import Path
 
 import pytest
@@ -47,6 +48,9 @@ def test_default_log_stays_outside_project(
         codex_bin="codex",
     )
 
+    assert list(result)[0] == "started_at"
+    assert "run_id" not in result
+    assert datetime.fromisoformat(result["started_at"]).tzinfo is not None
     log_dir = Path(result["log_file"]).parent
     assert log_dir.parent == tmp_path
     assert log_dir.name.startswith("codex-wake-run-")
