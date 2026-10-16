@@ -12,6 +12,12 @@ message. Inspect the staged diff and, when useful, recent commits in the same
 repository before drafting the message. Preserve an established repository
 convention when one exists, unless the user asks for a different style.
 
+Use simple, direct English inspired by ASD-STE100. Prefer active voice,
+familiar words, and consistent technical terms. Keep each sentence focused
+on one idea. Preserve exact code identifiers and necessary technical
+vocabulary. Do not sacrifice accuracy or natural wording to shorten a
+message.
+
 ## Subject
 
 - Keep the subject to 50 characters or fewer when possible; treat 72 characters
