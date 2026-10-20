@@ -37,6 +37,9 @@ was chosen. Avoid narrating implementation details that the diff already makes
 clear. Include relevant side effects, constraints, or trade-offs. Put issue or
 review references at the bottom when the repository uses them.
 
+Do not add AI attribution trailers such as `Assisted-by: OpenAI Codex` or
+`Co-authored-by: Codex` unless the user explicitly requests them.
+
 Return the complete proposed message in a form ready to paste into Git. Do not
 create or amend a commit unless the user explicitly requests that operation.
 
