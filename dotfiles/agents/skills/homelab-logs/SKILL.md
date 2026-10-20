@@ -7,7 +7,7 @@ description: Query centralized Loki logs for homelab infrastructure such as Prox
 
 Use the centralized Loki instance before attempting to read local logs:
 
-`https://loki-read.docker.home.arpa/loki/api/v1/query_range`
+`https://loki-read.atlas.home.arpa/loki/api/v1/query_range`
 
 Query it directly with LogQL over HTTP, normally using `curl --fail --silent --show-error --get --cert /home/user/.config/home-arpa/mtls/codex.crt --key /home/user/.config/home-arpa/mtls/codex.key` and `--data-urlencode` for query parameters. Puppet manages the client certificate. Bound every query to a relevant time range and set a reasonable `limit`; use `direction=backward` when recent events are most useful.
 
@@ -19,7 +19,7 @@ The log shippers use these labels:
 - Docker: `{job="docker", host="<host>", service_name="<compose-project>/<service>"}`. When Compose labels are unavailable, `service_name` may be the Docker container name.
 - File-based logs: `{job="varlogs", host="<host>"}`.
 
-Use the host's actual Puppet certname, such as `proxmox.home.arpa`, `proxmox-cortex.home.arpa`, or `docker.home.arpa`. If the relevant labels are uncertain, query Loki's label or stream endpoints first instead of guessing.
+Use the host's actual Puppet certname, such as `proxmox.home.arpa`, `proxmox-cortex.home.arpa`, or `atlas.home.arpa`. If the relevant labels are uncertain, query Loki's label or stream endpoints first instead of guessing.
 
 ## Query workflow
 
