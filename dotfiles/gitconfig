@@ -83,6 +83,7 @@ autoUpdate = true
 
 [safe]
 	directory = /export/complex/wolf
+	directory = /opt/docker/puppet-control-repo
 
 [status]
 branch = true
