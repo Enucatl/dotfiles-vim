@@ -18,16 +18,38 @@ WAKE_HEADER = "[Wake Run Result]"
 
 
 def build_wake_message(
-    exit_code: int | None, log_file: Path, *, launch_error: str | None = None
+    exit_code: int | None,
+    log_file: Path,
+    *,
+    started_at: str,
+    finished_at: str,
+    launch_error: str | None = None,
 ) -> str:
     """Summarize a completed run without issuing instructions to the agent."""
     status = "Completed" if exit_code == 0 and launch_error is None else "Failed"
     exit_text = str(exit_code) if exit_code is not None else "Not started"
+    elapsed = round(
+        (
+            datetime.fromisoformat(finished_at) - datetime.fromisoformat(started_at)
+        ).total_seconds()
+    )
+    if elapsed > 3600:
+        hours, remainder = divmod(elapsed, 3600)
+        minutes, seconds = divmod(remainder, 60)
+        elapsed_text = f"{hours}h {minutes}m {seconds}s"
+    elif elapsed > 60:
+        minutes, seconds = divmod(elapsed, 60)
+        elapsed_text = f"{minutes}m {seconds}s"
+    else:
+        elapsed_text = f"{elapsed}s"
     lines = [
         WAKE_HEADER,
         "",
         f"Status: {status}",
         f"Exit code: {exit_text}",
+        f"Started at: {started_at}",
+        f"Finished at: {finished_at}",
+        f"Elapsed: {elapsed_text}",
         f"Log file: {log_file}",
     ]
     if launch_error:
@@ -144,7 +166,13 @@ def queue_wakeup(thread_id: str, message: str, codex_bin: str) -> None:
 
 
 def run_worker(
-    *, thread_id: str, command: str, cwd: Path, log_file: Path, codex_bin: str
+    *,
+    thread_id: str,
+    command: str,
+    cwd: Path,
+    log_file: Path,
+    codex_bin: str,
+    started_at: str,
 ) -> int:
     log_file.parent.mkdir(parents=True, exist_ok=True)
     exit_code: int | None = None
@@ -167,7 +195,14 @@ def run_worker(
                     "utf-8", errors="replace"
                 )
             )
-    message = build_wake_message(exit_code, log_file, launch_error=launch_error)
+    finished_at = datetime.now().astimezone().isoformat()
+    message = build_wake_message(
+        exit_code,
+        log_file,
+        started_at=started_at,
+        finished_at=finished_at,
+        launch_error=launch_error,
+    )
     try:
         queue_wakeup(thread_id, message, codex_bin)
     except Exception as exc:
@@ -221,6 +256,8 @@ def arm_watcher(
         str(cwd),
         "--log-file",
         str(log_file),
+        "--started-at",
+        started_at,
         "--codex-bin",
         resolved_codex,
     ]
@@ -251,6 +288,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--thread-id", help=argparse.SUPPRESS)
     parser.add_argument("--log-file", help=argparse.SUPPRESS)
+    parser.add_argument("--started-at", help=argparse.SUPPRESS)
     return parser.parse_args(argv)
 
 
@@ -258,14 +296,17 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     cwd = Path(args.cwd).expanduser().resolve()
     if args.worker:
-        if not args.thread_id or not args.log_file:
-            raise SystemExit("worker mode requires --thread-id and --log-file")
+        if not args.thread_id or not args.log_file or not args.started_at:
+            raise SystemExit(
+                "worker mode requires --thread-id, --log-file, and --started-at"
+            )
         return run_worker(
             thread_id=args.thread_id,
             command=args.command,
             cwd=cwd,
             log_file=Path(args.log_file).expanduser().resolve(),
             codex_bin=args.codex_bin,
+            started_at=args.started_at,
         )
     thread_id = os.environ.get("CODEX_THREAD_ID", "").strip()
     if not thread_id:

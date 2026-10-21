@@ -5,7 +5,7 @@ from __future__ import annotations
 import importlib.util
 import os
 import subprocess
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -19,12 +19,36 @@ SPEC.loader.exec_module(wake_run)
 
 def test_wake_message_contains_result_without_agent_instructions() -> None:
     """Keep the queued follow-up limited to facts about the completed run."""
-    message = wake_run.build_wake_message(7, Path("run.log"))
+    message = wake_run.build_wake_message(
+        7,
+        Path("run.log"),
+        started_at="2026-10-21T12:00:00+02:00",
+        finished_at="2026-10-21T12:01:01+02:00",
+    )
 
     assert (
-        message
-        == "[Wake Run Result]\n\nStatus: Failed\nExit code: 7\nLog file: run.log"
+        message == "[Wake Run Result]\n\nStatus: Failed\nExit code: 7\n"
+        "Started at: 2026-10-21T12:00:00+02:00\n"
+        "Finished at: 2026-10-21T12:01:01+02:00\n"
+        "Elapsed: 1m 1s\nLog file: run.log"
     )
+
+
+@pytest.mark.parametrize(
+    ("seconds", "expected"),
+    [(0, "0s"), (60, "60s"), (61, "1m 1s"), (3600, "60m 0s"), (3601, "1h 0m 1s")],
+)
+def test_wake_message_formats_elapsed_time(seconds: int, expected: str) -> None:
+    """Format elapsed time in whole seconds, minutes, or hours."""
+    started_at = datetime.fromisoformat("2026-10-21T12:00:00+02:00")
+    message = wake_run.build_wake_message(
+        0,
+        Path("run.log"),
+        started_at=started_at.isoformat(),
+        finished_at=(started_at + timedelta(seconds=seconds)).isoformat(),
+    )
+
+    assert f"Elapsed: {expected}" in message
 
 
 def test_default_log_stays_outside_project(
