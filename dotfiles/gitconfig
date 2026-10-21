@@ -84,6 +84,7 @@ autoUpdate = true
 [safe]
 	directory = /export/complex/wolf
 	directory = /opt/docker/puppet-control-repo
+	directory = /opt/git/openvox/control.git
 
 [status]
 branch = true
