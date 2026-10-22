@@ -17,7 +17,7 @@ max_wait_timeout_ms = 3_600_000
 
 [model_providers.ollama-complex]
 name = "ollama"
-base_url = "http://cognition.home.arpa:8111/v1"
+base_url = "http://cerebrum.home.arpa:8111/v1"
 
 [profiles.qwen]
 model = "qwen"
