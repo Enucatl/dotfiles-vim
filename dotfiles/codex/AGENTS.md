@@ -34,6 +34,9 @@
 ## Verification
 
 - Run required checks and tests appropriate to the scope and risk of the change.
+- Run all tests in disposable temporary Docker containers
+  (`docker run --rm --userns=host`), keeping test dependencies and artifacts off
+  the host and cleaning up any temporary volumes afterward.
 - Do not add tests for reversible, low-impact changes when they merely duplicate
   the implementation. Any added test should meaningfully verify the change.
 - After relevant checks pass, broaden or repeat testing only when failures,
