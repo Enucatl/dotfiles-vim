@@ -27,10 +27,9 @@ def test_wake_message_contains_result_without_agent_instructions() -> None:
     )
 
     assert (
-        message == "[Wake Run Result]\n\nStatus: Failed\nExit code: 7\n"
+        message == "[Wake Run Result]\n\nStatus: Failed\nElapsed: 1m 1s\nExit code: 7\n"
         "Started at: 2026-10-21T12:00:00+02:00\n"
-        "Finished at: 2026-10-21T12:01:01+02:00\n"
-        "Elapsed: 1m 1s\nLog file: run.log"
+        "Finished at: 2026-10-21T12:01:01+02:00\nLog file: run.log"
     )
 
 

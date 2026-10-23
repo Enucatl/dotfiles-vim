@@ -46,10 +46,10 @@ def build_wake_message(
         WAKE_HEADER,
         "",
         f"Status: {status}",
+        f"Elapsed: {elapsed_text}",
         f"Exit code: {exit_text}",
         f"Started at: {started_at}",
         f"Finished at: {finished_at}",
-        f"Elapsed: {elapsed_text}",
         f"Log file: {log_file}",
     ]
     if launch_error:
