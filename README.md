@@ -18,3 +18,17 @@ echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_ed25519.
 
 # Neovim
 Configured directly in `~/.config/nvim/init.lua`.
+
+# Codex
+Puppet's `profile::codex_config` manages shared defaults in
+`/etc/codex/config.toml` on desktop and Docker hosts. Codex owns the writable
+`~/.codex/config.toml` for user overrides and runtime state. User settings,
+including later model selections, take precedence over the system defaults.
+Instructions and skills continue to use the existing dotfiles links.
+
+During cutover, Puppet removes `~/.codex/config.toml` only if it is the old
+`~/.vim/dotfiles/codex/config.toml` symlink, before updating dotfiles and syncing
+plugins. Regular config files remain untouched. State from the old tracked
+config is intentionally discarded without migration. Reboot after deployment;
+Codex recreates its user config as needed, and trust confirmations may appear
+again once.
